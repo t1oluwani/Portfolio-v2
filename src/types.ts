@@ -74,5 +74,4 @@ export type NavItem = {
   href: string;
   index: string;
   label: string;
-  stage: string;
 };

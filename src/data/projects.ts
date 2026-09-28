@@ -15,7 +15,6 @@ export const projects: Project[] = [
     status: "complete",
     year: "—",
     domain: "Graphics · spatial AI",
-    stage: "act",
     featured: true,
     summary:
       "A first-person recreation of Atari Battlezone: wireframe 3D, procedural terrain, raycast combat, and enemy tanks with distinct state-machine behaviours.",
@@ -72,7 +71,6 @@ export const projects: Project[] = [
     status: "complete",
     year: "—",
     domain: "Computer vision",
-    stage: "perceive",
     featured: true,
     summary:
       "A visual-recognition playground: draw a digit, then compare logistic regression, an FNN, and a CNN trained with PyTorch on MNIST.",
@@ -131,7 +129,6 @@ export const projects: Project[] = [
     status: "complete",
     year: "—",
     domain: "Intelligent systems",
-    stage: "understand",
     featured: true,
     summary:
       "Study software that turns a lecture recording or YouTube URL into a seekable transcript, a content-grounded chatbot, and generated study artifacts.",
@@ -186,7 +183,6 @@ export const projects: Project[] = [
     status: "in-progress",
     year: "—",
     domain: "Product · intelligent systems",
-    stage: "act",
     featured: true,
     summary:
       "Co-founded and led technical development of a mobile networking product: capture people you meet, keep event context, and use an LLM to draft follow-ups mapped to goals.",
@@ -243,7 +239,6 @@ export const projects: Project[] = [
     status: "complete",
     year: "—",
     domain: "Backend",
-    stage: "build",
     summary:
       "A Node/Express employee API with MongoDB persistence, OpenAPI docs, and deployment on a Cybera Ubuntu instance.",
     problem:
@@ -284,7 +279,6 @@ export const projects: Project[] = [
     status: "complete",
     year: "—",
     domain: "Full-stack",
-    stage: "build",
     summary:
       "A themed web app for practicing both writing an API and consuming one: form submissions in MongoDB, character records from SWAPI.",
     problem:
@@ -335,7 +329,6 @@ export const projects: Project[] = [
     status: "complete",
     year: "—",
     domain: "Product tooling",
-    stage: "build",
     summary:
       "A lightweight web app for tracking user stories — status, priority, and story points — aligned with Agile/Scrum planning.",
     problem:
@@ -373,7 +366,6 @@ export const projects: Project[] = [
     status: "complete",
     year: "—",
     domain: "Software design",
-    stage: "build",
     summary:
       "Python word games that share structure through inheritance, abstraction, and polymorphism — Wordle and Hangman from one object model.",
     problem:
@@ -412,7 +404,6 @@ export const projects: Project[] = [
     status: "complete",
     year: "—",
     domain: "Application software",
-    stage: "build",
     summary:
       "A personal finance tracker aimed at first-income users: inflows, outflows, categories, budgets, and save/load.",
     problem:
@@ -452,7 +443,6 @@ export const projects: Project[] = [
     status: "complete",
     year: "—",
     domain: "Web",
-    stage: "build",
     summary:
       "A three-tab site for teens: amphibian facts, a quiz, and a mini Frogger — the first coding project, later rebuilt with better HTML/CSS/JS practice.",
     problem:

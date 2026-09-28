@@ -7,16 +7,16 @@ export const profile = {
   nameParts: ["Tioluwani", "Akinloye"] as const,
   aliases: "Tio / Favour",
   shortName: "T. Akinloye",
-  role: "Software / AI Engineer",
-  location: "Burnaby, BC",
-  origin: "Born in Nigeria · raised in Canada",
-  statusLine: "MSc Visual Computing · Simon Fraser University · expected 2028",
+  role: "Software / AI/ML Engineer",
+  location: "Canada",
+  origin: "Born in Nigeria · Raised in Canada",
+  statusLine: "MSc Visual Computing | BSc Honors Computing Science",
   statement:
     "I build intelligent systems that perceive the world, form models of it, and act with intention.",
   about: [
-    "I go by Tio or Favour. I am a software and AI engineer working toward robotics, computer vision, and intelligent systems — the boundary between sensing and action.",
-    "I am pursuing a Master of Visual Computing at Simon Fraser University (expected 2028), after an Honors BSc in Computing Science at the University of Alberta (2025) and earlier studies in Combined Major in Science at UBC. Dual citizen of Canada and Nigeria.",
-    "Outside of lab and product work I play soccer, lift, read novels and manga, and draw. I care about using this craft on problems that actually move — models that are part of a system, not a slide.",
+    "I go by Tio or Favour. I am a software and AI/ML engineer working toward robotics, computer vision, and intelligent systems, essentially the boundaries between sensing and action.",
+    "I am pursuing a Master of Visual Computing at Simon Fraser University (expected 2028), after an Honors BSc in Computing Science at the University of Alberta (2025). Dual citizen of Canada and Nigeria.",
+    "Outside of school and my career, I play soccer, exercise, read novels and manga, draw, and cook. I am also interested in the intersectionality of technology and healthcare.",
   ],
   links: {
     github: "https://github.com/t1oluwani",
@@ -24,21 +24,20 @@ export const profile = {
     email: "akinloyetioluwani@gmail.com",
     resume: "/Tioluwani_Akinloye_Resume.pdf",
   },
-  systemId: "TA-PS-02",
 };
 
 export const navItems: NavItem[] = [
-  { id: "hero", href: "#hero", index: "01", label: "Viewport", stage: "PERCEIVE" },
-  { id: "about", href: "#about", index: "02", label: "Subject", stage: "UNDERSTAND" },
-  { id: "work", href: "#work", index: "03", label: "Case files", stage: "BUILD" },
-  { id: "path", href: "#path", index: "04", label: "Log", stage: "BUILD" },
-  { id: "stack", href: "#stack", index: "05", label: "Stack", stage: "BUILD" },
-  { id: "focus", href: "#focus", index: "06", label: "Threads", stage: "BUILD" },
-  { id: "act", href: "#act", index: "07", label: "Channel", stage: "ACT" },
+  { id: "hero", href: "#hero", index: "01", label: "Viewport"},
+  { id: "about", href: "#about", index: "02", label: "Subject"},
+  { id: "work", href: "#work", index: "03", label: "Case files"},
+  { id: "path", href: "#path", index: "04", label: "Log"},
+  { id: "stack", href: "#stack", index: "05", label: "Stack"},
+  { id: "focus", href: "#focus", index: "06", label: "Threads"},
+  { id: "act", href: "#act", index: "07", label: "Channel"},
 ];
 
 export const bootLines = [
-  "SYS.BOOT  perception-stack  v2.0",
+  "SYS.BOOT  random stuff go!  v2.0",
   "calibrating optical axis…",
   "loading spatial prior…",
   "mapping world frame  [origin locked]",
@@ -62,7 +61,7 @@ export const timeline: TimelineEntry[] = [
   },
   {
     id: "sfu-ta",
-    code: "TCH-01",
+    code: "TCH-02",
     period: "Sep 2026 — Present",
     title: "Teaching Assistant — CMPT 125 D100",
     org: "Simon Fraser University",
@@ -82,12 +81,12 @@ export const timeline: TimelineEntry[] = [
     kind: "education",
     status: "active",
     locale: "Burnaby, BC",
-    detail: "Graduate study in visual computing. Coursework includes machine learning and distributed cloud systems.",
+    detail: "Graduate study in visual computing. Electives includes robotic autonomy and biomedical computer vision.",
     tags: ["Python", "PyTorch", "Computer vision", "Machine learning"],
   },
   {
     id: "scaleupmap",
-    code: "ROL-03",
+    code: "DEV-02",
     period: "Feb 2025 — May 2026",
     title: "Full Stack Developer",
     org: "ScaleupMap",
@@ -139,7 +138,7 @@ export const timeline: TimelineEntry[] = [
   },
   {
     id: "knead",
-    code: "ROL-02",
+    code: "DEV-01",
     period: "Jan 2024 — Apr 2024",
     title: "Student Software Developer",
     org: "Knead Technologies",
@@ -152,7 +151,7 @@ export const timeline: TimelineEntry[] = [
   },
   {
     id: "stem",
-    code: "TCH-00",
+    code: "TCH-01",
     period: "Jul 2022 — Jun 2023",
     title: "Online STEM Facilitator",
     org: "STEM Montessori Academy of Canada",
@@ -173,84 +172,84 @@ export const timeline: TimelineEntry[] = [
     status: "complete",
     locale: "Vancouver, BC",
     detail:
-      "Combined Major in Science. Relocated and continued the computing-science degree at the University of Alberta.",
+      "Combined Major in Science. Relocated and continued with computing-science degree at the University of Alberta.",
     tags: ["C", "C++", "Java", "Racket", "Algorithms"],
   },
 ];
 
-export const skillLayers: SkillLayer[] = [
-  {
-    id: "perceive",
-    label: "Perceive",
-    description: "Signal from the world — images, video, graphics, and spatial structure.",
-    items: [
-      { name: "Computer vision", note: "SmartVision, clinical CV consulting" },
-      { name: "OpenCV / OpenGL" },
-      { name: "PyTorch / Torchvision" },
-      { name: "Raycasting · collision" },
-    ],
-  },
-  {
-    id: "understand",
-    label: "Understand",
-    description: "Models that turn input into something a system can use.",
-    items: [
-      { name: "CNNs / FNNs / logistic regression" },
-      { name: "Whisper ASR" },
-      { name: "Gemini / OpenAI APIs" },
-      { name: "Python · C++" },
-    ],
-  },
-  {
-    id: "build",
-    label: "Build",
-    description: "The software that holds a system together.",
-    items: [
-      { name: "React / Next.js / TypeScript" },
-      { name: "Vue.js · Flutter/Dart" },
-      { name: "FastAPI · Flask · Go · Laravel" },
-      { name: "PostgreSQL · MongoDB · Firebase · Docker" },
-    ],
-  },
-  {
-    id: "act",
-    label: "Act",
-    description: "Closing the loop — serving models, shipping product, teaching, deploying.",
-    items: [
-      { name: "REST · GCP · Cybera" },
-      { name: "Cypress · PHPUnit · JUnit" },
-      { name: "Agile / Scrum · UI/UX" },
-      { name: "Git · CI-minded testing" },
-    ],
-  },
-];
+// export const skillLayers: SkillLayer[] = [
+//   {
+//     id: "perceive",
+//     label: "Perceive",
+//     description: "Signal from the world — images, video, graphics, and spatial structure.",
+//     items: [
+//       { name: "Computer vision", note: "SmartVision, clinical CV consulting" },
+//       { name: "OpenCV / OpenGL" },
+//       { name: "PyTorch / Torchvision" },
+//       { name: "Raycasting · collision" },
+//     ],
+//   },
+//   {
+//     id: "understand",
+//     label: "Understand",
+//     description: "Models that turn input into something a system can use.",
+//     items: [
+//       { name: "CNNs / FNNs / logistic regression" },
+//       { name: "Whisper ASR" },
+//       { name: "Gemini / OpenAI APIs" },
+//       { name: "Python · C++" },
+//     ],
+//   },
+//   {
+//     id: "build",
+//     label: "Build",
+//     description: "The software that holds a system together.",
+//     items: [
+//       { name: "React / Next.js / TypeScript" },
+//       { name: "Vue.js · Flutter/Dart" },
+//       { name: "FastAPI · Flask · Go · Laravel" },
+//       { name: "PostgreSQL · MongoDB · Firebase · Docker" },
+//     ],
+//   },
+//   {
+//     id: "act",
+//     label: "Act",
+//     description: "Closing the loop — serving models, shipping product, teaching, deploying.",
+//     items: [
+//       { name: "REST · GCP · Cybera" },
+//       { name: "Cypress · PHPUnit · JUnit" },
+//       { name: "Agile / Scrum · UI/UX" },
+//       { name: "Git · CI-minded testing" },
+//     ],
+//   },
+// ];
 
-export const interests: Interest[] = [
-  {
-    id: "robotics",
-    title: "Robotics",
-    status: "ACTIVE — SFU",
-    text: "Project 15004: joint-link virtual models for humanoid and robot applications, plus interaction methods for those models. Looking for work where perception sits inside a control loop, not beside it.",
-  },
-  {
-    id: "vision",
-    title: "Computer vision",
-    status: "CORE",
-    text: "Visual computing MSc, CMPUT 328 visual recognition, SmartVision (digit models up to a reported 98% CNN accuracy), and clinical consulting on CV pipelines (tube ID, inversion counting, PHI-safe video).",
-  },
-  {
-    id: "intelligent",
-    title: "Intelligent systems",
-    status: "ACTIVE",
-    text: "StudyAI’s grounded lecture loop, Gemini microservices at ScaleupMap, and an undisclosed networking product that turns event encounters into follow-through. Prefer systems with APIs, state, and evaluation.",
-  },
-  {
-    id: "spatial",
-    title: "Spatial systems",
-    status: "BUILDING",
-    text: "Battlezone as a spatial sandbox: first-person transforms, raycast LOS, collision, and pathfinding agents. A step toward maps and geometry a robot could actually use.",
-  },
-];
+// export const interests: Interest[] = [
+//   {
+//     id: "robotics",
+//     title: "Robotics",
+//     status: "ACTIVE — SFU",
+//     text: "Project 15004: joint-link virtual models for humanoid and robot applications, plus interaction methods for those models. Looking for work where perception sits inside a control loop, not beside it.",
+//   },
+//   {
+//     id: "vision",
+//     title: "Computer vision",
+//     status: "CORE",
+//     text: "Visual computing MSc, CMPUT 328 visual recognition, SmartVision (digit models up to a reported 98% CNN accuracy), and clinical consulting on CV pipelines (tube ID, inversion counting, PHI-safe video).",
+//   },
+//   {
+//     id: "intelligent",
+//     title: "Intelligent systems",
+//     status: "ACTIVE",
+//     text: "StudyAI’s grounded lecture loop, Gemini microservices at ScaleupMap, and an undisclosed networking product that turns event encounters into follow-through. Prefer systems with APIs, state, and evaluation.",
+//   },
+//   {
+//     id: "spatial",
+//     title: "Spatial systems",
+//     status: "BUILDING",
+//     text: "Battlezone as a spatial sandbox: first-person transforms, raycast LOS, collision, and pathfinding agents. A step toward maps and geometry a robot could actually use.",
+//   },
+// ];
 
 export const contactChannels = [
   {
@@ -268,13 +267,13 @@ export const contactChannels = [
   {
     id: "linkedin",
     label: "LinkedIn",
-    value: "tioluwani-akinloye",
+    value: "Tioluwani Akinloye",
     href: "https://www.linkedin.com/in/tioluwani-akinloye-255a481b7",
   },
   {
     id: "resume",
     label: "Resume",
-    value: "PDF",
+    value: "View my Resume (PDF)",
     href: "/Tioluwani_Akinloye_Resume.pdf",
   },
 ];
