@@ -1,5 +1,3 @@
-export type PipelineStage = "perceive" | "understand" | "build" | "act";
-
 export type ProjectStatus = "complete" | "in-progress" | "research";
 
 export type ArchitectureNode = {
@@ -21,7 +19,7 @@ export type Project = {
   status: ProjectStatus;
   year: string;
   domain: string;
-  stage: PipelineStage;
+  // stage: PipelineStage;
   summary: string;
   problem: string;
   approach: string;
@@ -58,7 +56,7 @@ export type TimelineEntry = {
 };
 
 export type SkillLayer = {
-  id: PipelineStage;
+  id: string;
   label: string;
   description: string;
   items: Array<{ name: string; note?: string }>;
