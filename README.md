@@ -32,6 +32,10 @@ src/
 
 Projects are data-driven. `/work/:slug` is a full dossier (problem, approach, contribution, result, schematic, tech table, screenshot frames).
 
+Screenshots: leave `frames[].src` empty for a capture placeholder. To attach a still, put a PNG in `public/work/<slug>/` and set `src` on that frame in `src/data/projects.ts`.
+
+The undisclosed networking startup is listed without company name or marketing URL.
+
 ## Scripts
 
 ```bash

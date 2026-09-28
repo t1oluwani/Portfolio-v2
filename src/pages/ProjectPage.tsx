@@ -1,6 +1,7 @@
 import { Link, Navigate, useParams } from "react-router-dom";
 import { projects } from "@/data/content";
 import { ArchitectureDiagram } from "@/components/system/ArchitectureDiagram";
+import { CaptureFrame } from "@/components/system/CaptureFrame";
 import { useEffect } from "react";
 
 const statusCopy = {
@@ -42,11 +43,7 @@ export function ProjectPage() {
           <a className="btn" href={project.demo} target="_blank" rel="noreferrer">
             Demo / recording
           </a>
-        ) : (
-          <span className="btn" aria-disabled="true">
-            Demo TBD
-          </span>
-        )}
+        ) : null}
       </div>
 
       <div className="project-grid">
@@ -89,13 +86,7 @@ export function ProjectPage() {
 
       <div className="frames">
         {project.frames.map((frame) => (
-          <figure key={frame.id} className="frame">
-            <div className="frame__id">
-              {frame.id} · PENDING CAPTURE
-            </div>
-            <h3 className="frame__caption">{frame.caption}</h3>
-            <p className="frame__note">{frame.note}</p>
-          </figure>
+          <CaptureFrame key={frame.id} frame={frame} slug={project.slug} />
         ))}
       </div>
 

@@ -28,6 +28,7 @@ export type Project = {
   contribution: string;
   result: string;
   technologies: string[];
+  featured?: boolean;
   github?: string;
   demo?: string;
   architecture: {
@@ -38,6 +39,7 @@ export type Project = {
     id: string;
     caption: string;
     note: string;
+    src?: string;
   }>;
   notes: string[];
 };
@@ -48,9 +50,11 @@ export type TimelineEntry = {
   period: string;
   title: string;
   org: string;
-  kind: "education" | "role" | "research";
+  kind: "education" | "role" | "research" | "teaching";
   status: "active" | "complete" | "tbd";
+  locale?: string;
   detail: string;
+  tags?: string[];
 };
 
 export type SkillLayer = {

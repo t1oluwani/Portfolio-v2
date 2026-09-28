@@ -15,9 +15,8 @@ export function Contact() {
       <div ref={ref} className="contact reveal">
         <div>
           <p className="lede">
-            If you are building perception, robotics, or other intelligent systems and want to
-            talk, use a channel below. Empty fields are placeholders — fill them in{" "}
-            <code className="mono">src/data/content.ts</code>.
+            If you are building perception, robotics, or other intelligent systems, open a
+            channel. Email is the fastest handshake.
           </p>
           <div className="channels">
             {contactChannels.map((ch) =>

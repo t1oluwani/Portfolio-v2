@@ -23,8 +23,20 @@ export function Experience() {
               <span>{item.period}</span>
             </div>
             <h3 className="timeline__title">{item.title}</h3>
-            <p className="timeline__org">{item.org}</p>
+            <p className="timeline__org">
+              {item.org}
+              {item.locale ? ` · ${item.locale}` : ""}
+            </p>
             <p className="timeline__detail">{item.detail}</p>
+            {item.tags?.length ? (
+              <div className="chip-row chip-row--tight">
+                {item.tags.map((tag) => (
+                  <span key={tag} className="chip chip--quiet">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            ) : null}
           </article>
         ))}
       </div>

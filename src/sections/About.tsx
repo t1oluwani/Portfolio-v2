@@ -20,7 +20,10 @@ export function About() {
           <tbody>
             <tr>
               <th scope="row">Unit</th>
-              <td>{profile.name}</td>
+              <td>
+                {profile.name}
+                <span className="spec-alias"> · {profile.aliases}</span>
+              </td>
             </tr>
             <tr>
               <th scope="row">Class</th>
@@ -36,16 +39,21 @@ export function About() {
             </tr>
             <tr>
               <th scope="row">Locale</th>
-              <td>{profile.location}</td>
+              <td>
+                {profile.location}
+                <span className="spec-alias"> · {profile.origin}</span>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">Channel</th>
+              <td>
+                <a href={`mailto:${profile.links.email}`}>{profile.links.email}</a>
+              </td>
             </tr>
             <tr>
               <th scope="row">Source</th>
               <td>
-                {profile.links.github ? (
-                  <a href={profile.links.github}>github.com/t1oluwani</a>
-                ) : (
-                  "TBD"
-                )}
+                <a href={profile.links.github}>github.com/t1oluwani</a>
               </td>
             </tr>
           </tbody>

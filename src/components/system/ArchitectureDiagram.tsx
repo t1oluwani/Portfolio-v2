@@ -25,21 +25,23 @@ export function ArchitectureDiagram({ project }: { project: Project }) {
     });
   });
 
+  const used = grouped.filter((g) => g.nodes.length > 0);
+
   return (
     <div ref={ref} className="schematic reveal">
       <svg viewBox="0 0 800 340" role="img" aria-label={`${project.title} system schematic`}>
         <rect width="800" height="340" fill="#0d100f" />
-        {layers.map((layer) => (
+        {used.map((g) => (
           <text
-            key={layer}
+            key={g.layer}
             x="18"
-            y={(layerY[layer] ?? 0) + 4}
+            y={(layerY[g.layer] ?? 0) + 4}
             fill="#8a7a5e"
             fontFamily="IBM Plex Mono, monospace"
             fontSize="10"
             letterSpacing="1.6"
           >
-            {layer.toUpperCase()}
+            {g.layer.toUpperCase()}
           </text>
         ))}
         {project.architecture.edges.map((edge) => {

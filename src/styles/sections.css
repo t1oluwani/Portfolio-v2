@@ -727,17 +727,91 @@
 }
 
 .frame {
-  min-height: 220px;
+  margin: 0;
   border: 1px solid var(--line);
-  background:
-    linear-gradient(rgba(232, 226, 210, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(232, 226, 210, 0.03) 1px, transparent 1px),
-    var(--panel);
-  background-size: 16px 16px, 16px 16px, auto;
-  padding: 16px;
+  background: var(--panel);
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+}
+
+.frame__stage {
+  min-height: 220px;
+  border-bottom: 1px solid var(--line);
+  background:
+    linear-gradient(rgba(232, 226, 210, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(232, 226, 210, 0.04) 1px, transparent 1px),
+    var(--void-2);
+  background-size: 16px 16px, 16px 16px, auto;
+  position: relative;
+}
+
+.frame__stage img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.frame__placeholder {
+  min-height: 220px;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 24px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+}
+
+.frame__cross {
+  width: 28px;
+  height: 28px;
+  margin-bottom: 8px;
+  background:
+    linear-gradient(var(--brass-dim), var(--brass-dim)) center / 1px 100% no-repeat,
+    linear-gradient(var(--brass-dim), var(--brass-dim)) center / 100% 1px no-repeat;
+}
+
+.frame__path {
+  max-width: 28em;
+  line-height: 1.5;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.frame figcaption {
+  padding: 16px;
+}
+
+.archive-kicker {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 48px 0 0;
+  padding-bottom: 12px;
+}
+
+.spec-alias {
+  color: var(--muted);
+}
+
+.chip-row--tight {
+  margin-top: 12px;
+}
+
+.chip--quiet {
+  background: transparent;
+  font-size: 11px;
+  font-family: var(--font-mono);
+  letter-spacing: 0.06em;
+}
+
+.timeline__detail {
+  margin: 0;
+  color: var(--paper-soft);
+  max-width: 48em;
 }
 
 .frame__id {
