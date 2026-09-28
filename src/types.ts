@@ -1,4 +1,4 @@
-export type ProjectStatus = "complete" | "in-progress" | "research";
+export type ProjectStatus = "complete" | "partially-complete" | "in-progress" | "planned" | "on-hold";
 
 export type ArchitectureNode = {
   id: string;
@@ -18,7 +18,7 @@ export type Project = {
   subtitle: string;
   status: ProjectStatus;
   year: string;
-  domain: string;
+  feature: string;
   // stage: PipelineStage;
   summary: string;
   problem: string;

@@ -8,13 +8,69 @@ function frames(
 
 export const projects: Project[] = [
   {
+    slug: "networking-startup",
+    code: "CS-10",
+    title: "Networking copilot app",
+    subtitle: "Undisclosed startup: event connections with a measurable follow-through",
+    status: "on-hold",
+    year: "2026",
+    feature: "Software Process/Product · Intelligent Systems",
+    featured: true,
+    summary:
+      "Co-founded and led technical development of a mobile networking product: capture people you meet, keep event context, and use an LLM to draft follow-ups mapped to goals.",
+    problem:
+      "Students and early-career professionals collect cards, emails, and LinkedIn requests at events, then lose the thread. Follow-up is manual, context decays, and there is no sense of whether a connection moved.",
+    approach:
+      "Owned the pipeline end-to-end: concept validation, Figma UI/UX, architecture and UML, then a custom stack — Flutter/Dart client, FastAPI services, Supabase, Gemini, GCP — with testing and data-security constraints. Product surface: QR / quick-add capture, event-linked context, AI follow-up drafts from notes, goal mapping, suggested next actions, and event finding aligned to the user’s network.",
+    contribution:
+      "Co-founder and technical lead: product definition, system architecture, stack selection, and implementation leadership.",
+    result:
+      "Company name withheld. Public marketing site and waitlist exist; treat this dossier as the technical case, not a press page. Outcome metrics TBD.",
+    technologies: [
+      "Flutter",
+      "Dart",
+      "FastAPI",
+      "Supabase",
+      "Gemini API",
+      "GCP",
+      "Figma",
+      "UML",
+    ],
+    architecture: {
+      nodes: [
+        { id: "cap", label: "QR / quick-add", layer: "sense" },
+        { id: "ctx", label: "Event context", layer: "sense" },
+        { id: "api", label: "FastAPI", layer: "route" },
+        { id: "db", label: "Supabase", layer: "route" },
+        { id: "llm", label: "Gemini drafts", layer: "model" },
+        { id: "app", label: "Flutter app", layer: "act" },
+      ],
+      edges: [
+        { from: "cap", to: "api" },
+        { from: "ctx", to: "api" },
+        { from: "api", to: "db" },
+        { from: "api", to: "llm" },
+        { from: "llm", to: "app" },
+        { from: "db", to: "app" },
+      ],
+    },
+    frames: frames([
+      ["F-01", "Capture flow", "Screenshot pending — QR / quick-add of a new connection"],
+      ["F-02", "Follow-up draft", "Screenshot pending — notes → suggested message"],
+    ]),
+    notes: [
+      "Startup name intentionally withheld.",
+      "More details + Landing page available upon request.",
+    ],
+  },
+  {
     slug: "battlezone",
-    code: "CS-01",
+    code: "CS-09",
     title: "Battlezone",
     subtitle: "Atari 1980, rebuilt as a real-time OpenGL tank sim",
     status: "complete",
-    year: "—",
-    domain: "Graphics · spatial AI",
+    year: "2026",
+    feature: "3D Graphics · Pathfinding",
     featured: true,
     summary:
       "A first-person recreation of Atari Battlezone: wireframe 3D, procedural terrain, raycast combat, and enemy tanks with distinct state-machine behaviours.",
@@ -65,17 +121,17 @@ export const projects: Project[] = [
   },
   {
     slug: "smartvision",
-    code: "CS-02",
+    code: "CS-08",
     title: "SmartVision",
     subtitle: "Train, draw, and compare digit-recognition models in one viewport",
-    status: "complete",
-    year: "—",
-    domain: "Computer vision",
+    status: "partially-complete",
+    year: "2024",
+    feature: "Computer vision",
     featured: true,
     summary:
       "A visual-recognition playground: draw a digit, then compare logistic regression, an FNN, and a CNN trained with PyTorch on MNIST.",
     problem:
-      "Recognition models are easier to trust when you can probe them — change the input, switch the architecture, and watch training versus inference behave in real time.",
+      "Wanted to apply course concepts in a practical, real-world scenario, applied knowledge from static training to dynamic performance.",
     approach:
       "Vue.js canvas captures a handwritten 0–9. A Flask API exposes train / predict / clear for three PyTorch models (logistic regression, FNN, CNN) on MNIST. The UI surfaces accuracy and processing details so the architectures can be compared in the same session. FashionMNIST object recognition is specified in the repo and is not implemented.",
     contribution:
@@ -123,12 +179,12 @@ export const projects: Project[] = [
   },
   {
     slug: "studyai",
-    code: "CS-03",
+    code: "CS-07",
     title: "StudyAI",
-    subtitle: "Lecture video → transcript, grounded chat, summaries, quizzes",
+    subtitle: "Lecture video → transcript, contextualized chatbot, summaries, quizzes",
     status: "complete",
-    year: "—",
-    domain: "Intelligent systems",
+    year: "2024",
+    feature: "AI / LLMs · Video processing",
     featured: true,
     summary:
       "Study software that turns a lecture recording or YouTube URL into a seekable transcript, a content-grounded chatbot, and generated study artifacts.",
@@ -173,103 +229,7 @@ export const projects: Project[] = [
       ["F-01", "Transcript seek", "Screenshot pending — clickable transcript aligned to the player"],
       ["F-02", "Grounded Q&A", "Screenshot pending — chatbot citing timestamps"],
     ]),
-    notes: ["Designed for exam prep against posted lectures."],
-  },
-  {
-    slug: "networking-startup",
-    code: "CS-04",
-    title: "Networking copilot",
-    subtitle: "Undisclosed startup — event connections with a measurable follow-through",
-    status: "in-progress",
-    year: "—",
-    domain: "Product · intelligent systems",
-    featured: true,
-    summary:
-      "Co-founded and led technical development of a mobile networking product: capture people you meet, keep event context, and use an LLM to draft follow-ups mapped to goals.",
-    problem:
-      "Students and early-career professionals collect cards, emails, and LinkedIn requests at events, then lose the thread. Follow-up is manual, context decays, and there is no sense of whether a connection moved.",
-    approach:
-      "Owned the pipeline end-to-end: concept validation, Figma UI/UX, architecture and UML, then a custom stack — Flutter/Dart client, FastAPI services, Supabase, Gemini, GCP — with testing and data-security constraints. Product surface: QR / quick-add capture, event-linked context, AI follow-up drafts from notes, goal mapping, suggested next actions, and event finding aligned to the user’s network.",
-    contribution:
-      "Co-founder and technical lead: product definition, system architecture, stack selection, and implementation leadership.",
-    result:
-      "Company name withheld. Public marketing site and waitlist exist; treat this dossier as the technical case, not a press page. Outcome metrics TBD.",
-    technologies: [
-      "Flutter",
-      "Dart",
-      "FastAPI",
-      "Supabase",
-      "Gemini API",
-      "GCP",
-      "Figma",
-      "UML",
-    ],
-    architecture: {
-      nodes: [
-        { id: "cap", label: "QR / quick-add", layer: "sense" },
-        { id: "ctx", label: "Event context", layer: "sense" },
-        { id: "api", label: "FastAPI", layer: "route" },
-        { id: "db", label: "Supabase", layer: "route" },
-        { id: "llm", label: "Gemini drafts", layer: "model" },
-        { id: "app", label: "Flutter app", layer: "act" },
-      ],
-      edges: [
-        { from: "cap", to: "api" },
-        { from: "ctx", to: "api" },
-        { from: "api", to: "db" },
-        { from: "api", to: "llm" },
-        { from: "llm", to: "app" },
-        { from: "db", to: "app" },
-      ],
-    },
-    frames: frames([
-      ["F-01", "Capture flow", "Screenshot pending — QR / quick-add of a new connection"],
-      ["F-02", "Follow-up draft", "Screenshot pending — notes → suggested message"],
-    ]),
-    notes: [
-      "Do not publish the company name on this site.",
-      "Demo link omitted on purpose so the public brand is not disclosed here.",
-    ],
-  },
-  {
-    slug: "restful-api",
-    code: "CS-05",
-    title: "Employee Management API",
-    subtitle: "CRUD REST service on a Cybera Ubuntu host",
-    status: "complete",
-    year: "—",
-    domain: "Backend",
-    summary:
-      "A Node/Express employee API with MongoDB persistence, OpenAPI docs, and deployment on a Cybera Ubuntu instance.",
-    problem:
-      "Needed a complete REST surface — not a tutorial stub — with real CRUD, aggregates, error codes, and a deployed host.",
-    approach:
-      "Express routes over MongoDB. GET list sorts by tenure and returns aggregate stats (count, average years, average salary). GET/POST/PUT/PATCH/DELETE on employees. Unsupported methods return 405. Swagger/OpenAPI documents the contract. Deployed on Cybera with IPv6 networking.",
-    contribution: "Sole author of the API, documentation, and Ubuntu/Cybera deployment.",
-    result:
-      "Deployed employee management API with interactive docs. Treat the host as potentially ephemeral; GitHub is the durable record.",
-    technologies: ["Node.js", "Express.js", "MongoDB", "OpenAPI", "Ubuntu", "Cybera"],
-    github: "https://github.com/t1oluwani/restfulAPI",
-    architecture: {
-      nodes: [
-        { id: "http", label: "HTTP client", layer: "sense" },
-        { id: "ex", label: "Express", layer: "route" },
-        { id: "mdb", label: "MongoDB", layer: "route" },
-        { id: "docs", label: "OpenAPI", layer: "act" },
-        { id: "crud", label: "CRUD + stats", layer: "act" },
-      ],
-      edges: [
-        { from: "http", to: "ex" },
-        { from: "ex", to: "mdb" },
-        { from: "ex", to: "docs" },
-        { from: "mdb", to: "crud" },
-      ],
-    },
-    frames: frames([
-      ["F-01", "OpenAPI surface", "Screenshot pending — /docs endpoint"],
-      ["F-02", "List + aggregates", "Screenshot pending — employees sorted with stats"],
-    ]),
-    notes: ["Course/deployment context: University of Alberta CMPUT 401 / Cybera instance."],
+    notes: ["Designed for exam prep against posted lectures and youtube tutorials."],
   },
   {
     slug: "starwars-api",
@@ -277,12 +237,12 @@ export const projects: Project[] = [
     title: "Star Wars form + SWAPI",
     subtitle: "Own REST API plus a third-party character lookup",
     status: "complete",
-    year: "—",
-    domain: "Full-stack",
+    year: "2024",
+    feature: "API Integration · 3rd-party APIs",
     summary:
       "A themed web app for practicing both writing an API and consuming one: form submissions in MongoDB, character records from SWAPI.",
     problem:
-      "Learn the two sides of HTTP in one project — persist user-submitted records, and fetch canonical character data from SWAPI.",
+      "Learn the two sides of HTTP in one project: persist user-submitted records, and fetch canonical character data from SWAPI.",
     approach:
       "HTML/CSS/JS frontend. Node + Express backend. MongoDB/Mongoose stores name, email, ratings, favourite film and character. Fetch talks to SWAPI by character id. GitHub Pages hosts the static client.",
     contribution: "Sole author of form UI, Express CRUD, Mongo persistence, and SWAPI integration.",
@@ -322,15 +282,56 @@ export const projects: Project[] = [
     notes: [],
   },
   {
+    slug: "restful-api",
+    code: "CS-05",
+    title: "Employee Management API",
+    subtitle: "CRUD REST service on a Cybera Ubuntu host",
+    status: "complete",
+    year: "2024",
+    feature: "REST API · Deployment",
+    summary:
+      "A Node/Express employee API with MongoDB persistence, OpenAPI docs, and deployment on a Cybera Ubuntu instance.",
+    problem:
+      "Needed a complete REST surface with real CRUD, aggregates, error codes, and a deployed host.",
+    approach:
+      "Express routes over MongoDB. GET list sorts by tenure and returns aggregate stats (count, average years, average salary). GET/POST/PUT/PATCH/DELETE on employees. Unsupported methods return 405. Swagger/OpenAPI documents the contract. Deployed on Cybera with IPv6 networking.",
+    contribution: "Sole author of the API, documentation, and Ubuntu/Cybera deployment.",
+    result:
+      "Deployed employee management API with interactive docs. Treat the host as potentially ephemeral; GitHub is the durable record.",
+    technologies: ["Node.js", "Express.js", "MongoDB", "OpenAPI", "Ubuntu", "Cybera"],
+    github: "https://github.com/t1oluwani/restfulAPI",
+    architecture: {
+      nodes: [
+        { id: "http", label: "HTTP client", layer: "sense" },
+        { id: "ex", label: "Express", layer: "route" },
+        { id: "mdb", label: "MongoDB", layer: "route" },
+        { id: "docs", label: "OpenAPI", layer: "act" },
+        { id: "crud", label: "CRUD + stats", layer: "act" },
+      ],
+      edges: [
+        { from: "http", to: "ex" },
+        { from: "ex", to: "mdb" },
+        { from: "ex", to: "docs" },
+        { from: "mdb", to: "crud" },
+      ],
+    },
+    frames: frames([
+      ["F-01", "OpenAPI surface", "Screenshot pending — /docs endpoint"],
+      ["F-02", "List + aggregates", "Screenshot pending — employees sorted with stats"],
+    ]),
+    notes: [],
+  },
+  
+  {
     slug: "sprint",
-    code: "CS-07",
+    code: "CS-04",
     title: "Sprint",
     subtitle: "Agile user-story board for Scrum-style planning",
     status: "complete",
-    year: "—",
-    domain: "Product tooling",
+    year: "2024",
+    feature: "Agile / Scrum",
     summary:
-      "A lightweight web app for tracking user stories — status, priority, and story points — aligned with Agile/Scrum planning.",
+      "A lightweight web app for tracking user stories: status, priority, and story points aligned with Agile/Scrum planning.",
     problem:
       "Small teams still need a simple place to capture stories, rank them, and see the board without standing up a full Jira.",
     approach:
@@ -360,14 +361,14 @@ export const projects: Project[] = [
   },
   {
     slug: "word-games",
-    code: "CS-08",
+    code: "CS-03",
     title: "Word Games",
     subtitle: "Terminal Wordle + Hangman on a shared class hierarchy",
     status: "complete",
-    year: "—",
-    domain: "Software design",
+    year: "2023",
+    feature: "Abstraction",
     summary:
-      "Python word games that share structure through inheritance, abstraction, and polymorphism — Wordle and Hangman from one object model.",
+      "Python word games that share structure through inheritance, abstraction, and polymorphism, Wordle and Hangman from one object model.",
     problem:
       "Two related games should not duplicate control flow. The design problem is a common type hierarchy, not two scripts.",
     approach:
@@ -398,21 +399,21 @@ export const projects: Project[] = [
   },
   {
     slug: "budget-app",
-    code: "CS-09",
+    code: "CS-02",
     title: "Budget App",
     subtitle: "Expense tracker with OOP, TDD, and JSON persistence",
     status: "complete",
-    year: "—",
-    domain: "Application software",
+    year: "2021",
+    feature: "Test Driven Development · Object Oriented Programming",
     summary:
       "A personal finance tracker aimed at first-income users: inflows, outflows, categories, budgets, and save/load.",
     problem:
-      "Young adults need a small, inspectable money overview — not another bloated finance product — with persistence they can trust.",
+      "Solve a problem you have using Java, OOP, and TDD, while maintaining code quality, a GUI, and data persistence.",
     approach:
       "Java application (CPSC 210 lineage) with TDD (JUnit), JSON serialization, and an object model for transactions, categories, and budgets. Features: record income/expense/transfers, categorize, custom budget limits, warnings near/over budget or when spending exceeds earning, and encouraging copy based on balance range. Graphs, regression forecasts, multi-currency, and accounts were listed as TODO in the source README.",
-    contribution: "Sole author of the domain model, persistence, tests, and UI for the shipped stories.",
+    contribution: "Sole author of the feature model, persistence, tests, and UI for the shipped stories.",
     result:
-      "Working tracker with JSON save/load and support for 100+ transactions as stated on the CV. Unbuilt items stay unmarked.",
+      "Working tracker with JSON save/load and support for near unlimited transactions, with local data storage.",
     technologies: ["Java", "OOP", "JUnit", "TDD", "JSON persistence", "Git"],
     github: "https://github.com/t1oluwani/Budget-App",
     architecture: {
@@ -433,20 +434,20 @@ export const projects: Project[] = [
       ["F-01", "Balance overview", "Screenshot pending — income, expenses, budget headroom"],
       ["F-02", "Persistence", "Screenshot pending — save / load round-trip"],
     ]),
-    notes: ["CV notes JSON persistence and 100+ user transactions."],
+    notes: ["Tests were written before functionality was implemented."],
   },
   {
     slug: "frogg-site",
-    code: "CS-10",
+    code: "CS-01",
     title: "Frogg-site",
-    subtitle: "First web project: facts, quiz, and a Frogger canvas",
+    subtitle: "First ever web project: facts, quiz, and a Frogger game using HTML5 Canvas",
     status: "complete",
-    year: "—",
-    domain: "Web",
+    year: "2019",
+    feature: "Web development",
     summary:
-      "A three-tab site for teens: amphibian facts, a quiz, and a mini Frogger — the first coding project, later rebuilt with better HTML/CSS/JS practice.",
+      "A three-tab site for teens: amphibian facts, a quiz, and a mini Frogger game, my first coding project, later improved with better HTML/CSS/JS practice.",
     problem:
-      "Refresh client-side web skills by shipping something complete and playful rather than a component demo.",
+      "Leverage my new knowledge of HTML/CSS/JS to make an interactive site (The game was just a challenge since I finished early).",
     approach:
       "Static HTML/CSS/JS with DOM events, a quiz, and HTML5 Canvas for Frogger. Hosted on GitHub Pages. Animation polish and a closer Frogger likeness remain on the task list in the README.",
     contribution: "Sole author; original high-school project later revised.",
