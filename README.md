@@ -1,54 +1,15 @@
-# Tioluwani Akinloye — Perception Systems
+# Tioluwani Akinloye's Portfolio (version 2)
 
+Welcome to my portfolio (again)! Once again this document provides an overview of the portfolio website, including its features, technologies.
 Personal portfolio for a software / AI engineer working toward robotics, computer vision, and intelligent systems.
 
-The site is designed as a **perception stack**, not a generic developer template with a robotics skin.
+## Overview
 
-## Design direction
+This portfolio utilizes Vite and is designed to showcase the skills, projects, and experiences of Tioluwani Akinloye, 
+a capable full stack developer with further expertise on robotics, machine learning, computer vision.
 
-**Pipeline:** Perceive → Understand → Build → Act
+Deployed on Netlify: [coming soon...]
 
-**Interface metaphor:** a research-lab viewport — coordinate frame, tracker, case files, mission log, capability stack, handshake.
+### Sections
 
-**Visual language:** dark graphite, warm paper type, brass (not neon), IBM Plex + Instrument Serif, CAD corners, grids, schematics.
-
-**Content rule:** edit facts in `src/data/content.ts`. Placeholders are intentional. Do not invent results.
-
-## Architecture
-
-```
-src/
-  data/content.ts      ← all copy, projects, timeline, skills, links
-  types.ts
-  pages/               Home + immersive case-study route
-  sections/            one file per page section
-  components/
-    vision/            boot sequence + pointer-linked tracker
-    system/            section headers, architecture SVG
-    layout/            HUD chrome
-  hooks/
-  styles/              tokens/layout/sections
-```
-
-Projects are data-driven. `/work/:slug` is a full dossier (problem, approach, contribution, result, schematic, tech table, screenshot frames).
-
-Screenshots: leave `frames[].src` empty for a capture placeholder. To attach a still, put a PNG in `public/work/<slug>/` and set `src` on that frame in `src/data/projects.ts`.
-
-The undisclosed networking startup is listed without company name or marketing URL.
-
-## Scripts
-
-```bash
-npm install
-npm run dev
-npm run build
-```
-
-Deployed as a SPA (Netlify redirects included). Update `index.html` canonical URL, `public/sitemap.xml`, and `public/robots.txt` when the production domain is final.
-
-## Fill in later
-
-- Email, LinkedIn, resume in `profile.links`
-- Timeline roles and prior education
-- Project years, metrics, and screenshots under `public/work/<slug>/`
-- Personal about paragraph
+I'll get back to this eventually
