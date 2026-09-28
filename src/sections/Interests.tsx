@@ -1,4 +1,4 @@
-import { interests } from "@/data/content";
+// import { interests } from "@/data/content";
 import { SectionHeader } from "@/components/system/SectionHeader";
 import { useReveal } from "@/hooks/useReveal";
 
@@ -11,13 +11,13 @@ export function Interests() {
         Current interests
       </h2>
       <div ref={ref} className="threads reveal">
-        {interests.map((item) => (
+        {/* {interests.map((item) => (
           <article key={item.id} className="thread">
             <div className="thread__status">{item.status}</div>
             <h3>{item.title}</h3>
             <p>{item.text}</p>
           </article>
-        ))}
+        ))} */}
       </div>
     </section>
   );

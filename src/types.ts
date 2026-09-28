@@ -1,4 +1,4 @@
-export type ProjectStatus = "complete" | "partially-complete" | "in-progress" | "planned" | "on-hold";
+export type ProjectStatus = "complete" | "partially-complete" | "in-progress" | "on-hold";
 
 export type ArchitectureNode = {
   id: string;

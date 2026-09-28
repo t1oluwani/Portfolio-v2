@@ -10,11 +10,11 @@ export const projects: Project[] = [
   {
     slug: "networking-startup",
     code: "CS-10",
-    title: "Networking copilot app",
+    title: "Networking Copilot App",
     subtitle: "Undisclosed startup: event connections with a measurable follow-through",
     status: "on-hold",
     year: "2026",
-    feature: "Software Process/Product · Intelligent Systems",
+    feature: "Software Process · Intelligent Systems",
     featured: true,
     summary:
       "Co-founded and led technical development of a mobile networking product: capture people you meet, keep event context, and use an LLM to draft follow-ups mapped to goals.",
@@ -126,7 +126,7 @@ export const projects: Project[] = [
     subtitle: "Train, draw, and compare digit-recognition models in one viewport",
     status: "partially-complete",
     year: "2024",
-    feature: "Computer vision",
+    feature: "ML · PyTorch · Computer Vision",
     featured: true,
     summary:
       "A visual-recognition playground: draw a digit, then compare logistic regression, an FNN, and a CNN trained with PyTorch on MNIST.",
@@ -288,7 +288,7 @@ export const projects: Project[] = [
     subtitle: "CRUD REST service on a Cybera Ubuntu host",
     status: "complete",
     year: "2024",
-    feature: "REST API · Deployment",
+    feature: "REST API · API Deployment",
     summary:
       "A Node/Express employee API with MongoDB persistence, OpenAPI docs, and deployment on a Cybera Ubuntu instance.",
     problem:
@@ -329,7 +329,7 @@ export const projects: Project[] = [
     subtitle: "Agile user-story board for Scrum-style planning",
     status: "complete",
     year: "2024",
-    feature: "Agile / Scrum",
+    feature: "Agile / Scrum Methodology",
     summary:
       "A lightweight web app for tracking user stories: status, priority, and story points aligned with Agile/Scrum planning.",
     problem:
@@ -366,7 +366,7 @@ export const projects: Project[] = [
     subtitle: "Terminal Wordle + Hangman on a shared class hierarchy",
     status: "complete",
     year: "2023",
-    feature: "Abstraction",
+    feature: "Abstraction · Polymorphism",
     summary:
       "Python word games that share structure through inheritance, abstraction, and polymorphism, Wordle and Hangman from one object model.",
     problem:
@@ -404,7 +404,7 @@ export const projects: Project[] = [
     subtitle: "Expense tracker with OOP, TDD, and JSON persistence",
     status: "complete",
     year: "2021",
-    feature: "Test Driven Development · Object Oriented Programming",
+    feature: "TDD · OOP · Data Persistence",
     summary:
       "A personal finance tracker aimed at first-income users: inflows, outflows, categories, budgets, and save/load.",
     problem:

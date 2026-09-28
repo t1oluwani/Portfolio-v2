@@ -4,9 +4,10 @@ import { SectionHeader } from "@/components/system/SectionHeader";
 import type { Project, ProjectStatus } from "@/types";
 
 const statusLabel: Record<ProjectStatus, string> = {
-  complete: "Complete",
+  "complete": "Complete",
+  "partially-complete": "Partially complete",
   "in-progress": "In progress",
-  research: "Research",
+  "on-hold": "On hold",
 };
 
 function CaseRow({ project }: { project: Project }) {
@@ -23,7 +24,7 @@ function CaseRow({ project }: { project: Project }) {
         >
           {statusLabel[project.status]}
         </span>
-        <span>{project.domain}</span>
+        <span>{project.feature}</span>
         <span>Open dossier →</span>
       </div>
     </Link>

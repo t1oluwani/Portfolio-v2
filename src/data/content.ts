@@ -1,4 +1,9 @@
-import type { Interest, NavItem, SkillLayer, TimelineEntry } from "@/types";
+import type { 
+  // Interest, 
+  NavItem, 
+  // SkillLayer, 
+  TimelineEntry 
+} from "@/types";
 
 export { projects } from "@/data/projects";
 

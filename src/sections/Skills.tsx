@@ -1,4 +1,4 @@
-import { skillLayers } from "@/data/content";
+// import { skillLayers } from "@/data/content";
 import { SectionHeader } from "@/components/system/SectionHeader";
 import { useReveal } from "@/hooks/useReveal";
 
@@ -11,7 +11,7 @@ export function Skills() {
         Skills
       </h2>
       <div ref={ref} className="stack reveal">
-        {skillLayers.map((layer, i) => (
+        {/* {skillLayers.map((layer, i) => (
           <div key={layer.id} className="stack__layer">
             <div>
               <div className="stack__id">L{String(i + 1).padStart(2, "0")}</div>
@@ -29,7 +29,7 @@ export function Skills() {
               </div>
             </div>
           </div>
-        ))}
+        ))} */}
       </div>
     </section>
   );
