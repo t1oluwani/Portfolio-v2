@@ -13,15 +13,15 @@ export const profile = {
   aliases: "Tio / Favour",
   shortName: "Tio Akinloye",
   role: "Software / AI/ML Engineer",
-  location: "Canada",
+  location: "Vancouver, Canada",
   origin: "Born in Nigeria · Raised in Canada",
-  statusLine: "MSc Visual Computing | BSc Honors Computing Science",
+  statusLine: "Master of Visual Computing (Incoming) | BSc Honors Computing Science",
   statement:
-    "I build intelligent systems that perceive the world, form models of it, and act with intention.",
+    "I am a software and AI/ML engineer with a passion for intelligent systems and emerging applications in the integrated healthcare / biomedical field.",
   about: [
-    "I go by Tio or Favour. I am a software and AI/ML engineer working toward robotics, computer vision, and intelligent systems, essentially the boundaries between sensing and action.",
-    "I am pursuing a Master of Visual Computing at Simon Fraser University (expected 2028), after an Honors BSc in Computing Science at the University of Alberta (2025). Dual citizen of Canada and Nigeria.",
-    "Outside of school and my career, I play soccer, exercise, read novels and manga, draw, and cook. I am also interested in the intersectionality of technology and healthcare.",
+    "I go by Tio or Favour. I am a software and AI/ML engineer with interests spanning software development, quality assurance, AI/ML, robotics, and computer vision, with a particular interest in intelligent systems. I am also very interested in the intersectionality of technology and healthcare. ",
+    "I am pursuing a Master of Visual Computing at Simon Fraser University (expected 2028), following an Honors BSc in Computing Science from the University of Alberta (2025). I am a dual citizen of Canada and Nigeria.",
+    "Outside of school and my career, I engage in a variety of hobbies that reflect different aspects of my interests. My intellectual hobbies include reading novels and manga and playing chess; my physical hobbies include playing soccer and basketball; my creative hobbies include drawing and cooking; and my social interests include volunteering and mentoring. ",
   ],
   links: {
     github: "https://github.com/t1oluwani",

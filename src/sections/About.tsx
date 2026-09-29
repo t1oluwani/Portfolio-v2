@@ -8,9 +8,9 @@ export function About() {
     <section id="about" className="section" aria-labelledby="about-title">
       <SectionHeader
         index="02"
-        stage="UNDERSTAND"
-        title="Subject file"
-        aside="spec / biography"
+        stage="Beyond the work"
+        title="Introduction"
+        aside="Profile"
       />
       <h2 id="about-title" className="sr-only">
         About
@@ -19,19 +19,19 @@ export function About() {
         <table className="spec-table">
           <tbody>
             <tr>
-              <th scope="row">Unit</th>
+              <th scope="row">Name</th>
               <td>
                 {profile.name}
                 <span className="spec-alias"> · {profile.aliases}</span>
               </td>
             </tr>
             <tr>
-              <th scope="row">Class</th>
+              <th scope="row">Role</th>
               <td>{profile.role}</td>
             </tr>
             <tr>
               <th scope="row">Focus</th>
-              <td>Robotics · computer vision · intelligent systems</td>
+              <td>Software Engineer · Computer Vision · Robotics</td>
             </tr>
             <tr>
               <th scope="row">Status</th>
@@ -44,18 +44,6 @@ export function About() {
                 <span className="spec-alias"> · {profile.origin}</span>
               </td>
             </tr>
-            <tr>
-              <th scope="row">Channel</th>
-              <td>
-                <a href={`mailto:${profile.links.email}`}>{profile.links.email}</a>
-              </td>
-            </tr>
-            <tr>
-              <th scope="row">Source</th>
-              <td>
-                <a href={profile.links.github}>github.com/t1oluwani</a>
-              </td>
-            </tr>
           </tbody>
         </table>
         <div className="spec-copy">
@@ -64,7 +52,7 @@ export function About() {
           ))}
         </div>
       </div>
-      <div className="pipeline" aria-label="Working model">
+      {/* <div className="pipeline" aria-label="Working model">
         <div className="pipeline__step">
           <div className="pipeline__idx">01</div>
           <div className="pipeline__name">Perceive</div>
@@ -85,7 +73,7 @@ export function About() {
           <div className="pipeline__name">Act</div>
           <p className="pipeline__hint">Close the loop. Prefer systems that do something.</p>
         </div>
-      </div>
+      </div> */}
     </section>
   );
 }

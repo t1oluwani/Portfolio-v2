@@ -41,7 +41,7 @@ export function Projects() {
         index="03"
         stage="BUILD"
         title="Case files"
-        aside={`${String(projects.length).padStart(2, "0")} records`}
+        aside={`${String(projects.length).padStart(2, "0")} projects`}
       />
       <h2 id="work-title" className="sr-only">
         Projects

@@ -4,10 +4,13 @@ import { ArchitectureDiagram } from "@/components/system/ArchitectureDiagram";
 import { CaptureFrame } from "@/components/system/CaptureFrame";
 import { useEffect } from "react";
 
+// "complete" | "partially-complete" | "in-progress" | "on-hold";
+
 const statusCopy = {
-  complete: "Complete",
+  "complete": "Complete",
+  "partially-complete": "Partially complete",
   "in-progress": "In progress",
-  research: "Research",
+  "on-hold": "On hold"
 };
 
 export function ProjectPage() {
@@ -29,7 +32,7 @@ export function ProjectPage() {
         </span>
       </div>
       <p className="hero__status project-page__kicker">
-        {project.domain} · {project.year}
+        {project.featured} · {project.year}
       </p>
       <h1 className="project-page__title">{project.title}</h1>
       <p className="hero__statement project-page__lede">{project.subtitle}</p>
