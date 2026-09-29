@@ -8,7 +8,12 @@ function useClock() {
     const id = window.setInterval(() => setNow(new Date()), 1000);
     return () => window.clearInterval(id);
   }, []);
-  return now.toISOString().slice(11, 19) + "Z";
+  return now.toLocaleTimeString([], {
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+    hour12: false,
+  });
 }
 
 function useActiveSection() {
@@ -52,7 +57,7 @@ export function SiteShell() {
       <div className="grid-bg" aria-hidden="true" />
       <header className="topbar">
         <Link className="topbar__brand" to="/">
-          {profile.systemId} · {profile.shortName}
+          {profile.shortName}
         </Link>
         <div className="topbar__meta">
           <span className="topbar__dot" aria-hidden="true" />
@@ -77,8 +82,8 @@ export function SiteShell() {
         <Outlet />
       </main>
       <footer className="footer">
-        <span>© {new Date().getFullYear()} {profile.name}</span>
-        <span>Perceive → Understand → Build → Act</span>
+        <span>© 2026 {profile.name}</span>
+        <span>Commitment → Results</span>
       </footer>
       <nav className="mobile-nav" aria-label="Mobile sections">
         {rail.map((item) => (

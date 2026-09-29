@@ -11,7 +11,7 @@ export const profile = {
   name: "Tioluwani Akinloye",
   nameParts: ["Tioluwani", "Akinloye"] as const,
   aliases: "Tio / Favour",
-  shortName: "T. Akinloye",
+  shortName: "Tio Akinloye",
   role: "Software / AI/ML Engineer",
   location: "Canada",
   origin: "Born in Nigeria · Raised in Canada",
