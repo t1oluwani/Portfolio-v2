@@ -11,7 +11,7 @@ export function Hero() {
   const coords = {
     lat: "49.2781 N",
     lon: "122.9199 W",
-    frame: "SFU / local",
+    frame: "Local",
   };
 
   return (

@@ -6,7 +6,12 @@ export function Experience() {
   const ref = useReveal<HTMLDivElement>();
   return (
     <section id="path" className="section" aria-labelledby="path-title">
-      <SectionHeader index="04" stage="BUILD" title="Mission log" aside="education / roles" />
+      <SectionHeader
+        index="04"
+        stage="My path so far"
+        title="Experience"
+        aside="Work + Education"
+      />
       <h2 id="path-title" className="sr-only">
         Experience
       </h2>
