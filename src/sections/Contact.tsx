@@ -8,15 +8,18 @@ export function Contact() {
 
   return (
     <section id="act" className="section" aria-labelledby="link-title">
-      <SectionHeader index="07" stage="ACT" title="Open a channel" aside="handshake" />
+      <SectionHeader 
+      index="06" 
+      stage="How to reach out" 
+      title="Contact" 
+      aside="Start a conversation" />
       <h2 id="link-title" className="sr-only">
         Contact
       </h2>
       <div ref={ref} className="contact reveal">
         <div>
           <p className="lede">
-            If you are building perception, robotics, or other intelligent systems, open a
-            channel. Email is the fastest handshake.
+            If any of my projects interest you, you’d like to collaborate, or you’d like to discuss an idea, open a channel. I’m always happy to connect, share what I’ve learned, and explore what we could build together.
           </p>
           <div className="channels">
             {contactChannels.map((ch) =>
@@ -58,7 +61,7 @@ export function Contact() {
           </label>
           <label>
             Payload
-            <textarea name="message" required placeholder="What are you building?" />
+            <textarea name="message" required placeholder="How can I help you?" />
           </label>
           <button className="btn btn--solid" type="submit" disabled={!mail}>
             Transmit

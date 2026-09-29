@@ -43,7 +43,7 @@ export function Projects() {
         index="03"
         stage="What I've built"
         title="Projects"
-        aside={`${String(projects.length).padStart(2, "0")} projects`}
+        aside={`${String(projects.length).padStart(2, "0")} projects total`}
       />
       <h2 id="work-title" className="sr-only">
         Projects

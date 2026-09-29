@@ -9,8 +9,8 @@ export function Experience() {
       <SectionHeader
         index="04"
         stage="My path so far"
-        title="Experience"
-        aside="Work + Education"
+        title="Timeline"
+        aside="My Experiences"
       />
       <h2 id="path-title" className="sr-only">
         Experience

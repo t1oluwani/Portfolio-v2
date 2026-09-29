@@ -10,7 +10,7 @@ export function About() {
         index="02"
         stage="Beyond the work"
         title="Introduction"
-        aside="Profile"
+        aside="My profile"
       />
       <h2 id="about-title" className="sr-only">
         About

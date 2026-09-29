@@ -10,7 +10,7 @@ export function Skills() {
         index="05"
         stage="How I build"
         title="Skillset"
-        aside="Tools of the trade"
+        aside="Tools of my trade"
       />
       <h2 id="stack-title" className="sr-only">
         Skills

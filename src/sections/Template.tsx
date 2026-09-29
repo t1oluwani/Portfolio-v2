@@ -5,7 +5,11 @@ export function NewContentTemplate() {
   const ref = useReveal<HTMLDivElement>();
   return (
     <section id="focus" className="section" aria-labelledby="focus-title">
-      <SectionHeader index="06" stage="BUILD" title="Active threads" aside="research / direction" />
+      <SectionHeader 
+      index="07" 
+      stage="_____" 
+      title="_____" 
+      aside="_____" />
       <h2 id="focus-title" className="sr-only">
         Current interests
       </h2>
