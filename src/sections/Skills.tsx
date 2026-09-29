@@ -6,7 +6,12 @@ export function Skills() {
   const ref = useReveal<HTMLDivElement>();
   return (
     <section id="stack" className="section" aria-labelledby="stack-title">
-      <SectionHeader index="05" stage="BUILD" title="Capability stack" aside="aligned to the pipeline" />
+      <SectionHeader
+        index="05"
+        stage="How I build"
+        title="Skillset"
+        aside="Tools of the trade"
+      />
       <h2 id="stack-title" className="sr-only">
         Skills
       </h2>

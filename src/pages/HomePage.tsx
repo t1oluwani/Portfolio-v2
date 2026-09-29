@@ -5,7 +5,6 @@ import { About } from "@/sections/About";
 import { Projects } from "@/sections/Projects";
 import { Experience } from "@/sections/Experience";
 import { Skills } from "@/sections/Skills";
-import { Interests } from "@/sections/Interests";
 import { Contact } from "@/sections/Contact";
 
 export function HomePage() {
@@ -23,7 +22,6 @@ export function HomePage() {
       <Projects />
       <Experience />
       <Skills />
-      <Interests />
       <Contact />
     </>
   );
