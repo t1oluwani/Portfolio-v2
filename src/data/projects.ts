@@ -17,7 +17,7 @@ export const projects: Project[] = [
     feature: "Software Process · Intelligent Systems",
     featured: true,
     summary:
-      "Co-founded and led technical development of a mobile networking product: capture people you meet, keep event context, and use an LLM to draft follow-ups mapped to goals.",
+      "Co-founded and led technical development of a mobile networking product: leveraging AI to convert event connections into measurable progress.",
     problem:
       "Students and early-career professionals collect cards, emails, and LinkedIn requests at events, then lose the thread. Follow-up is manual, context decays, and there is no sense of whether a connection moved.",
     approach:

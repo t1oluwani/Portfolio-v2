@@ -400,13 +400,13 @@
 .case-row__title {
   font-family: var(--font-serif);
   font-size: clamp(1.8rem, 3vw, 2.6rem);
-  margin: 0 0 8px;
+  margin: 0 0 -4px 0;
   letter-spacing: -0.02em;
   transition: color 0.2s var(--ease);
 }
 
 .case-row__sub {
-  margin: 0;
+  margin: 8px 0 0 0;
   color: var(--paper-soft);
   max-width: 42em;
 }

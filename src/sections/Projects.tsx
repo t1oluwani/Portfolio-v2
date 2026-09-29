@@ -16,6 +16,8 @@ function CaseRow({ project }: { project: Project }) {
       <div className="case-row__code">{project.code}</div>
       <div>
         <h3 className="case-row__title">{project.title}</h3>
+        <span className="spec-alias">({project.year}) {project.feature} </span>
+
         <p className="case-row__sub">{project.summary}</p>
       </div>
       <div className="case-row__meta">
@@ -24,8 +26,8 @@ function CaseRow({ project }: { project: Project }) {
         >
           {statusLabel[project.status]}
         </span>
-        <span>{project.feature}</span>
-        <span>Open dossier →</span>
+        
+        <span>More Details →</span>
       </div>
     </Link>
   );
@@ -39,8 +41,8 @@ export function Projects() {
     <section id="work" className="section" aria-labelledby="work-title">
       <SectionHeader
         index="03"
-        stage="BUILD"
-        title="Case files"
+        stage="What I've built"
+        title="Projects"
         aside={`${String(projects.length).padStart(2, "0")} projects`}
       />
       <h2 id="work-title" className="sr-only">
