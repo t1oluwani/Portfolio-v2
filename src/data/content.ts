@@ -12,7 +12,7 @@ export const profile = {
   nameParts: ["Tioluwani", "Akinloye"] as const,
   aliases: "Tio / Favour",
   shortName: "Tio Akinloye",
-  role: "Software / AI/ML Engineer",
+  role: "Software · AI/ML Engineer",
   location: "Vancouver, Canada",
   origin: "Born in Nigeria · Raised in Canada",
   statusLine: "Master of Visual Computing (Incoming) | BSc Honors Computing Science",

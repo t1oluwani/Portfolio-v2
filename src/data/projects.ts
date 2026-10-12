@@ -8,10 +8,94 @@ function frames(
 
 export const projects: Project[] = [
   {
+    slug: "gemini-wears-prada",
+    code: "CS-11",
+    title: "Gemini Wears Prada",
+    subtitle: "AI fashion critic and digital wardrobe assistant",
+    status: "complete",
+    year: "2026",
+    feature: "Generative AI · Computer Vision · Full-Stack Development",
+    featured: true,
+    summary:
+      "An interactive web application that combines AI-powered outfit critiques, digital wardrobe organization, and personalized outfit generation.",
+    problem:
+      "Choosing outfits can be difficult even when users have a full closet of clothes. The project aims to make outfit decisions easier and more engaging.",
+    approach:
+      "Built a React web application integrating Google's Gemini AI for outfit analysis, clothing identification, and outfit recommendations. Users can upload or capture outfit photos for vocal fashion critiques, digitize individual clothing items into sticker-style assets using Hugging Face and rembg, manually mix and match wardrobe items, generate random outfits, and request looks based on prompts such as dress code and season. ElevenLabs provides voice interaction for the AI fashion critic.",
+    contribution:
+      "Team project developed for StormHacks 2026. Individual contributions not specified.",
+    result:
+      "An AI-powered fashion assistant featuring outfit critique, digital wardrobe management, and AI-assisted outfit generation.",
+    technologies: [
+      "React",
+      "TypeScript",
+      "Vite",
+      "Python",
+      "FastAPI",
+      "Google Gemini API",
+      "Google GenAI",
+      "ElevenLabs",
+      "Hugging Face",
+      "rembg",
+      "Supabase",
+    ],
+    demo: "https://devpost.com/software/orbitcare?ref_content=my-projects-tab&ref_feature=my_projects",
+    architecture: {
+      nodes: [
+        { id: "upload", label: "Upload photos", layer: "sense" },
+
+        {
+          id: "isolate",
+          label: "Clothing isolation (rembg / Hugging Face)",
+          layer: "model",
+        },
+        { id: "label", label: "Clothing labelling", layer: "model" },
+        { id: "wardrobe", label: "Digital wardrobe", layer: "route" },
+        { id: "outfit", label: "Outfit generation", layer: "act" },
+
+        { id: "transcription", label: "Voice transcription", layer: "sense" },
+        { id: "critique", label: "Gemini outfit analysis", layer: "model" },
+        { id: "feedback", label: "Vocal fashion critique", layer: "act" },
+      ],
+      edges: [
+        { from: "upload", to: "isolate" },
+        { from: "isolate", to: "label" },
+        { from: "label", to: "wardrobe" },
+        { from: "wardrobe", to: "outfit" },
+
+        { from: "upload", to: "transcription" },
+        { from: "transcription", to: "critique" },
+        { from: "critique", to: "feedback" },
+      ],
+    },
+    frames: frames([
+      [
+        "F-01",
+        "AI fashion critic",
+        "Outfit photo analysis and vocal fashion feedback",
+      ],
+      [
+        "F-02",
+        "Digital wardrobe",
+        "Clothing items isolated into sticker-style assets",
+      ],
+      [
+        "F-03",
+        "Outfit generation",
+        "Wardrobe-based outfit creation using user prompts",
+      ],
+    ]),
+    notes: [
+      "Built for StormHacks 2026.",
+      "Team members: Tioluwani Akinloye and Charles Aina.",
+    ],
+  },
+  {
     slug: "networking-startup",
     code: "CS-10",
     title: "Networking Copilot App",
-    subtitle: "Undisclosed startup: event connections with a measurable follow-through",
+    subtitle:
+      "Undisclosed startup: event connections with a measurable follow-through",
     status: "on-hold",
     year: "2026",
     feature: "Software Process · Intelligent Systems",
@@ -55,8 +139,16 @@ export const projects: Project[] = [
       ],
     },
     frames: frames([
-      ["F-01", "Capture flow", "Screenshot pending — QR / quick-add of a new connection"],
-      ["F-02", "Follow-up draft", "Screenshot pending — notes → suggested message"],
+      [
+        "F-01",
+        "Capture flow",
+        "Screenshot pending — QR / quick-add of a new connection",
+      ],
+      [
+        "F-02",
+        "Follow-up draft",
+        "Screenshot pending — notes → suggested message",
+      ],
     ]),
     notes: [
       "Startup name intentionally withheld.",
@@ -111,8 +203,16 @@ export const projects: Project[] = [
       ],
     },
     frames: frames([
-      ["F-01", "Wireframe viewport", "Screenshot pending — first-person vector battlefield"],
-      ["F-02", "Enemy behaviours", "Screenshot pending — Guard / Hunter / Sniper in play"],
+      [
+        "F-01",
+        "Wireframe viewport",
+        "Screenshot pending — first-person vector battlefield",
+      ],
+      [
+        "F-02",
+        "Enemy behaviours",
+        "Screenshot pending — Guard / Hunter / Sniper in play",
+      ],
     ]),
     notes: [
       "Course context: CMPUT 411 (Computer Graphics), University of Alberta.",
@@ -123,7 +223,8 @@ export const projects: Project[] = [
     slug: "smartvision",
     code: "CS-08",
     title: "SmartVision",
-    subtitle: "Train, draw, and compare digit-recognition models in one viewport",
+    subtitle:
+      "Train, draw, and compare digit-recognition models in one viewport",
     status: "partially-complete",
     year: "2024",
     feature: "ML · PyTorch · Computer Vision",
@@ -169,8 +270,16 @@ export const projects: Project[] = [
       ],
     },
     frames: frames([
-      ["F-01", "Digit canvas", "Screenshot pending — drop a capture into /public/work/smartvision/"],
-      ["F-02", "Model compare", "Screenshot pending — LR / FNN / CNN outputs side by side"],
+      [
+        "F-01",
+        "Digit canvas",
+        "Screenshot pending — drop a capture into /public/work/smartvision/",
+      ],
+      [
+        "F-02",
+        "Model compare",
+        "Screenshot pending — LR / FNN / CNN outputs side by side",
+      ],
     ]),
     notes: [
       "Object-recognition (FashionMNIST) is documented as not implemented.",
@@ -181,7 +290,8 @@ export const projects: Project[] = [
     slug: "studyai",
     code: "CS-07",
     title: "StudyAI",
-    subtitle: "Lecture video → transcript, contextualized chatbot, summaries, quizzes",
+    subtitle:
+      "Lecture video → transcript, contextualized chatbot, summaries, quizzes",
     status: "complete",
     year: "2024",
     feature: "AI / LLMs · Video processing",
@@ -226,10 +336,20 @@ export const projects: Project[] = [
       ],
     },
     frames: frames([
-      ["F-01", "Transcript seek", "Screenshot pending — clickable transcript aligned to the player"],
-      ["F-02", "Grounded Q&A", "Screenshot pending — chatbot citing timestamps"],
+      [
+        "F-01",
+        "Transcript seek",
+        "Screenshot pending — clickable transcript aligned to the player",
+      ],
+      [
+        "F-02",
+        "Grounded Q&A",
+        "Screenshot pending — chatbot citing timestamps",
+      ],
     ]),
-    notes: ["Designed for exam prep against posted lectures and youtube tutorials."],
+    notes: [
+      "Designed for exam prep against posted lectures and youtube tutorials.",
+    ],
   },
   {
     slug: "starwars-api",
@@ -245,7 +365,8 @@ export const projects: Project[] = [
       "Learn the two sides of HTTP in one project: persist user-submitted records, and fetch canonical character data from SWAPI.",
     approach:
       "HTML/CSS/JS frontend. Node + Express backend. MongoDB/Mongoose stores name, email, ratings, favourite film and character. Fetch talks to SWAPI by character id. GitHub Pages hosts the static client.",
-    contribution: "Sole author of form UI, Express CRUD, Mongo persistence, and SWAPI integration.",
+    contribution:
+      "Sole author of form UI, Express CRUD, Mongo persistence, and SWAPI integration.",
     result: "Working form + character fetch, with a GitHub Pages client.",
     technologies: [
       "HTML",
@@ -295,10 +416,18 @@ export const projects: Project[] = [
       "Needed a complete REST surface with real CRUD, aggregates, error codes, and a deployed host.",
     approach:
       "Express routes over MongoDB. GET list sorts by tenure and returns aggregate stats (count, average years, average salary). GET/POST/PUT/PATCH/DELETE on employees. Unsupported methods return 405. Swagger/OpenAPI documents the contract. Deployed on Cybera with IPv6 networking.",
-    contribution: "Sole author of the API, documentation, and Ubuntu/Cybera deployment.",
+    contribution:
+      "Sole author of the API, documentation, and Ubuntu/Cybera deployment.",
     result:
       "Deployed employee management API with interactive docs. Treat the host as potentially ephemeral; GitHub is the durable record.",
-    technologies: ["Node.js", "Express.js", "MongoDB", "OpenAPI", "Ubuntu", "Cybera"],
+    technologies: [
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "OpenAPI",
+      "Ubuntu",
+      "Cybera",
+    ],
     github: "https://github.com/t1oluwani/restfulAPI",
     architecture: {
       nodes: [
@@ -317,11 +446,15 @@ export const projects: Project[] = [
     },
     frames: frames([
       ["F-01", "OpenAPI surface", "Screenshot pending — /docs endpoint"],
-      ["F-02", "List + aggregates", "Screenshot pending — employees sorted with stats"],
+      [
+        "F-02",
+        "List + aggregates",
+        "Screenshot pending — employees sorted with stats",
+      ],
     ]),
     notes: [],
   },
-  
+
   {
     slug: "sprint",
     code: "CS-04",
@@ -338,7 +471,8 @@ export const projects: Project[] = [
       "HTML/CSS/JS (with Python listed among project skills) and Scrum-oriented UX: story records, priority, story-point difficulty, and an interface meant to be adopted quickly. GitHub Pages hosts the live board. Later ideas in the README (auth, orgs, realtime chat) are not claimed as shipped.",
     contribution:
       "Team project (Knead team GitHub org). Personal work covered UI/UX, story tracking, and Agile planning practices as listed on the portfolio source material.",
-    result: "Public board at GitHub Pages. Collaborative/login features remain listed as future work.",
+    result:
+      "Public board at GitHub Pages. Collaborative/login features remain listed as future work.",
     technologies: ["HTML", "CSS", "JavaScript", "Python", "Scrum", "UI/UX"],
     github: "https://github.com/t1oluwani/Sprint",
     demo: "https://kneadteam.github.io/Sprint/",
@@ -354,7 +488,11 @@ export const projects: Project[] = [
       ],
     },
     frames: frames([
-      ["F-01", "Story board", "Screenshot pending — status and priority columns"],
+      [
+        "F-01",
+        "Story board",
+        "Screenshot pending — status and priority columns",
+      ],
       ["F-02", "Story points", "Screenshot pending — difficulty assignment"],
     ]),
     notes: ["Live client: kneadteam.github.io/Sprint"],
@@ -376,7 +514,14 @@ export const projects: Project[] = [
     contribution: "Sole author of the object model and both game loops.",
     result:
       "Playable terminal Wordle and Hangman. README still lists GUI, stats, and category packs as future work — not presented as done.",
-    technologies: ["Python", "OOP", "Polymorphism", "Abstraction", "Control flow", "Terminal UI"],
+    technologies: [
+      "Python",
+      "OOP",
+      "Polymorphism",
+      "Abstraction",
+      "Control flow",
+      "Terminal UI",
+    ],
     github: "https://github.com/t1oluwani/Word-Games-App",
     architecture: {
       nodes: [
@@ -393,7 +538,11 @@ export const projects: Project[] = [
     },
     frames: frames([
       ["F-01", "Wordle round", "Screenshot pending — terminal Wordle"],
-      ["F-02", "Hangman round", "Screenshot pending — shared hierarchy in play"],
+      [
+        "F-02",
+        "Hangman round",
+        "Screenshot pending — shared hierarchy in play",
+      ],
     ]),
     notes: [],
   },
@@ -411,7 +560,8 @@ export const projects: Project[] = [
       "Solve a problem you have using Java, OOP, and TDD, while maintaining code quality, a GUI, and data persistence.",
     approach:
       "Java application (CPSC 210 lineage) with TDD (JUnit), JSON serialization, and an object model for transactions, categories, and budgets. Features: record income/expense/transfers, categorize, custom budget limits, warnings near/over budget or when spending exceeds earning, and encouraging copy based on balance range. Graphs, regression forecasts, multi-currency, and accounts were listed as TODO in the source README.",
-    contribution: "Sole author of the feature model, persistence, tests, and UI for the shipped stories.",
+    contribution:
+      "Sole author of the feature model, persistence, tests, and UI for the shipped stories.",
     result:
       "Working tracker with JSON save/load and support for near unlimited transactions, with local data storage.",
     technologies: ["Java", "OOP", "JUnit", "TDD", "JSON persistence", "Git"],
@@ -431,7 +581,11 @@ export const projects: Project[] = [
       ],
     },
     frames: frames([
-      ["F-01", "Balance overview", "Screenshot pending — income, expenses, budget headroom"],
+      [
+        "F-01",
+        "Balance overview",
+        "Screenshot pending — income, expenses, budget headroom",
+      ],
       ["F-02", "Persistence", "Screenshot pending — save / load round-trip"],
     ]),
     notes: ["Tests were written before functionality was implemented."],
@@ -440,7 +594,8 @@ export const projects: Project[] = [
     slug: "frogg-site",
     code: "CS-01",
     title: "Frogg-site",
-    subtitle: "First ever web project: facts, quiz, and a Frogger game using HTML5 Canvas",
+    subtitle:
+      "First ever web project: facts, quiz, and a Frogger game using HTML5 Canvas",
     status: "complete",
     year: "2019",
     feature: "Web development",
@@ -452,14 +607,7 @@ export const projects: Project[] = [
       "Static HTML/CSS/JS with DOM events, a quiz, and HTML5 Canvas for Frogger. Hosted on GitHub Pages. Animation polish and a closer Frogger likeness remain on the task list in the README.",
     contribution: "Sole author; original high-school project later revised.",
     result: "Public three-tab experience on GitHub Pages.",
-    technologies: [
-      "HTML",
-      "CSS",
-      "JavaScript",
-      "DOM",
-      "HTML5 Canvas",
-      "UI/UX",
-    ],
+    technologies: ["HTML", "CSS", "JavaScript", "DOM", "HTML5 Canvas", "UI/UX"],
     github: "https://github.com/t1oluwani/Frogg-site",
     demo: "https://t1oluwani.github.io/Frogg-site/",
     architecture: {
@@ -477,6 +625,8 @@ export const projects: Project[] = [
       ["F-01", "Info + quiz", "Screenshot pending — facts tab and quiz"],
       ["F-02", "Frogger", "Screenshot pending — canvas game"],
     ]),
-    notes: ["First coding project, later rewritten with tighter front-end practice."],
+    notes: [
+      "First coding project, later rewritten with tighter front-end practice.",
+    ],
   },
 ];
