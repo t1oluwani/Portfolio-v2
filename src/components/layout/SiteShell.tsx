@@ -2,20 +2,6 @@ import { useEffect, useMemo, useState } from "react";
 import { Link, Outlet, useLocation } from "react-router-dom";
 import { navItems, profile } from "@/data/content";
 
-function useClock() {
-  const [now, setNow] = useState(() => new Date());
-  useEffect(() => {
-    const id = window.setInterval(() => setNow(new Date()), 1000);
-    return () => window.clearInterval(id);
-  }, []);
-  return now.toLocaleTimeString([], {
-    hour: "2-digit",
-    minute: "2-digit",
-    second: "2-digit",
-    hour12: false,
-  });
-}
-
 function useActiveSection() {
   const [active, setActive] = useState(navItems[0].id);
   const location = useLocation();
@@ -42,7 +28,6 @@ function useActiveSection() {
 }
 
 export function SiteShell() {
-  const clock = useClock();
   const active = useActiveSection();
   const location = useLocation();
   const onHome = location.pathname === "/";
@@ -62,7 +47,6 @@ export function SiteShell() {
         <div className="topbar__meta">
           <span className="topbar__dot" aria-hidden="true" />
           <span>SYS.OK</span>
-          <span>{clock}</span>
           <span className="sr-only">System status nominal</span>
         </div>
       </header>
