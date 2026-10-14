@@ -81,3 +81,26 @@ export function useVisitorInfo() {
 
 export const fmtCoord = (v: number, pos: string, neg: string) =>
   `${Math.abs(v).toFixed(4)} ${v >= 0 ? pos : neg}`;
+
+export const fmtReadout = (visitor: VisitorInfo | null, origin: string, clock: string): { label: string; value: string }[] => [
+  { label: "YOU ARE IN", value: origin },
+  { label: "YOUR TIME", value: `${clock} (${visitor?.utcOffset ?? ""})`.trim() },
+  {
+    label: "YOUR COORDS",
+    value:
+      visitor?.lat != null && visitor?.lon != null
+        ? `${fmtCoord(visitor.lat, "N", "S")} · ${fmtCoord(visitor.lon, "E", "W")}`
+        : "—",
+  },
+  ...(visitor ? [{ label: "YOUR DEVICE", value: `${visitor.platform} (${visitor.screen})` }] : []),
+  ...(visitor && (visitor.referrer || visitor.network)
+    ? [
+        {
+          label: "TRACED FROM",
+          value: [visitor.referrer, visitor.network?.toUpperCase()]
+            .filter(Boolean)
+            .join(" → "),
+        },
+      ]
+    : []),
+];

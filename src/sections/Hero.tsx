@@ -3,7 +3,7 @@ import { profile } from "@/data/content";
 import { PerceptionCanvas } from "@/components/vision/PerceptionCanvas";
 import { BootOverlay } from "@/components/vision/BootOverlay";
 import { useBootSequence } from "@/hooks/useBootSequence";
-import { useVisitorInfo, fmtCoord } from "@/hooks/useVisitorInfo";
+import { useVisitorInfo, fmtReadout } from "@/hooks/useVisitorInfo";
 
 function useClock() {
   const [now, setNow] = useState(() => new Date());
@@ -29,17 +29,8 @@ export function Hero() {
   const origin = visitor?.city
     ? `${visitor.city}, ${visitor.country}`
     : visitor?.timezone.replace("_", " ") ?? "Resolving…";
+  const readout = fmtReadout(visitor, origin, clock);
 
-  const readout = [
-    `ORIGIN ${origin}`,
-    `TIME ${clock} ${visitor?.utcOffset ?? ""}`,
-    visitor?.lat != null && visitor?.lon != null
-      ? `${fmtCoord(visitor.lat, "N", "S")} · ${fmtCoord(visitor.lon, "E", "W")}`
-      : "COORDS —",
-    visitor ? `${visitor.platform} · ${visitor.screen}` : "",
-    visitor?.network ? `LINK ${visitor.network.toUpperCase()}` : "",
-    visitor?.referrer ? `VIA ${visitor.referrer}` : "",
-  ].filter(Boolean);
 
   return (
     <section id="hero" className="section section--hero" ref={hostRef} aria-label="Viewport">
@@ -53,13 +44,16 @@ export function Hero() {
           <span />
         </div>
         <div className="hero__readout hero__readout--tl">
-          {/* ORIGIN {coords.frame}
-          < br />
-          TIME {clock}
-          <br />
-          {coords.lat} · {coords.lon} */}
-          {readout.map((line) => (
-            <div key={line}>{line}</div>
+          <div className="hero__readout-head">
+            VISITOR SIGNAL (
+            <span className="hero__readout-dot" aria-hidden="true" />
+            ) DETECTED
+          </div>
+          {readout.map(({ label, value }) => (
+            <div key={label} className="hero__readout-row">
+              <span className="hero__readout-label">{label}</span>
+              <span className="hero__readout-value">{value}</span>
+            </div>
           ))}
         </div>
         <div className="hero__copy">

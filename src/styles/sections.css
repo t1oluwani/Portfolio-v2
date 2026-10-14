@@ -200,12 +200,49 @@
 .hero__readout--tl {
   top: 18px;
   left: 24px;
+  padding: 10px 0 0 10px;
 }
 
 .hero__readout--br {
   right: 24px;
   bottom: 22px;
   text-align: right;
+}
+
+.hero__readout-head {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  margin-bottom: 0.6em;
+  padding-bottom: 0.4em;
+  opacity: 0.9;
+  letter-spacing: 0.12em;
+}
+
+.hero__readout-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+  animation: readout-pulse 1.4s ease-in-out infinite;
+}
+
+.hero__readout-row {
+  display: flex;
+  gap: 1em;
+  justify-content: space-between;
+}
+
+.hero__readout-label {
+  opacity: 0.5; /* dim the label, keep the value bright */
+}
+
+@keyframes readout-pulse {
+  50% { opacity: 0.25; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__readout-dot { animation: none; }
 }
 
 .hero__corners {
