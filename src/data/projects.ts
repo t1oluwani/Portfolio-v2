@@ -34,7 +34,7 @@ export const projects: Project[] = [
     ],
     github: "https://github.com/t1oluwani/gemini-wears-prada",
     demo: "https://devpost.com/software/orbitcare?ref_content=my-projects-tab&ref_feature=my_projects",
-    demotype: "Recording",
+    demotype: "Devpost",
     architecture: {
       nodes: [
         { id: "upload", label: "Upload photos", layer: "sense" },

@@ -51,43 +51,46 @@ export function ProjectPage() {
         {project.subtitle}
       </p>
 
-      <div className="hero__actions project-page__actions">
-        {project.github ? (
-          <a
-            className="btn btn--solid"
-            href={project.github}
-            target="_blank"
-            rel="noreferrer"
-          >
-            GitHub
-          </a>
-        ) : null}
-        {project.demo ? (
-          <a
-            className="btn"
-            href={project.demo}
-            target="_blank"
-            rel="noreferrer"
-          >
-            {project.demotype ? `View ${project.demotype}` : "View Demo"}
-          </a>
-        ) : null}
-      </div>
-
       <div className="project-split">
-        <div className="block block--card" data-track="tools used">
-          <h2>Technologies</h2>
-          <table className="tech-table">
-            <tbody>
-              {project.technologies.map((tech, i) => (
-                <tr key={tech}>
-                  <td>T{String(i + 1).padStart(2, "0")}</td>
-                  <td>{tech}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+        <div className="project-split__left">
+          <div className="hero__actions project-page__actions">
+            {project.github ? (
+              <a
+                className="btn btn--solid"
+                href={project.github}
+                target="_blank"
+                rel="noreferrer"
+              >
+                GitHub
+              </a>
+            ) : null}
+            {project.demo ? (
+              <a
+                className="btn"
+                href={project.demo}
+                target="_blank"
+                rel="noreferrer"
+              >
+                {project.demotype ? `View ${project.demotype}` : "View Demo"}
+              </a>
+            ) : null}
+          </div>
+
+          <div className="block block--card" data-track="tools used">
+            <h2>Technologies</h2>
+            <table className="tech-table">
+              <tbody>
+                {project.technologies.map((tech, i) => (
+                  <tr key={tech}>
+                    <td>T{String(i + 1).padStart(2, "0")}</td>
+                    <td>{tech}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </div>
+
         <Thumbnail slug={project.slug} title={project.title} />
       </div>
 

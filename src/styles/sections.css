@@ -965,12 +965,17 @@ html {
 
 .project-page__lede {
   margin: 0;
+  margin-bottom: 75px;
   max-width: none;
   text-align: center;
 }
 
 .project-page__actions {
-  justify-content: center;
+  margin: 0; /* remove any old margin */
+  /* margin-top: 25px; */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 .block--spaced {
@@ -1019,6 +1024,21 @@ html {
 
 /* ---------- Project page: technologies + thumbnail ---------- */
 
+.thumbnail {
+  margin: 0;
+  border: 5px solid var(--brass);
+  border-radius: 14px;
+  overflow: hidden;
+  max-width: 750px;
+}
+
+.thumbnail img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
 .project-split {
   display: grid;
   grid-template-columns: minmax(250px, 300px) 1fr;
@@ -1027,13 +1047,28 @@ html {
   margin-top: 20px;
 }
 
+.project-split__left {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly; /* buttons top, card bottom */
+  gap: 16px; /* space between buttons and tech card */
+  min-width: 0; /* prevents grid overflow */
+}
+
 /* no thumbnail found: technologies take the full width */
 .project-split:not(:has(.thumbnail)) {
   grid-template-columns: 1fr;
 }
 
+.project-split > .block--card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* This vertically centers the table */
+}
+
 .tech-table {
   width: 100%;
+  /* margin-bottom: 20px; */
   border-collapse: collapse;
 }
 
@@ -1051,20 +1086,6 @@ html {
 .tech-table td:first-child {
   width: 3.5em;
   color: var(--muted);
-}
-
-.thumbnail {
-  margin: 0;
-  border: 5px solid var(--brass);
-  border-radius: 14px;
-  overflow: hidden;
-}
-
-.thumbnail img {
-  display: block;
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
 }
 
 /* ---------- Project page: mobile ---------- */
