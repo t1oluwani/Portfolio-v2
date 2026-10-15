@@ -2,10 +2,12 @@ import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import { SiteShell } from "@/components/layout/SiteShell";
 import { HomePage } from "@/pages/HomePage";
 import { ProjectPage } from "@/pages/ProjectPage";
+import { TrackingCursor } from "@/components/vision/TrackingCursor";
 
 export function App() {
   return (
     <BrowserRouter>
+      <TrackingCursor />
       <Routes>
         <Route element={<SiteShell />}>
           <Route path="/" element={<HomePage />} />

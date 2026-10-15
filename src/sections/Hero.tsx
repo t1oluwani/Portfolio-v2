@@ -37,7 +37,7 @@ export function Hero() {
   return (
     <section id="hero" className="section section--hero" ref={hostRef} aria-label="Viewport">
       {boot.visible ? <BootOverlay lines={boot.lines} onSkip={boot.skip} /> : null}
-      <PerceptionCanvas hostRef={hostRef} focusRef={focusRef} />
+      <PerceptionCanvas hostRef={hostRef} />
       <div className="hero">
         <div className="hero__corners" aria-hidden="true">
           <span />
