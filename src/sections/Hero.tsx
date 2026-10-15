@@ -6,7 +6,6 @@ import { useBootSequence } from "@/hooks/useBootSequence";
 import { useVisitorInfo, fmtReadout } from "@/hooks/useVisitorInfo";
 import { Mail, Download } from "lucide-react";
 
-
 function useClock() {
   const [now, setNow] = useState(() => new Date());
   useEffect(() => {
@@ -19,6 +18,16 @@ function useClock() {
     second: "2-digit",
     hour12: false,
   });
+}
+
+function downloadResume() {
+  const resumeUrl = "/documents/Tioluwani_Akinloye_Resume.pdf";
+  const link = document.createElement("a");
+  link.href = resumeUrl;
+  link.download = "Tioluwani_Akinloye_Resume.pdf";
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
 }
 
 export function Hero() {
@@ -77,7 +86,7 @@ export function Hero() {
               Get in Touch
               <Mail className="btn__icon" />
             </a>
-            <a className="btn" href="#act">
+            <a className="btn" onClick={downloadResume}>
               Download Resume
               <Download className="btn__icon" />
             </a>

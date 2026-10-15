@@ -278,6 +278,6 @@ export const contactChannels = [
     id: "resume",
     label: "Resume",
     value: "View my Resume (PDF)",
-    href: "/Tioluwani_Akinloye_Resume.pdf",
+    href: "/documents/Tioluwani_Akinloye_Resume.pdf",
   },
 ];
