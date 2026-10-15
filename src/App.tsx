@@ -11,7 +11,7 @@ export function App() {
       <Routes>
         <Route element={<SiteShell />}>
           <Route path="/" element={<HomePage />} />
-          <Route path="/work/:slug" element={<ProjectPage />} />
+          <Route path="/projects/:slug" element={<ProjectPage />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Route>
       </Routes>

@@ -7,13 +7,13 @@ export function Contact() {
   const mail = profile.links.email;
 
   return (
-    <section id="act" className="section" aria-labelledby="link-title">
+    <section id="contact" className="section" aria-labelledby="contact-title">
       <SectionHeader 
       index="06" 
       stage="How to reach out" 
       title="Contact" 
       aside="Start a conversation" />
-      <h2 id="link-title" className="sr-only">
+      <h2 id="contact-title" className="sr-only">
         Contact
       </h2>
       <div ref={ref} className="contact reveal">

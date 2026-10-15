@@ -5,14 +5,14 @@ import { useReveal } from "@/hooks/useReveal";
 export function Experience() {
   const ref = useReveal<HTMLDivElement>();
   return (
-    <section id="path" className="section" aria-labelledby="path-title">
+    <section id="experiences" className="section" aria-labelledby="experiences-title">
       <SectionHeader
         index="04"
         stage="My path so far"
         title="Timeline"
         aside="My Experiences"
       />
-      <h2 id="path-title" className="sr-only">
+      <h2 id="experiences-title" className="sr-only">
         Experience
       </h2>
       <div ref={ref} className="timeline reveal">

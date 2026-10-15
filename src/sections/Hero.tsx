@@ -73,7 +73,7 @@ export function Hero() {
             {profile.statusLine}
           </p>
           <div className="hero__actions">
-            <a className="btn btn--solid" href="#work">
+            <a className="btn btn--solid" href="#contact">
               Get in Touch
               <Mail className="btn__icon" />
             </a>

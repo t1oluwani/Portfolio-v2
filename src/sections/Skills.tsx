@@ -5,14 +5,14 @@ import { useReveal } from "@/hooks/useReveal";
 export function Skills() {
   const ref = useReveal<HTMLDivElement>();
   return (
-    <section id="stack" className="section" aria-labelledby="stack-title">
+    <section id="skills" className="section" aria-labelledby="skills-title">
       <SectionHeader
         index="05"
         stage="How I build"
         title="Skillset"
         aside="Tools of my trade"
       />
-      <h2 id="stack-title" className="sr-only">
+      <h2 id="skills-title" className="sr-only">
         Skills
       </h2>
       <div ref={ref} className="stack reveal">

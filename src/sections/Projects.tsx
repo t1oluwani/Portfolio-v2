@@ -12,7 +12,7 @@ const statusLabel: Record<ProjectStatus, string> = {
 
 function CaseRow({ project }: { project: Project }) {
   return (
-    <Link className="case-row" to={`/work/${project.slug}`}>
+    <Link className="case-row" to={`/projects/${project.slug}`}>
       <div className="case-row__code">{project.code}</div>
       <div>
         <h3 className="case-row__title">{project.title}</h3>
@@ -38,14 +38,14 @@ export function Projects() {
   const rest = projects.filter((p) => !p.featured);
 
   return (
-    <section id="work" className="section" aria-labelledby="work-title">
+    <section id="projects" className="section" aria-labelledby="projects-title">
       <SectionHeader
         index="03"
         stage="What I've built"
         title="Projects"
         aside={`${String(projects.length).padStart(2, "0")} projects total`}
       />
-      <h2 id="work-title" className="sr-only">
+      <h2 id="projects-title" className="sr-only">
         Projects
       </h2>
       <div className="case-list">

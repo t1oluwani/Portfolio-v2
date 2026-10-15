@@ -26,7 +26,7 @@ export function ProjectPage() {
   return (
     <article className="project-page">
       <div className="project-page__nav">
-        <Link to="/#work">← Case files</Link>
+        <Link to="/#projects">← Case files</Link>
         <span data-track="project status">
           {project.code} · {statusCopy[project.status]}
         </span>
