@@ -23,7 +23,6 @@ export type Project = {
   summary: string;
   problem: string;
   approach: string;
-  contribution: string;
   result: string;
   technologies: string[];
   featured?: boolean;

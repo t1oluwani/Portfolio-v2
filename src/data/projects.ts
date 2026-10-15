@@ -16,8 +16,6 @@ export const projects: Project[] = [
       "Choosing outfits can be difficult even when users have a full closet of clothes. The project aims to make outfit decisions easier and more engaging.",
     approach:
       "Built a React web application integrating Google's Gemini AI for outfit analysis, clothing identification, and outfit recommendations. Users can upload or capture outfit photos for vocal fashion critiques, digitize individual clothing items into sticker-style assets using Hugging Face and rembg, manually mix and match wardrobe items, generate random outfits, and request looks based on prompts such as dress code and season. ElevenLabs provides voice interaction for the AI fashion critic.",
-    contribution:
-      "Team project developed for StormHacks 2026. Individual contributions not specified.",
     result:
       "An AI-powered fashion assistant featuring outfit critique, digital wardrobe management, and AI-assisted outfit generation.",
     technologies: [
@@ -80,8 +78,6 @@ export const projects: Project[] = [
       "Students and early-career professionals collect cards, emails, and LinkedIn requests at events, then lose the thread. Follow-up is manual, context decays, and there is no sense of whether a connection moved.",
     approach:
       "Owned the pipeline end-to-end: concept validation, Figma UI/UX, architecture and UML, then a custom stack — Flutter/Dart client, FastAPI services, Supabase, Gemini, GCP — with testing and data-security constraints. Product surface: QR / quick-add capture, event-linked context, AI follow-up drafts from notes, goal mapping, suggested next actions, and event finding aligned to the user’s network.",
-    contribution:
-      "Co-founder and technical lead: product definition, system architecture, stack selection, and implementation leadership.",
     result:
       "Company name withheld. Public marketing site and waitlist exist; treat this dossier as the technical case, not a press page. Outcome metrics TBD.",
     technologies: [
@@ -132,8 +128,6 @@ export const projects: Project[] = [
       "The original Battlezone is a landmark in first-person spatial combat. Recreating it is a way to own the full loop — camera, world, collision, and agents — rather than wrapping a game engine’s defaults.",
     approach:
       "Python + Pygame own the window and input. PyOpenGL draws a retro vector world. Combat uses raycasting for shots and line-of-sight, blocked by obstacles. Three enemy types (Guard, Hunter, Sniper) run state machines; pathfinding uses positional correction so agents seek without overlapping. Difficulty (Easy / Normal / Hard) shifts spawn mix, count, and damage. HUD, menus, and hit-flash close the arcade loop.",
-    contribution:
-      "Sole author: rendering pipeline, tank controls, projectile/LOS raycasting, enemy AI, procedural world generation, and game states.",
     result:
       "Playable recreation with difficulty select, wave survival, and the three enemy archetypes documented in the repo. Screenshots from the original README belong in the frames below once copied into /public/work/battlezone/.",
     technologies: [
@@ -185,8 +179,6 @@ export const projects: Project[] = [
       "Wanted to apply course concepts in a practical, real-world scenario, applied knowledge from static training to dynamic performance.",
     approach:
       "Vue.js canvas captures a handwritten 0–9. A Flask API exposes train / predict / clear for three PyTorch models (logistic regression, FNN, CNN) on MNIST. The UI surfaces accuracy and processing details so the architectures can be compared in the same session. FashionMNIST object recognition is specified in the repo and is not implemented.",
-    contribution:
-      "Sole author of frontend, Flask model-serving API, PyTorch training/inference, and Render deployment wiring.",
     result:
       "Live draw-to-predict playground. Resume-reported test accuracies: logistic regression 92%, FNN 96%, CNN 98%, with training-time optimizations. Hosted inference is constrained to logistic regression on free-tier memory; CNN/FNN training and loading are intended for local clone.",
     technologies: [
@@ -241,8 +233,6 @@ export const projects: Project[] = [
       "Long lectures are hard to search. Students need timestamps, summaries, and a way to ask questions against the actual video rather than a generic chatbot.",
     approach:
       "React frontend + FastAPI backend + Firebase Realtime Database. Pydub/FFmpeg extract audio from a file or YouTube link. OpenAI Whisper transcribes (resume: files up to ~25 MB / ~30 minutes, ~90% transcription accuracy). An OpenAI chat model answers with timestamps, and controls generate summaries, key points, and quizzes (~95% comprehension-response accuracy as reported on the resume). Phrases in the transcript seek the player.",
-    contribution:
-      "Author of the React client, FastAPI routes, transcription/Q&A pipeline, and Firebase persistence.",
     result:
       "Working study loop for YouTube and local media, with a recorded walkthrough on Vimeo.",
     technologies: [
@@ -293,8 +283,6 @@ export const projects: Project[] = [
       "Learn the two sides of HTTP in one project: persist user-submitted records, and fetch canonical character data from SWAPI.",
     approach:
       "HTML/CSS/JS frontend. Node + Express backend. MongoDB/Mongoose stores name, email, ratings, favourite film and character. Fetch talks to SWAPI by character id. GitHub Pages hosts the static client.",
-    contribution:
-      "Sole author of form UI, Express CRUD, Mongo persistence, and SWAPI integration.",
     result: "Working form + character fetch, with a GitHub Pages client.",
     technologies: [
       "HTML",
@@ -341,8 +329,6 @@ export const projects: Project[] = [
       "Needed a complete REST surface with real CRUD, aggregates, error codes, and a deployed host.",
     approach:
       "Express routes over MongoDB. GET list sorts by tenure and returns aggregate stats (count, average years, average salary). GET/POST/PUT/PATCH/DELETE on employees. Unsupported methods return 405. Swagger/OpenAPI documents the contract. Deployed on Cybera with IPv6 networking.",
-    contribution:
-      "Sole author of the API, documentation, and Ubuntu/Cybera deployment.",
     result:
       "Deployed employee management API with interactive docs. Treat the host as potentially ephemeral; GitHub is the durable record.",
     technologies: [
@@ -385,8 +371,6 @@ export const projects: Project[] = [
       "Small teams still need a simple place to capture stories, rank them, and see the board without standing up a full Jira.",
     approach:
       "HTML/CSS/JS (with Python listed among project skills) and Scrum-oriented UX: story records, priority, story-point difficulty, and an interface meant to be adopted quickly. GitHub Pages hosts the live board. Later ideas in the README (auth, orgs, realtime chat) are not claimed as shipped.",
-    contribution:
-      "Team project (Knead team GitHub org). Personal work covered UI/UX, story tracking, and Agile planning practices as listed on the portfolio source material.",
     result:
       "Public board at GitHub Pages. Collaborative/login features remain listed as future work.",
     technologies: ["HTML", "CSS", "JavaScript", "Python", "Scrum", "UI/UX"],
@@ -420,7 +404,6 @@ export const projects: Project[] = [
       "Two related games should not duplicate control flow. The design problem is a common type hierarchy, not two scripts.",
     approach:
       "Terminal UI in Python. Shared abstractions for words, scoring, and play-again flow. Wordle and Hangman as specializations. Word lists loaded from file (including a filtered dictionary).",
-    contribution: "Sole author of the object model and both game loops.",
     result:
       "Playable terminal Wordle and Hangman. README still lists GUI, stats, and category packs as future work — not presented as done.",
     technologies: [
@@ -461,8 +444,6 @@ export const projects: Project[] = [
       "Solve a problem you have using Java, OOP, and TDD, while maintaining code quality, a GUI, and data persistence.",
     approach:
       "Java application (CPSC 210 lineage) with TDD (JUnit), JSON serialization, and an object model for transactions, categories, and budgets. Features: record income/expense/transfers, categorize, custom budget limits, warnings near/over budget or when spending exceeds earning, and encouraging copy based on balance range. Graphs, regression forecasts, multi-currency, and accounts were listed as TODO in the source README.",
-    contribution:
-      "Sole author of the feature model, persistence, tests, and UI for the shipped stories.",
     result:
       "Working tracker with JSON save/load and support for near unlimited transactions, with local data storage.",
     technologies: ["Java", "OOP", "JUnit", "TDD", "JSON persistence", "Git"],
@@ -498,7 +479,6 @@ export const projects: Project[] = [
       "Leverage my new knowledge of HTML/CSS/JS to make an interactive site (The game was just a challenge since I finished early).",
     approach:
       "Static HTML/CSS/JS with DOM events, a quiz, and HTML5 Canvas for Frogger. Hosted on GitHub Pages. Animation polish and a closer Frogger likeness remain on the task list in the README.",
-    contribution: "Sole author; original high-school project later revised.",
     result: "Public three-tab experience on GitHub Pages.",
     technologies: ["HTML", "CSS", "JavaScript", "DOM", "HTML5 Canvas", "UI/UX"],
     github: "https://github.com/t1oluwani/Frogg-site",

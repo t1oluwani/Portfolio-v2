@@ -21,7 +21,6 @@ export function ProjectPage() {
     { title: "Problem", body: project.problem, step: true },
     { title: "Approach", body: project.approach, step: true },
     { title: "Result", body: project.result, step: true },
-    { title: "Contribution", body: project.contribution, step: false },
   ];
   let stepNum = 0;
 
@@ -76,7 +75,7 @@ export function ProjectPage() {
             ) : null}
           </div>
 
-          <div className="block block--card" data-track="tools used">
+          <div className="block block--card tech-section" data-track="tools used">
             <h2>Technologies</h2>
             <table className="tech-table">
               <tbody>
@@ -95,11 +94,12 @@ export function ProjectPage() {
       </div>
 
       <div className="project-grid">
-        {sections.map(({ title, body, step }) => (
+        {sections.map(({ title, body, step }, index) => (
           <div
             key={title}
             className="block block--card"
             data-track={title.toLowerCase()}
+            data-section={index + 1}
           >
             <h2>
               <span className="block__num">
