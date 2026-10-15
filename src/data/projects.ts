@@ -1,11 +1,5 @@
 import type { Project } from "@/types";
 
-function frames(
-  pairs: Array<[id: string, caption: string, note: string]>,
-): Project["frames"] {
-  return pairs.map(([id, caption, note]) => ({ id, caption, note }));
-}
-
 export const projects: Project[] = [
   {
     slug: "gemini-wears-prada",
@@ -32,7 +26,6 @@ export const projects: Project[] = [
       "Vite",
       "Python",
       "FastAPI",
-      "Google Gemini API",
       "Google GenAI",
       "ElevenLabs",
       "Hugging Face",
@@ -40,7 +33,7 @@ export const projects: Project[] = [
       "Supabase",
     ],
     github: "https://github.com/t1oluwani/gemini-wears-prada",
-    demo: "https://vimeo.com/1232714616?share=copy&fl=sv&fe=ci#t=0",
+    demo: "https://devpost.com/software/orbitcare?ref_content=my-projects-tab&ref_feature=my_projects",
     demotype: "Recording",
     architecture: {
       nodes: [
@@ -52,10 +45,9 @@ export const projects: Project[] = [
           layer: "model",
         },
         { id: "label", label: "Clothing labelling", layer: "model" },
-        { id: "wardrobe", label: "Digital wardrobe", layer: "route" },
+        { id: "wardrobe", label: "Digital wardrobe", layer: "act" },
         { id: "outfit", label: "Outfit generation", layer: "act" },
 
-        { id: "transcription", label: "Voice transcription", layer: "sense" },
         { id: "critique", label: "Gemini outfit analysis", layer: "model" },
         { id: "feedback", label: "Vocal fashion critique", layer: "act" },
       ],
@@ -65,39 +57,19 @@ export const projects: Project[] = [
         { from: "label", to: "wardrobe" },
         { from: "wardrobe", to: "outfit" },
 
-        { from: "upload", to: "transcription" },
-        { from: "transcription", to: "critique" },
+        { from: "upload", to: "critique" },
         { from: "critique", to: "feedback" },
       ],
     },
-    frames: frames([
-      [
-        "F-01",
-        "AI fashion critic",
-        "Outfit photo analysis and vocal fashion feedback",
-      ],
-      [
-        "F-02",
-        "Digital wardrobe",
-        "Clothing items isolated into sticker-style assets",
-      ],
-      [
-        "F-03",
-        "Outfit generation",
-        "Wardrobe-based outfit creation using user prompts",
-      ],
-    ]),
     notes: [
       "Built for StormHacks 2026.",
-      "Devpost: https://devpost.com/software/orbitcare?ref_content=my-projects-tab&ref_feature=my_projects",
     ],
   },
   {
     slug: "networking-startup",
     code: "CS-10",
     title: "Networking Copilot Startup",
-    subtitle:
-      "Meridian: event connections with a measurable follow-through",
+    subtitle: "Meridian: event connections with a measurable follow-through",
     status: "on-hold",
     year: "2026",
     feature: "Software Process · Intelligent Systems",
@@ -143,19 +115,7 @@ export const projects: Project[] = [
         { from: "db", to: "app" },
       ],
     },
-    frames: frames([
-      [
-        "F-01",
-        "Capture flow",
-        "Screenshot pending — QR / quick-add of a new connection",
-      ],
-      [
-        "F-02",
-        "Follow-up draft",
-        "Screenshot pending — notes → suggested message",
-      ],
-    ]),
-    notes: []
+    notes: [],
   },
   {
     slug: "battlezone",
@@ -204,18 +164,6 @@ export const projects: Project[] = [
         { from: "gl", to: "hud" },
       ],
     },
-    frames: frames([
-      [
-        "F-01",
-        "Wireframe viewport",
-        "Screenshot pending — first-person vector battlefield",
-      ],
-      [
-        "F-02",
-        "Enemy behaviours",
-        "Screenshot pending — Guard / Hunter / Sniper in play",
-      ],
-    ]),
     notes: [
       "Course context: CMPUT 411 (Computer Graphics), University of Alberta.",
       "Tank mesh referenced from a Thingiverse STL/OBJ; rendering and systems are custom.",
@@ -272,18 +220,6 @@ export const projects: Project[] = [
         { from: "cnn", to: "out" },
       ],
     },
-    frames: frames([
-      [
-        "F-01",
-        "Digit canvas",
-        "Screenshot pending — drop a capture into /public/work/smartvision/",
-      ],
-      [
-        "F-02",
-        "Model compare",
-        "Screenshot pending — LR / FNN / CNN outputs side by side",
-      ],
-    ]),
     notes: [
       "Object-recognition (FashionMNIST) is documented as not implemented.",
       "Course notes cited: CMPUT 328 Visual Recognition, University of Alberta.",
@@ -339,18 +275,6 @@ export const projects: Project[] = [
         { from: "asr", to: "ui" },
       ],
     },
-    frames: frames([
-      [
-        "F-01",
-        "Transcript seek",
-        "Screenshot pending — clickable transcript aligned to the player",
-      ],
-      [
-        "F-02",
-        "Grounded Q&A",
-        "Screenshot pending — chatbot citing timestamps",
-      ],
-    ]),
     notes: [
       "Designed for exam prep against posted lectures and youtube tutorials.",
     ],
@@ -401,10 +325,6 @@ export const projects: Project[] = [
         { from: "mdb", to: "ui" },
       ],
     },
-    frames: frames([
-      ["F-01", "Submission form", "Screenshot pending — themed intake UI"],
-      ["F-02", "SWAPI lookup", "Screenshot pending — character record by id"],
-    ]),
     notes: [],
   },
   {
@@ -449,14 +369,6 @@ export const projects: Project[] = [
         { from: "mdb", to: "crud" },
       ],
     },
-    frames: frames([
-      ["F-01", "OpenAPI surface", "Screenshot pending — /docs endpoint"],
-      [
-        "F-02",
-        "List + aggregates",
-        "Screenshot pending — employees sorted with stats",
-      ],
-    ]),
     notes: [],
   },
   {
@@ -492,14 +404,6 @@ export const projects: Project[] = [
         { from: "prio", to: "board" },
       ],
     },
-    frames: frames([
-      [
-        "F-01",
-        "Story board",
-        "Screenshot pending — status and priority columns",
-      ],
-      ["F-02", "Story points", "Screenshot pending — difficulty assignment"],
-    ]),
     notes: ["Live client: kneadteam.github.io/Sprint"],
   },
   {
@@ -541,14 +445,6 @@ export const projects: Project[] = [
         { from: "base", to: "h" },
       ],
     },
-    frames: frames([
-      ["F-01", "Wordle round", "Screenshot pending — terminal Wordle"],
-      [
-        "F-02",
-        "Hangman round",
-        "Screenshot pending — shared hierarchy in play",
-      ],
-    ]),
     notes: [],
   },
   {
@@ -585,14 +481,6 @@ export const projects: Project[] = [
         { from: "cat", to: "ui" },
       ],
     },
-    frames: frames([
-      [
-        "F-01",
-        "Balance overview",
-        "Screenshot pending — income, expenses, budget headroom",
-      ],
-      ["F-02", "Persistence", "Screenshot pending — save / load round-trip"],
-    ]),
     notes: ["Tests were written before functionality was implemented."],
   },
   {
@@ -627,10 +515,6 @@ export const projects: Project[] = [
         { from: "quiz", to: "game" },
       ],
     },
-    frames: frames([
-      ["F-01", "Info + quiz", "Screenshot pending — facts tab and quiz"],
-      ["F-02", "Frogger", "Screenshot pending — canvas game"],
-    ]),
     notes: [
       "First coding project, later rewritten with tighter front-end practice.",
     ],

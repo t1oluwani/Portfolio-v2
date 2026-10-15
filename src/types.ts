@@ -34,12 +34,6 @@ export type Project = {
     nodes: ArchitectureNode[];
     edges: ArchitectureEdge[];
   };
-  frames: Array<{
-    id: string;
-    caption: string;
-    note: string;
-    src?: string;
-  }>;
   notes: string[];
 };
 
