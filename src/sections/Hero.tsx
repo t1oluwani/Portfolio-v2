@@ -4,6 +4,8 @@ import { PerceptionCanvas } from "@/components/vision/PerceptionCanvas";
 import { BootOverlay } from "@/components/vision/BootOverlay";
 import { useBootSequence } from "@/hooks/useBootSequence";
 import { useVisitorInfo, fmtReadout } from "@/hooks/useVisitorInfo";
+import { Mail, Download } from "lucide-react";
+
 
 function useClock() {
   const [now, setNow] = useState(() => new Date());
@@ -68,10 +70,12 @@ export function Hero() {
           </p>
           <div className="hero__actions">
             <a className="btn btn--solid" href="#work">
-              Get in Touch 
+              Get in Touch
+              <Mail className="btn__icon" />
             </a>
             <a className="btn" href="#act">
               Download Resume
+              <Download className="btn__icon" />
             </a>
           </div>
         </div>
