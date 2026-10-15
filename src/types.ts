@@ -29,6 +29,7 @@ export type Project = {
   featured?: boolean;
   github?: string;
   demo?: string;
+  demotype?: string;
   architecture: {
     nodes: ArchitectureNode[];
     edges: ArchitectureEdge[];

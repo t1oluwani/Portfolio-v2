@@ -27,15 +27,19 @@ export function ProjectPage() {
     <article className="project-page">
       <div className="project-page__nav">
         <Link to="/#work">← Case files</Link>
-        <span>
+        <span data-track="project status">
           {project.code} · {statusCopy[project.status]}
         </span>
       </div>
-      <p className="hero__status project-page__kicker">
-        {project.featured} · {project.year}
+      <p className="hero__status project-page__kicker" data-track="year">
+        {project.year}
       </p>
-      <h1 className="project-page__title">{project.title}</h1>
-      <p className="hero__statement project-page__lede">{project.subtitle}</p>
+      <h1 className="project-page__title" data-track="title">
+        {project.title}
+      </h1>
+      <p className="hero__statement project-page__lede" data-track="short description">
+        {project.subtitle}
+      </p>
       <div className="hero__actions project-page__actions">
         {project.github ? (
           <a className="btn btn--solid" href={project.github} target="_blank" rel="noreferrer">
@@ -44,12 +48,12 @@ export function ProjectPage() {
         ) : null}
         {project.demo ? (
           <a className="btn" href={project.demo} target="_blank" rel="noreferrer">
-            Demo / recording
+            {project.demotype ? `View ${project.demotype}` : "View Demo"}
           </a>
         ) : null}
       </div>
 
-      <div className="project-grid">
+      <div className="project-grid" data-track="summary">
         <div className="block">
           <h2>Problem</h2>
           <p>{project.problem}</p>
@@ -68,12 +72,12 @@ export function ProjectPage() {
         </div>
       </div>
 
-      <div className="block block--spaced">
+      <div className="block block--spaced" data-track="diagram">
         <h2>System schematic</h2>
         <ArchitectureDiagram project={project} />
       </div>
 
-      <div className="block block--spaced">
+      <div className="block block--spaced" data-track="skills entailed">
         <h2>Technologies</h2>
         <table className="tech-table">
           <tbody>
@@ -87,14 +91,14 @@ export function ProjectPage() {
         </table>
       </div>
 
-      <div className="frames">
+      <div className="frames" data-track="screenshots">
         {project.frames.map((frame) => (
           <CaptureFrame key={frame.id} frame={frame} slug={project.slug} />
         ))}
       </div>
 
       {project.notes.length ? (
-        <ul className="notes">
+        <ul className="notes" data-track="worth noting">
           {project.notes.map((note) => (
             <li key={note}>{note}</li>
           ))}

@@ -39,7 +39,9 @@ export const projects: Project[] = [
       "rembg",
       "Supabase",
     ],
-    demo: "https://devpost.com/software/orbitcare?ref_content=my-projects-tab&ref_feature=my_projects",
+    // demo: "https://devpost.com/software/orbitcare?ref_content=my-projects-tab&ref_feature=my_projects",
+    demo: "https://vimeo.com/1232714616?share=copy&fl=sv&fe=ci#t=0",
+    demotype: "Recording",
     architecture: {
       nodes: [
         { id: "upload", label: "Upload photos", layer: "sense" },
@@ -87,15 +89,15 @@ export const projects: Project[] = [
     ]),
     notes: [
       "Built for StormHacks 2026.",
-      "Team members: Tioluwani Akinloye and Charles Aina.",
+      "Devpost: https://devpost.com/software/orbitcare?ref_content=my-projects-tab&ref_feature=my_projects",
     ],
   },
   {
     slug: "networking-startup",
     code: "CS-10",
-    title: "Networking Copilot App",
+    title: "Networking Copilot Startup",
     subtitle:
-      "Undisclosed startup: event connections with a measurable follow-through",
+      "Meridian: event connections with a measurable follow-through",
     status: "on-hold",
     year: "2026",
     feature: "Software Process · Intelligent Systems",
@@ -120,6 +122,8 @@ export const projects: Project[] = [
       "Figma",
       "UML",
     ],
+    demo: "https://meridianco.framer.website/",
+    demotype: "Landing Page",
     architecture: {
       nodes: [
         { id: "cap", label: "QR / quick-add", layer: "sense" },
@@ -150,10 +154,7 @@ export const projects: Project[] = [
         "Screenshot pending — notes → suggested message",
       ],
     ]),
-    notes: [
-      "Startup name intentionally withheld.",
-      "More details + Landing page available upon request.",
-    ],
+    notes: []
   },
   {
     slug: "battlezone",
@@ -250,6 +251,7 @@ export const projects: Project[] = [
     ],
     github: "https://github.com/t1oluwani/SmartVision",
     demo: "https://smartvisionfrontend.onrender.com/",
+    demotype: "Live Demo",
     architecture: {
       nodes: [
         { id: "canvas", label: "Draw canvas", layer: "sense" },
@@ -317,6 +319,7 @@ export const projects: Project[] = [
     ],
     github: "https://github.com/t1oluwani/StudyAI",
     demo: "https://vimeo.com/1019093746",
+    demotype: "Recording",
     architecture: {
       nodes: [
         { id: "src", label: "Video / URL", layer: "sense" },
@@ -380,6 +383,7 @@ export const projects: Project[] = [
     ],
     github: "https://github.com/t1oluwani/StarWarsAPI",
     demo: "https://t1oluwani.github.io/StarWarsAPI/",
+    demotype: "Live Demo",
     architecture: {
       nodes: [
         { id: "form", label: "Theme form", layer: "sense" },
@@ -454,7 +458,6 @@ export const projects: Project[] = [
     ]),
     notes: [],
   },
-
   {
     slug: "sprint",
     code: "CS-04",
@@ -476,6 +479,7 @@ export const projects: Project[] = [
     technologies: ["HTML", "CSS", "JavaScript", "Python", "Scrum", "UI/UX"],
     github: "https://github.com/t1oluwani/Sprint",
     demo: "https://kneadteam.github.io/Sprint/",
+    demotype: "Live Demo",
     architecture: {
       nodes: [
         { id: "story", label: "User stories", layer: "sense" },
@@ -610,6 +614,7 @@ export const projects: Project[] = [
     technologies: ["HTML", "CSS", "JavaScript", "DOM", "HTML5 Canvas", "UI/UX"],
     github: "https://github.com/t1oluwani/Frogg-site",
     demo: "https://t1oluwani.github.io/Frogg-site/",
+    demotype: "Live Demo",
     architecture: {
       nodes: [
         { id: "info", label: "Facts tab", layer: "sense" },

@@ -31,7 +31,7 @@ export const profile = {
   },
 };
 
-export const navItems: NavItem[] = [
+export const navItems: NavItem[] = [ // (remember me)
   { id: "hero", href: "#hero", index: "01", label: "Viewport"},
   { id: "about", href: "#about", index: "02", label: "Subject"},
   { id: "work", href: "#work", index: "03", label: "Case files"},
