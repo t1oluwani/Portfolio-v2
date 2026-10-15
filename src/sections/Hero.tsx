@@ -45,7 +45,7 @@ export function Hero() {
           <span />
           <span />
         </div>
-        <div className="hero__readout hero__readout--tl">
+        <div className="hero__readout hero__readout--tl" data-track="visitor details">
           <div className="hero__readout-head">
             VISITOR SIGNAL (
             <span className="hero__readout-dot" aria-hidden="true" />
@@ -59,13 +59,17 @@ export function Hero() {
           ))}
         </div>
         <div className="hero__copy">
-          <p className="hero__status">{profile.role}</p>
-          <h1 ref={focusRef} className="hero__name" data-track="subject">
+          <p className="hero__status" data-track="my roles">
+            {profile.role}
+          </p>
+          <h1 ref={focusRef} className="hero__name" data-track="me">
             <span>{profile.nameParts[0]}</span>
             <span>{profile.nameParts[1]}</span>
           </h1>
-          <p className="hero__statement">{profile.statement}</p>
-          <p className="hero__meta">
+          <p className="hero__statement" data-track="in a nutshell">
+            {profile.statement}
+          </p>
+          <p className="hero__meta" data-track="my credentials">
             {profile.statusLine}
           </p>
           <div className="hero__actions">

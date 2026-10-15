@@ -1,6 +1,11 @@
 import { useEffect, useRef, type RefObject } from "react";
 import { usePrefersReducedMotion } from "@/hooks/usePrefersReducedMotion";
 
+const gridColor = "rgba(200, 225, 250, 0.05)";
+const crosshairColor = "rgba(175, 150, 200, 0.20)";
+const scanlineEdgeColor = "rgba(75, 150, 200, 0)";
+const scanlineCenterColor = "rgba(75, 150, 200, 0.15)";
+
 export function PerceptionCanvas({
   hostRef,
 }: {
@@ -41,7 +46,7 @@ export function PerceptionCanvas({
       ctx.clearRect(0, 0, w, h);
 
       // grid
-      ctx.strokeStyle = "rgba(232,226,210,0.045)";
+      ctx.strokeStyle = gridColor;
       ctx.lineWidth = 1;
       const step = 56;
       ctx.beginPath();
@@ -56,7 +61,7 @@ export function PerceptionCanvas({
       ctx.stroke();
 
       // center crosshair
-      ctx.strokeStyle = "rgba(196,176,138,0.18)";
+      ctx.strokeStyle = crosshairColor;
       ctx.beginPath();
       ctx.moveTo(w / 2, 0);
       ctx.lineTo(w / 2, h);
@@ -67,9 +72,9 @@ export function PerceptionCanvas({
       // scanline
       if (!reduced) {
         const g = ctx.createLinearGradient(0, scan - 28, 0, scan + 28);
-        g.addColorStop(0, "rgba(196,176,138,0)");
-        g.addColorStop(0.5, "rgba(196,176,138,0.12)");
-        g.addColorStop(1, "rgba(196,176,138,0)");
+        g.addColorStop(0, scanlineEdgeColor);
+        g.addColorStop(0.5, scanlineCenterColor);
+        g.addColorStop(1, scanlineEdgeColor);
         ctx.fillStyle = g;
         ctx.fillRect(0, scan - 28, w, 56);
       }

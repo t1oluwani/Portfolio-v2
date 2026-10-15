@@ -5,13 +5,16 @@ const SELECTOR = "[data-track], a[href], button:not(:disabled)";
 
 const lerp = (a: number, b: number, t: number) => a + (b - a) * t;
 
+const topTextColor = "rgba(5, 250, 29, 0.95)";
+const crosshairColor = "rgba(0, 183, 255, 0.85)";
+const bottomTextColor = "rgba(5, 245, 213, 0.95)";
+
 function labelFor(el: Element) {
   const t = (el as HTMLElement).dataset.track;
   if (t) return t.toUpperCase();
-  return el.tagName === "A" ? "LINK" : "ACTION";
+  return el.tagName === "A" ? "VISIT" : "LOCKED";
 }
 
-// Smallest tracked element under (or within a few px of) the pointer.
 function findTarget(px: number, py: number) {
   let best: { rect: DOMRect; label: string; area: number } | null = null;
   for (const el of document.querySelectorAll(SELECTOR)) {
@@ -25,7 +28,8 @@ function findTarget(px: number, py: number) {
       py <= r.bottom + pad
     ) {
       const area = r.width * r.height;
-      if (!best || area < best.area) best = { rect: r, label: labelFor(el), area };
+      if (!best || area < best.area)
+        best = { rect: r, label: labelFor(el), area };
     }
   }
   return best;
@@ -37,7 +41,8 @@ export function TrackingCursor() {
 
   useEffect(() => {
     // Mouse/trackpad only; touch has no hover position to track.
-    if (!window.matchMedia("(hover: hover) and (pointer: fine)").matches) return;
+    if (!window.matchMedia("(hover: hover) and (pointer: fine)").matches)
+      return;
 
     const canvas = canvasRef.current;
     const ctx = canvas?.getContext("2d");
@@ -45,7 +50,7 @@ export function TrackingCursor() {
 
     const pointer = { x: 0, y: 0 };
     const smooth = { x: 0, y: 0 };
-    const box = { x: 0, y: 0, w: 88, h: 88, label: "PTR" };
+    const box = { x: 0, y: 0, w: 88, h: 88, label: "TGT" };
     let alpha = 0;
     let targetAlpha = 0;
     let seen = false;
@@ -97,11 +102,11 @@ export function TrackingCursor() {
         ? {
             x: hit.rect.left + hit.rect.width / 2,
             y: hit.rect.top + hit.rect.height / 2,
-            w: hit.rect.width + (hit.label === "SUBJECT" ? 36 : 16),
-            h: hit.rect.height + (hit.label === "SUBJECT" ? 28 : 12),
-            label: hit.label,
+            w: hit.rect.width + (hit.label === "ME" ? 36 : 16),
+            h: hit.rect.height + (hit.label === "ME" ? 28 : 12),
+            label: hit.label === "ME" ? "THE GOAT" : hit.label,
           }
-        : { x: smooth.x, y: smooth.y, w: 88, h: 88, label: "PTR" };
+        : { x: smooth.x, y: smooth.y, w: 88, h: 88, label: "TGT" };
 
       box.x = lerp(box.x, target.x, reduced ? 1 : 0.14);
       box.y = lerp(box.y, target.y, reduced ? 1 : 0.14);
@@ -116,7 +121,7 @@ export function TrackingCursor() {
       const c = 14;
 
       ctx.globalAlpha = alpha;
-      ctx.strokeStyle = "rgba(196,176,138,0.85)";
+      ctx.strokeStyle = crosshairColor;
       ctx.lineWidth = 1.25;
 
       // corner brackets
@@ -146,13 +151,13 @@ export function TrackingCursor() {
       // readouts, clamped so they never clip at the viewport edges
       ctx.font = "11px 'IBM Plex Mono', monospace";
       const lx = Math.min(Math.max(x0, 8), w - 140);
-      ctx.fillStyle = "rgba(196,176,138,0.9)";
+      ctx.fillStyle = topTextColor;
       ctx.fillText(
         `${box.label}  ·  ${Math.round(box.w)}×${Math.round(box.h)}`,
         lx,
         Math.max(y0 - 8, 14),
       );
-      ctx.fillStyle = "rgba(139,135,124,0.95)";
+      ctx.fillStyle = bottomTextColor;
       ctx.fillText(
         `x ${pointer.x.toFixed(0)}   y ${pointer.y.toFixed(0)}`,
         lx,
@@ -177,5 +182,7 @@ export function TrackingCursor() {
     };
   }, [reduced]);
 
-  return <canvas ref={canvasRef} className="tracking-cursor" aria-hidden="true" />;
+  return (
+    <canvas ref={canvasRef} className="tracking-cursor" aria-hidden="true" />
+  );
 }

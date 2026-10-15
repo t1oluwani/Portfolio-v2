@@ -19,6 +19,7 @@ export function Experience() {
         {timeline.map((item) => (
           <article
             key={item.id}
+            data-track={`timeline-${item.id}`}
             className={`timeline__item${item.status === "active" ? " is-active" : ""}`}
           >
             <div className="timeline__head">

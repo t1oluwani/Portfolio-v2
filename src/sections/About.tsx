@@ -16,7 +16,7 @@ export function About() {
         About
       </h2>
       <div ref={ref} className="spec-grid reveal">
-        <table className="spec-table">
+        <table className="spec-table" data-track="my profile">
           <tbody>
             <tr>
               <th scope="row">Name</th>
@@ -46,7 +46,7 @@ export function About() {
             </tr>
           </tbody>
         </table>
-        <div className="spec-copy">
+        <div className="spec-copy" data-track="a short biography">
           {profile.about.map((p) => (
             <p key={p.slice(0, 24)}>{p}</p>
           ))}

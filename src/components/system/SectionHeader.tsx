@@ -15,12 +15,16 @@ export function SectionHeader({
   return (
     <div ref={ref} className="reveal">
       <div className="section-kicker">
-        <span>
+        <span data-track="header">
           {index} / <span className="section-kicker__stage">{stage}</span>
         </span>
-        <span>{aside}</span>
+        <span data-track="digest">
+          {aside}
+        </span>
       </div>
-      <h2 className="section-title">{title}</h2>
+      <h2 className="section-title" data-track="title">
+        {title}
+      </h2>
     </div>
   );
 }

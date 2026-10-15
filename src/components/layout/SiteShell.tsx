@@ -41,12 +41,12 @@ export function SiteShell() {
       </a>
       <div className="grid-bg" aria-hidden="true" />
       <header className="topbar">
-        <Link className="topbar__brand" to="/">
+        <Link className="topbar__brand" data-track="preferred name" to="/">
           {profile.shortName}
         </Link>
         <div className="topbar__meta">
           <span className="topbar__dot" aria-hidden="true" />
-          <span>SYS.OK</span>
+          <span data-track="site status">SYS.OK</span>
           <span className="sr-only">System status nominal</span>
         </div>
       </header>
@@ -66,8 +66,8 @@ export function SiteShell() {
         <Outlet />
       </main>
       <footer className="footer">
-        <span>© 2026 {profile.name}</span>
-        <span>Commitment → Results</span>
+        <span data-track="copyright">© 2026 {profile.name}</span>
+        <span data-track="modus operandi">Commitment → Results</span>
       </footer>
       <nav className="mobile-nav" aria-label="Mobile sections">
         {rail.map((item) => (

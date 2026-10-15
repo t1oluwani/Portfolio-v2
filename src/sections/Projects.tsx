@@ -50,7 +50,7 @@ export function Projects() {
       </h2>
       <div className="case-list">
         {featured.map((project) => (
-          <CaseRow key={project.slug} project={project} />
+          <CaseRow key={project.slug} project={project} data-track={`${project.title} (click to view)`} />
         ))}
       </div>
       {rest.length ? (

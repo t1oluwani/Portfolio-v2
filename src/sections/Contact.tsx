@@ -17,7 +17,7 @@ export function Contact() {
         Contact
       </h2>
       <div ref={ref} className="contact reveal">
-        <div>
+        <div data-track="contact links">
           <p className="lede">
             If any of my projects interest you, you’d like to collaborate, or you’d like to discuss an idea, open a channel. I’m always happy to connect, share what I’ve learned, and explore what we could build together.
           </p>
@@ -39,6 +39,7 @@ export function Contact() {
         </div>
         <form
           className="form"
+          data-track="contact form"
           onSubmit={(e) => {
             e.preventDefault();
             const data = new FormData(e.currentTarget);

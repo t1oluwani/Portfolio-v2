@@ -140,7 +140,7 @@
   font-size: 11px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--muted);
+  color: var(--oxide);
 }
 
 @media (max-width: 860px) {
