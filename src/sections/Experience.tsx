@@ -20,13 +20,19 @@ export function Experience() {
           <article
             key={item.id}
             data-track={`timeline-${item.id}`}
-            className={`timeline__item${item.status === "active" ? " is-active" : ""}`}
+            className={[
+              "timeline__item",
+              item.kind === "education" ? "timeline__item--right" : "timeline__item--left",
+              item.status === "active" ? "is-active" : "",
+            ]
+              .filter(Boolean)
+              .join(" ")}
           >
             <div className="timeline__head">
+              <span>{item.period}</span>
               <span>
                 {item.code} · {item.kind}
               </span>
-              <span>{item.period}</span>
             </div>
             <h3 className="timeline__title">{item.title}</h3>
             <p className="timeline__org">

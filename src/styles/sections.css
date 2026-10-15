@@ -518,25 +518,56 @@ html {
   color: var(--warn);
 }
 
+/* ---------- Timeline: shared center stem ---------- */
+
 .timeline {
+  --stem-gap: 28px;
   position: relative;
-  margin-left: 28px;
-  border-left: 1px solid var(--line-strong);
   display: flex;
   flex-direction: column;
-  gap: 0;
+  gap: 16px;
 }
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  border-left: 1px solid var(--line-strong);
+}
+
+/* ---------- Timeline: cards ---------- */
 
 .timeline__item {
   position: relative;
-  padding: 0 0 40px 32px;
+  width: calc(50% - var(--stem-gap));
+  padding: 16px 18px;
+  border: 1px solid color-mix(in srgb, var(--brass) 32%, transparent);
+  border-radius: 14px;
+  background: color-mix(in srgb, var(--brass) 6%, transparent);
+  transition: border-color 0.2s var(--ease), background 0.2s var(--ease);
 }
 
+.timeline__item--left:hover {
+  border-color: color-mix(in srgb, var(--brass) 65%, transparent);
+  background: color-mix(in srgb, var(--brass) 10%, transparent);
+}
+
+.timeline__item--right:hover {
+  border-color: color-mix(in srgb, var(--oxide) 65%, transparent);
+  background: color-mix(in srgb, var(--oxide) 10%, transparent);
+}
+
+.timeline__item.is-active {
+  border-width: 4px;
+}
+
+/* dot on the stem, level with the card's top */
 .timeline__item::before {
   content: "";
   position: absolute;
-  left: -5px;
-  top: 8px;
+  top: 22px;
   width: 9px;
   height: 9px;
   background: var(--void);
@@ -546,6 +577,41 @@ html {
 .timeline__item.is-active::before {
   background: var(--brass);
 }
+
+/* left: everything except education */
+.timeline__item--left {
+  align-self: flex-start;
+  text-align: right;
+}
+
+.timeline__item--left::before {
+  right: calc(-1 * var(--stem-gap) - 5px);
+}
+
+.timeline__item--left .timeline__head { flex-direction: row-reverse; }
+.timeline__item--left .chip-row       { justify-content: flex-end; }
+
+/* right: education */
+.timeline__item--right {
+  align-self: flex-end;
+  border-color: color-mix(in srgb, var(--oxide) 38%, transparent);
+  background: color-mix(in srgb, var(--oxide) 7%, transparent);
+}
+
+.timeline__item--right:hover {
+  border-color: color-mix(in srgb, var(--oxide) 70%, transparent);
+}
+
+.timeline__item--right::before {
+  left: calc(-1 * var(--stem-gap) - 5px);
+  border-color: var(--oxide);
+}
+
+.timeline__item--right.is-active::before {
+  background: var(--oxide);
+}
+
+/* ---------- Timeline: content (unchanged) ---------- */
 
 .timeline__head {
   display: flex;
@@ -573,7 +639,33 @@ html {
 .timeline__detail {
   margin: 0;
   color: var(--paper-soft);
-  max-width: 48em;
+}
+
+/* ---------- Timeline: mobile ---------- */
+
+@media (max-width: 860px) {
+  .timeline {
+    padding-left: 24px;
+  }
+
+  .timeline::before { left: 0; }
+
+  .timeline__item,
+  .timeline__item--left,
+  .timeline__item--right {
+    width: auto;
+    align-self: stretch;
+    text-align: left;
+  }
+
+  .timeline__item--left::before,
+  .timeline__item--right::before {
+    right: auto;
+    left: -29px; /* 24px stem padding + 5px to center on the line */
+  }
+
+  .timeline__item--left .timeline__head { flex-direction: row; }
+  .timeline__item--left .chip-row       { justify-content: flex-start; }
 }
 
 .stack {

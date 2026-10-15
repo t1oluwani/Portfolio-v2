@@ -1,8 +1,8 @@
-import type { 
-  // Interest, 
-  NavItem, 
-  // SkillLayer, 
-  TimelineEntry 
+import type {
+  // Interest,
+  NavItem,
+  // SkillLayer,
+  TimelineEntry,
 } from "@/types";
 
 export { projects } from "@/data/projects";
@@ -15,7 +15,8 @@ export const profile = {
   role: "Software · AI/ML Engineer",
   location: "Vancouver, Canada",
   origin: "Born in Nigeria · Raised in Canada",
-  statusLine: "Master of Visual Computing (Incoming) | BSc Honors Computing Science",
+  statusLine:
+    "Master of Visual Computing (Incoming) | BSc Honors Computing Science",
   statement:
     "I am a software and AI/ML engineer with a passion for intelligent systems and emerging applications in the integrated healthcare / biomedical field.",
   about: [
@@ -31,13 +32,19 @@ export const profile = {
   },
 };
 
-export const navItems: NavItem[] = [ // (remember me)
-  { id: "hero", href: "#hero", index: "01", label: "Viewport"},
-  { id: "about", href: "#about", index: "02", label: "Subject"},
-  { id: "projects", href: "#projects", index: "03", label: "Projects"},
-  { id: "experiences", href: "#experiences", index: "04", label: "Experiencesy"},
-  { id: "skills", href: "#skills", index: "05", label: "Skills"},
-  { id: "contact", href: "#contact", index: "06", label: "Contact"},
+export const navItems: NavItem[] = [
+  // (remember me)
+  { id: "hero", href: "#hero", index: "01", label: "Viewport" },
+  { id: "about", href: "#about", index: "02", label: "Subject" },
+  { id: "projects", href: "#projects", index: "03", label: "Projects" },
+  {
+    id: "experiences",
+    href: "#experiences",
+    index: "04",
+    label: "Experiencesy",
+  },
+  { id: "skills", href: "#skills", index: "05", label: "Skills" },
+  { id: "contact", href: "#contact", index: "06", label: "Contact" },
 ];
 
 export const bootLines = [
@@ -52,7 +59,7 @@ export const bootLines = [
 export const timeline: TimelineEntry[] = [
   {
     id: "sfu-ra",
-    code: "RES-03",
+    code: "RES-02",
     period: "Sep 2026 — Present",
     title: "Research Assistant (virtual humanoid / robot models)",
     org: "Simon Fraser University",
@@ -60,13 +67,18 @@ export const timeline: TimelineEntry[] = [
     status: "active",
     locale: "Burnaby, BC · Hybrid",
     detail:
-      "Project 15004: experimental study with virtual humanoid/robot model development. Designing software architecture for joint-link simulation models; following open-source design/documentation practice; designing and evaluating interaction methods for testing those models.",
-    tags: ["Robotics", "Simulation", "Joint-link systems", "Software architecture"],
+      "Developing virtual humanoid/robot models, joint-link simulation software, and interaction methods, following open-source design.",
+    tags: [
+      "Robotics",
+      "Simulation",
+      "Joint-link systems",
+      "Software architecture",
+    ],
   },
   {
     id: "sfu-ta",
     code: "TCH-02",
-    period: "Sep 2026 — Present",
+    period: "Sep 2026 → Present",
     title: "Teaching Assistant (CMPT 125 D100)",
     org: "Simon Fraser University",
     kind: "teaching",
@@ -79,97 +91,102 @@ export const timeline: TimelineEntry[] = [
   {
     id: "sfu-msc",
     code: "EDU-02",
-    period: "Sep 2026 — 2028 (expected)",
+    period: "Sep 2026 → 2028 (expected)",
     title: "Master of Visual Computing",
     org: "Simon Fraser University",
     kind: "education",
     status: "active",
     locale: "Burnaby, BC",
-    detail: "Graduate study in visual computing. Electives includes robotic autonomy and biomedical computer vision.",
+    detail:
+      "Graduate studies in visual computing. Electives includes robotic autonomy and biomedical computer vision.",
     tags: ["Python", "PyTorch", "Computer vision", "Machine learning"],
   },
   {
     id: "scaleupmap",
     code: "DEV-02",
-    period: "Feb 2025 — May 2026",
+    period: "Feb 2025 → May 2026",
     title: "Full Stack Developer",
     org: "ScaleupMap",
-    kind: "role",
+    kind: "industry",
     status: "complete",
     locale: "Edmonton, AB · Remote",
     detail:
-      "Full-stack features in React, TypeScript, Go, and PostgreSQL for a platform sized for 1,000+ users. Python AI services on Google Gemini, deployed on GCP. 20+ relational schemas (DBeaver). Unit, API, and E2E tests; code review that cut redundant API calls by up to 25%.",
-    tags: ["React", "Next.js", "TypeScript", "Go", "PostgreSQL", "Python", "Gemini", "GCP"],
+      "Built scalable full-stack features, integrated Gemini, designed relational database architectures, and improved API performance through comprehensive testing, debugging, and code reviews.",
+    tags: [
+      "React",
+      "Next.js",
+      "TypeScript",
+      "Go",
+      "PostgreSQL",
+      "Python",
+      "Gemini",
+      "GCP",
+    ],
   },
   {
     id: "ualberta",
     code: "EDU-01",
-    period: "Sep 2022 — Apr 2025",
+    period: "Sep 2022 → Apr 2025",
     title: "BSc Honors Computing Science",
     org: "University of Alberta",
     kind: "education",
     status: "complete",
     locale: "Edmonton, AB",
     detail:
-      "Honors computing science. Coursework includes visual recognition, AI search & planning, program analysis, models of computation, software engineering, and data structures & algorithms. Faculty of Science Dean’s List (2023).",
+      "Honors computing science. Coursework included visual recognition, AI search & planning, program analysis, models of computation, software engineering, and data structures & algorithms.",
     tags: ["PyTorch", "REST", "Docker", "Data structures"],
   },
   {
-    id: "cembrowski-llm",
-    code: "RES-02",
-    period: "Oct 2024 — Nov 2024",
-    title: "Research Assistant (clinical informatics & LLM analysis)",
-    org: "Prof. George S. Cembrowski · University of Alberta",
-    kind: "research",
-    status: "complete",
-    locale: "Edmonton, AB",
-    detail:
-      "Independent collaboration. Large-scale literature synthesis on seasonal and diurnal variation across hematology, chemistry, and coagulation analytes. Produced a ~90-page analyte-by-analyte report comparing interpretations from multiple LLMs with complete academic references.",
-    tags: ["Literature review", "LLMs", "Clinical informatics", "Technical writing"],
-  },
-  {
-    id: "cembrowski-cv",
+    id: "cembrowski-research",
     code: "RES-01",
-    period: "Jul 2024 — Dec 2024",
-    title: "Project Assistant (clinical AI & technical consulting)",
+    period: "Jul 2024 → Mar 2026",
+    title: "Project Assistant (clinical AI & informatics)",
     org: "Prof. George S. Cembrowski · University of Alberta",
     kind: "research",
     status: "complete",
     locale: "Edmonton, AB",
     detail:
-      "Independent collaboration on a phlebotomy-improvement initiative. Authored an 8-page consultation report on commercial software, computer-vision frameworks, model-training feasibility, and PHI-safe video-analysis workflows. Defined MVP and ideal-product requirements (inversion counting, cap-color tube identification, face blurring). Coordinated meetings with external experts.",
-    tags: ["OpenCV", "PyTorch", "Computer vision", "Requirements"],
+      "Analyzed LLM interpretations of seasonal and diurnal laboratory analyte variation, built a pipeline to standardize GEM 5000 calibration reports for cross-hospital assay linearity analysis, and authored reports on computer vision feasibility and video analysis.",
+    tags: [
+      "LLMs",
+      "Clinical informatics",
+      "Computer vision",
+      "OpenCV",
+      "PyTorch",
+      "Literature review",
+      "Technical writing",
+    ],
   },
   {
     id: "knead",
     code: "DEV-01",
-    period: "Jan 2024 — Apr 2024",
+    period: "Jan 2024 → Apr 2024",
     title: "Student Software Developer",
     org: "Knead Technologies",
-    kind: "role",
+    kind: "industry",
     status: "complete",
     locale: "Calgary, AB · Remote",
     detail:
-      "Dashboard and features (on-demand and routine donation tracking) in React (TypeScript), PHP/Laravel, Apache, and MySQL on Docker. Closed marketplace page and UI for transactions and metrics. Team of six in Agile sprints. Cypress E2E and PHPUnit; production bugs reduced by ~20%. Wrote technical and user documentation.",
+      "Built donation tracking dashboards, developed marketplace transaction interfaces, and collaborated in Agile sprints. Improved reliability through automated testing, technical workflows and user guides.",
     tags: ["React", "TypeScript", "Laravel", "MySQL", "Docker", "Cypress"],
   },
   {
     id: "stem",
     code: "TCH-01",
-    period: "Jul 2022 — Jun 2023",
+    period: "Jul 2022 → Jun 2023",
     title: "Online STEM Facilitator",
     org: "STEM Montessori Academy of Canada",
     kind: "teaching",
     status: "complete",
     locale: "Toronto, ON · Remote",
     detail:
-      "Designed and taught six coding courses in Python and HTML/CSS for students aged 10–18, beginner through advanced. Hour-long lectures; about 100 students.",
+      "Designed and taught six Python and HTML/CSS courses for approximately 100 students aged 10–18, delivering hour-long lessons tailored to beginner through advanced skill levels.",
     tags: ["Python", "HTML", "CSS", "Teaching"],
   },
   {
     id: "ubc",
     code: "EDU-00",
-    period: "Sep 2020 — Apr 2022",
+    period: "Sep 2020 → Apr 2022",
     title: "BSc Combined Major in Science",
     org: "The University of British Columbia",
     kind: "education",

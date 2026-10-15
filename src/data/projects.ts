@@ -11,13 +11,13 @@ export const projects: Project[] = [
     slug: "gemini-wears-prada",
     code: "CS-11",
     title: "Gemini Wears Prada",
-    subtitle: "AI fashion critic and digital wardrobe assistant",
+    subtitle: "AI fashion critic and digital wardrobe",
     status: "complete",
     year: "2026",
-    feature: "Generative AI · Computer Vision · Full-Stack Development",
+    feature: "Generative AI · Computer Vision",
     featured: true,
     summary:
-      "An interactive web application that combines AI-powered outfit critiques, digital wardrobe organization, and personalized outfit generation.",
+      "An application that combines a curated AI fashion critic, salient object detection and realistic AI text-to-speech to help users manage their wardrobes.",
     problem:
       "Choosing outfits can be difficult even when users have a full closet of clothes. The project aims to make outfit decisions easier and more engaging.",
     approach:
@@ -39,7 +39,7 @@ export const projects: Project[] = [
       "rembg",
       "Supabase",
     ],
-    // demo: "https://devpost.com/software/orbitcare?ref_content=my-projects-tab&ref_feature=my_projects",
+    github: "https://github.com/t1oluwani/gemini-wears-prada",
     demo: "https://vimeo.com/1232714616?share=copy&fl=sv&fe=ci#t=0",
     demotype: "Recording",
     architecture: {
@@ -122,6 +122,7 @@ export const projects: Project[] = [
       "Figma",
       "UML",
     ],
+    github: "https://github.com/MeridianCo",
     demo: "https://meridianco.framer.website/",
     demotype: "Landing Page",
     architecture: {
@@ -229,7 +230,7 @@ export const projects: Project[] = [
     status: "partially-complete",
     year: "2024",
     feature: "ML · PyTorch · Computer Vision",
-    featured: true,
+    featured: false,
     summary:
       "A visual-recognition playground: draw a digit, then compare logistic regression, an FNN, and a CNN trained with PyTorch on MNIST.",
     problem:

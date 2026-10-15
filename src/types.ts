@@ -49,7 +49,7 @@ export type TimelineEntry = {
   period: string;
   title: string;
   org: string;
-  kind: "education" | "role" | "research" | "teaching";
+  kind: "education" | "industry" | "research" | "teaching";
   status: "active" | "complete" | "tbd";
   locale?: string;
   detail: string;
