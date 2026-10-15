@@ -1,6 +1,29 @@
-// import { skillLayers } from "@/data/content";
+import { skillGroups } from "@/data/content";
 import { SectionHeader } from "@/components/system/SectionHeader";
 import { useReveal } from "@/hooks/useReveal";
+import type { SkillItem } from "@/types";
+
+const byName = (a: SkillItem, b: SkillItem) => a.name.localeCompare(b.name);
+
+function Chip({ item }: { item: SkillItem }) {
+  return (
+    <div className={`chip chip--skill${item.main ? " chip--main" : ""}`}>
+      {item.icon ? (
+        <span className="chip__icon">
+          <img
+            src={item.icon}
+            alt=""
+            loading="lazy"
+            onError={(e) => {
+              (e.currentTarget.parentElement as HTMLElement).style.display = "none";
+            }}
+          />
+        </span>
+      ) : null}
+      {item.name}
+    </div>
+  );
+}
 
 export function Skills() {
   const ref = useReveal<HTMLDivElement>();
@@ -16,25 +39,33 @@ export function Skills() {
         Skills
       </h2>
       <div ref={ref} className="stack reveal">
-        {/* {skillLayers.map((layer, i) => (
-          <div key={layer.id} className="stack__layer">
-            <div>
-              <div className="stack__id">L{String(i + 1).padStart(2, "0")}</div>
-              <h3 className="stack__label">{layer.label}</h3>
-            </div>
-            <div>
-              <p className="stack__desc">{layer.description}</p>
-              <div className="chip-row">
-                {layer.items.map((item) => (
-                  <div key={item.name} className="chip">
-                    {item.name}
-                    {item.note ? <small>{item.note}</small> : null}
+        {skillGroups.map((group) => {
+          const main = group.items.filter((i) => i.main).sort(byName);
+          const rest = group.items.filter((i) => !i.main).sort(byName);
+          return (
+            <div key={group.id} className="stack__layer">
+              <h3 className="stack__label" data-track="skill type">
+                {group.label}
+              </h3>
+              <div className="chip-lines">
+                {main.length > 0 && (
+                  <div className="chip-row" data-track={`strong skills`}>
+                    {main.map((item) => (
+                      <Chip key={item.name} item={item} />
+                    ))}
                   </div>
-                ))}
+                )}
+                {rest.length > 0 && (
+                  <div className="chip-row" data-track={`skills`}>
+                    {rest.map((item) => (
+                      <Chip key={item.name} item={item} />
+                    ))}
+                  </div>
+                )}
               </div>
             </div>
-          </div>
-        ))} */}
+          );
+        })}
       </div>
     </section>
   );

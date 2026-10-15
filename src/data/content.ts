@@ -1,7 +1,7 @@
 import type {
   // Interest,
   NavItem,
-  // SkillLayer,
+  SkillGroup,
   TimelineEntry,
 } from "@/types";
 
@@ -198,79 +198,67 @@ export const timeline: TimelineEntry[] = [
   },
 ];
 
-// export const skillLayers: SkillLayer[] = [
-//   {
-//     id: "perceive",
-//     label: "Perceive",
-//     description: "Signal from the world — images, video, graphics, and spatial structure.",
-//     items: [
-//       { name: "Computer vision", note: "SmartVision, clinical CV consulting" },
-//       { name: "OpenCV / OpenGL" },
-//       { name: "PyTorch / Torchvision" },
-//       { name: "Raycasting · collision" },
-//     ],
-//   },
-//   {
-//     id: "understand",
-//     label: "Understand",
-//     description: "Models that turn input into something a system can use.",
-//     items: [
-//       { name: "CNNs / FNNs / logistic regression" },
-//       { name: "Whisper ASR" },
-//       { name: "Gemini / OpenAI APIs" },
-//       { name: "Python · C++" },
-//     ],
-//   },
-//   {
-//     id: "build",
-//     label: "Build",
-//     description: "The software that holds a system together.",
-//     items: [
-//       { name: "React / Next.js / TypeScript" },
-//       { name: "Vue.js · Flutter/Dart" },
-//       { name: "FastAPI · Flask · Go · Laravel" },
-//       { name: "PostgreSQL · MongoDB · Firebase · Docker" },
-//     ],
-//   },
-//   {
-//     id: "act",
-//     label: "Act",
-//     description: "Closing the loop — serving models, shipping product, teaching, deploying.",
-//     items: [
-//       { name: "REST · GCP · Cybera" },
-//       { name: "Cypress · PHPUnit · JUnit" },
-//       { name: "Agile / Scrum · UI/UX" },
-//       { name: "Git · CI-minded testing" },
-//     ],
-//   },
-// ];
+const dv = (slug: string, variant = "original") =>
+  `https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${slug}/${slug}-${variant}.svg`;
 
-// export const interests: Interest[] = [
-//   {
-//     id: "robotics",
-//     title: "Robotics",
-//     status: "ACTIVE — SFU",
-//     text: "Project 15004: joint-link virtual models for humanoid and robot applications, plus interaction methods for those models. Looking for work where perception sits inside a control loop, not beside it.",
-//   },
-//   {
-//     id: "vision",
-//     title: "Computer vision",
-//     status: "CORE",
-//     text: "Visual computing MSc, CMPUT 328 visual recognition, SmartVision (digit models up to a reported 98% CNN accuracy), and clinical consulting on CV pipelines (tube ID, inversion counting, PHI-safe video).",
-//   },
-//   {
-//     id: "intelligent",
-//     title: "Intelligent systems",
-//     status: "ACTIVE",
-//     text: "StudyAI’s grounded lecture loop, Gemini microservices at ScaleupMap, and an undisclosed networking product that turns event encounters into follow-through. Prefer systems with APIs, state, and evaluation.",
-//   },
-//   {
-//     id: "spatial",
-//     title: "Spatial systems",
-//     status: "BUILDING",
-//     text: "Battlezone as a spatial sandbox: first-person transforms, raycast LOS, collision, and pathfinding agents. A step toward maps and geometry a robot could actually use.",
-//   },
-// ];
+export const skillGroups: SkillGroup[] = [
+  {
+    id: "languages",
+    label: "Languages",
+    items: [
+      { name: "Python", icon: dv("python"), main: true },
+      { name: "Java", icon: dv("java") },
+      { name: "C", icon: dv("c") },
+      { name: "PHP", icon: dv("php"), main: true },
+      { name: "Racket", icon: dv("racket") },
+      { name: "C++", icon: dv("cplusplus") },
+      { name: "TypeScript", icon: dv("typescript"), main: true },
+      { name: "Go", icon: dv("go"), main: true },
+    ],
+  },
+  {
+    id: "frameworks",
+    label: "Frameworks",
+    items: [
+      { name: "React", icon: dv("react"), main: true },
+      { name: "Next.js", icon: dv("nextjs") },
+      { name: "Node.js", icon: dv("nodejs") },
+      { name: "Express", icon: dv("express") },
+      // { name: "Vite", icon: dv("vite") },
+      // { name: "Vue.js", icon: dv("vuejs") },
+      { name: "FastAPI", icon: dv("fastapi"), main: true },
+      { name: "Flask", icon: dv("flask") },
+      { name: "Laravel", icon: dv("laravel"), main: true },
+    ],
+  },
+  {
+    id: "cloud-infra",
+    label: "Cloud & Infrastructure",
+    items: [
+      { name: "Cypress", icon: dv("cypress") },
+      { name: "GCP", icon: dv("googlecloud"), main: true },
+      { name: "Docker", icon: dv("docker") },
+      { name: "Git", icon: dv("git"), main: true },
+      { name: "PostgreSQL", icon: dv("postgresql"), main: true },
+      { name: "MongoDB", icon: dv("mongodb"), main: true },
+      { name: "Firebase", icon: dv("firebase") },
+      { name: "Supabase", icon: dv("supabase"), main: true },
+    ],
+  },
+  {
+    id: "ml-db",
+    label: "ML & DB",
+    items: [
+      { name: "PyTorch", icon: dv("pytorch"), main: true },
+      { name: "TensorFlow", icon: dv("tensorflow") },
+      { name: "scikit-learn", icon: dv("scikitlearn") },
+      { name: "NumPy", icon: dv("numpy"), main: true },
+      { name: "OpenCV", icon: dv("opencv") },
+      { name: "Gemini", icon: dv("gemini"), main: true },
+      { name: "OpenAI", icon: dv("openai") },
+    ],
+  },
+];
 
 export const contactChannels = [
   {

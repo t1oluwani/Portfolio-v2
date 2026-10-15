@@ -56,11 +56,12 @@ export type TimelineEntry = {
   tags?: string[];
 };
 
-export type SkillLayer = {
+export type SkillItem = { name: string; icon?: string; main?: boolean };
+
+export type SkillGroup = {
   id: string;
   label: string;
-  description: string;
-  items: Array<{ name: string; note?: string }>;
+  items: SkillItem[];
 };
 
 export type Interest = {
