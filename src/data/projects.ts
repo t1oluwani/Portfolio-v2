@@ -21,7 +21,6 @@ export const projects: Project[] = [
     technologies: [
       "React",
       "TypeScript",
-      "Vite",
       "Python",
       "FastAPI",
       "Google GenAI",
@@ -59,9 +58,7 @@ export const projects: Project[] = [
         { from: "critique", to: "feedback" },
       ],
     },
-    notes: [
-      "Built for StormHacks 2026.",
-    ],
+    notes: ["Built for StormHacks 2026."],
   },
   {
     slug: "networking-startup",
@@ -75,11 +72,11 @@ export const projects: Project[] = [
     summary:
       "Co-founded and led technical development of a mobile networking product: leveraging AI to convert event connections into measurable progress.",
     problem:
-      "Students and early-career professionals collect cards, emails, and LinkedIn requests at events, then lose the thread. Follow-up is manual, context decays, and there is no sense of whether a connection moved.",
+      "Students and early-career professionals collect contacts, emails, and LinkedIns at events, but progess often ends there. Follow-up is manual, context decays, and connections often end up unfulfilled.",
     approach:
-      "Owned the pipeline end-to-end: concept validation, Figma UI/UX, architecture and UML, then a custom stack — Flutter/Dart client, FastAPI services, Supabase, Gemini, GCP — with testing and data-security constraints. Product surface: QR / quick-add capture, event-linked context, AI follow-up drafts from notes, goal mapping, suggested next actions, and event finding aligned to the user’s network.",
+      "Owned Meridian end-to-end as founder and technical lead: concept validation, Figma UI/UX, architecture and UML, a custom stack: Flutter/Dart client, FastAPI services, Supabase, Gemini, GCP. Product surface: QR and quick-add capture, per-event context linked to each profile, AI follow-up drafts grounded in notes, goal mapping from intent to ranked contacts and messages, and event discovery aligned to the user's network. Event-first and goal-driven by design, not a feed-driven platform or generic CRM.",
     result:
-      "Company name withheld. Public marketing site and waitlist exist; treat this dossier as the technical case, not a press page. Outcome metrics TBD.",
+      "Public marketing site and waitlist live with early sign-ups from the target segment. App demo available upon request.",
     technologies: [
       "Flutter",
       "Dart",
@@ -95,20 +92,33 @@ export const projects: Project[] = [
     demotype: "Landing Page",
     architecture: {
       nodes: [
-        { id: "cap", label: "QR / quick-add", layer: "sense" },
-        { id: "ctx", label: "Event context", layer: "sense" },
-        { id: "api", label: "FastAPI", layer: "route" },
-        { id: "db", label: "Supabase", layer: "route" },
-        { id: "llm", label: "Gemini drafts", layer: "model" },
         { id: "app", label: "Flutter app", layer: "act" },
+        { id: "qr", label: "Quick-add", layer: "sense" },
+        { id: "notes", label: "Event Notes & Tags", layer: "sense" },
+        { id: "auth", label: "Supabase Auth", layer: "route" },
+        { id: "db", label: "Supabase PostgreSQL", layer: "route" },
+        { id: "intel", label: "Meridian Intelligence", layer: "model" },
+        { id: "outreach", label: "Outreach Engine", layer: "model" },
+        { id: "guide", label: "AI Guide", layer: "model" },
+        { id: "gemini", label: "Gemini", layer: "model" },
+        { id: "gcs", label: "GCP Cloud Storage", layer: "route" },
       ],
       edges: [
-        { from: "cap", to: "api" },
-        { from: "ctx", to: "api" },
-        { from: "api", to: "db" },
-        { from: "api", to: "llm" },
-        { from: "llm", to: "app" },
-        { from: "db", to: "app" },
+        { from: "app", to: "auth" },
+        { from: "app", to: "db" },
+        { from: "app", to: "intel" },
+        { from: "app", to: "outreach" },
+        { from: "app", to: "guide" },
+        { from: "qr", to: "app" },
+        { from: "notes", to: "app" },
+        { from: "intel", to: "db" },
+        { from: "outreach", to: "db" },
+        { from: "guide", to: "db" },
+        { from: "intel", to: "gemini" },
+        { from: "outreach", to: "gemini" },
+        { from: "guide", to: "gemini" },
+        { from: "app", to: "gcs" },
+        { from: "gcs", to: "db" },
       ],
     },
     notes: [],
@@ -125,11 +135,11 @@ export const projects: Project[] = [
     summary:
       "A first-person recreation of Atari Battlezone: wireframe 3D, procedural terrain, raycast combat, and enemy tanks with distinct state-machine behaviours.",
     problem:
-      "The original Battlezone is a landmark in first-person spatial combat. Recreating it is a way to own the full loop — camera, world, collision, and agents — rather than wrapping a game engine’s defaults.",
+      "I wanted to apply the skills I learned from CMPUT 411 (Computer Graphics) @ University of Alberta. I then applied pathfinding and behavioural AI to the real-time 3D game.",
     approach:
-      "Python + Pygame own the window and input. PyOpenGL draws a retro vector world. Combat uses raycasting for shots and line-of-sight, blocked by obstacles. Three enemy types (Guard, Hunter, Sniper) run state machines; pathfinding uses positional correction so agents seek without overlapping. Difficulty (Easy / Normal / Hard) shifts spawn mix, count, and damage. HUD, menus, and hit-flash close the arcade loop.",
+      "Python + Pygame own the window and input. PyOpenGL draws a retro vector world. Combat uses raycasting for shots and line-of-sight, blocked by obstacles. Three enemy types run state machines with rough behaviours: Guard patrols a fixed area and attacks in range, Hunter chases and closes to point-blank, Sniper keeps distance and retreats when approached. Pathfinding uses positional correction so agents seek without overlapping. Difficulty (Easy / Normal / Hard) shifts spawn mix, count, and damage. HUD, menus, and hit-flash close the arcade loop.",
     result:
-      "Playable recreation with difficulty select, wave survival, and the three enemy archetypes documented in the repo. Screenshots from the original README belong in the frames below once copied into /public/work/battlezone/.",
+      "Playable recreation with difficulty select, wave survival, and three documented enemy archetypes. Repo README covers the full architecture: engine, objects, render, math3d, game_ai, models.",
     technologies: [
       "Python",
       "PyOpenGL",
@@ -176,11 +186,11 @@ export const projects: Project[] = [
     summary:
       "A visual-recognition playground: draw a digit, then compare logistic regression, an FNN, and a CNN trained with PyTorch on MNIST.",
     problem:
-      "Wanted to apply course concepts in a practical, real-world scenario, applied knowledge from static training to dynamic performance.",
+      "Wanted to apply concepts from CMPUT 328 (Visual Recognition) in a practical, real-world scenario, applied knowledge from static training to dynamic performance.",
     approach:
       "Vue.js canvas captures a handwritten 0–9. A Flask API exposes train / predict / clear for three PyTorch models (logistic regression, FNN, CNN) on MNIST. The UI surfaces accuracy and processing details so the architectures can be compared in the same session. FashionMNIST object recognition is specified in the repo and is not implemented.",
     result:
-      "Live draw-to-predict playground. Resume-reported test accuracies: logistic regression 92%, FNN 96%, CNN 98%, with training-time optimizations. Hosted inference is constrained to logistic regression on free-tier memory; CNN/FNN training and loading are intended for local clone.",
+      "Live draw-to-predict playground (better to clone locally, deployed version has rate limits and free-tier memory constraints that affect performance): Accuracies for each model were approximately as follows: logistic regression 92%, FNN 96%, CNN 98%, with training-time optimizations. Hosted inference is constrained to logistic regression on free-tier memory (mostly for optics); CNN/FNN training and loading are intended for local clone.",
     technologies: [
       "Vue.js",
       "Flask",
@@ -230,9 +240,9 @@ export const projects: Project[] = [
     summary:
       "Study software that turns a lecture recording or YouTube URL into a seekable transcript, a content-grounded chatbot, and generated study artifacts.",
     problem:
-      "Long lectures are hard to search. Students need timestamps, summaries, and a way to ask questions against the actual video rather than a generic chatbot.",
+      "Long lectures are hard to parse. As a student, I needed a way to ask questions against the actual video and get relevant answers with timestamps rather than a generic chatbot.",
     approach:
-      "React frontend + FastAPI backend + Firebase Realtime Database. Pydub/FFmpeg extract audio from a file or YouTube link. OpenAI Whisper transcribes (resume: files up to ~25 MB / ~30 minutes, ~90% transcription accuracy). An OpenAI chat model answers with timestamps, and controls generate summaries, key points, and quizzes (~95% comprehension-response accuracy as reported on the resume). Phrases in the transcript seek the player.",
+      "React frontend, FastAPI backend, and Firebase Realtime Database for state sync. Pydub and FFmpeg extract audio from an uploaded file or a YouTube link. OpenAI Whisper transcribes the audio, then an OpenAI chat model answers questions with timestamps attached, and powers three generated artefacts: summaries, key points, and quizzes. Clicking a phrase in the transcript seeks the audio player to that moment.",
     result:
       "Working study loop for YouTube and local media, with a recorded walkthrough on Vimeo.",
     technologies: [
@@ -326,7 +336,7 @@ export const projects: Project[] = [
     summary:
       "A Node/Express employee API with MongoDB persistence, OpenAPI docs, and deployment on a Cybera Ubuntu instance.",
     problem:
-      "Needed a complete REST surface with real CRUD, aggregates, error codes, and a deployed host.",
+      "In order to learn the complete REST API lifecycle with real CRUD, aggregates, error codes, and most importantly, a deployed instance.",
     approach:
       "Express routes over MongoDB. GET list sorts by tenure and returns aggregate stats (count, average years, average salary). GET/POST/PUT/PATCH/DELETE on employees. Unsupported methods return 405. Swagger/OpenAPI documents the contract. Deployed on Cybera with IPv6 networking.",
     result:
@@ -370,9 +380,9 @@ export const projects: Project[] = [
     problem:
       "Small teams still need a simple place to capture stories, rank them, and see the board without standing up a full Jira.",
     approach:
-      "HTML/CSS/JS (with Python listed among project skills) and Scrum-oriented UX: story records, priority, story-point difficulty, and an interface meant to be adopted quickly. GitHub Pages hosts the live board. Later ideas in the README (auth, orgs, realtime chat) are not claimed as shipped.",
+      "HTML/CSS/JS and Scrum-oriented UX: story records, priority, story-point difficulty, and an interface meant to be adopted quickly. GitHub Pages hosts the live board.",
     result:
-      "Public board at GitHub Pages. Collaborative/login features remain listed as future work.",
+      "Public board at GitHub Pages.",
     technologies: ["HTML", "CSS", "JavaScript", "Python", "Scrum", "UI/UX"],
     github: "https://github.com/t1oluwani/Sprint",
     demo: "https://kneadteam.github.io/Sprint/",
@@ -403,9 +413,9 @@ export const projects: Project[] = [
     problem:
       "Two related games should not duplicate control flow. The design problem is a common type hierarchy, not two scripts.",
     approach:
-      "Terminal UI in Python. Shared abstractions for words, scoring, and play-again flow. Wordle and Hangman as specializations. Word lists loaded from file (including a filtered dictionary).",
+      "Terminal UI in Python. Shared abstractions for words, scoring, and play-again flow. Wordle and Hangman as specializations. Word lists loaded from file (including a filtered dictionary for bad words).",
     result:
-      "Playable terminal Wordle and Hangman. README still lists GUI, stats, and category packs as future work — not presented as done.",
+      "Playable terminal Wordle and Hangman.",
     technologies: [
       "Python",
       "OOP",
@@ -443,7 +453,7 @@ export const projects: Project[] = [
     problem:
       "Solve a problem you have using Java, OOP, and TDD, while maintaining code quality, a GUI, and data persistence.",
     approach:
-      "Java application (CPSC 210 lineage) with TDD (JUnit), JSON serialization, and an object model for transactions, categories, and budgets. Features: record income/expense/transfers, categorize, custom budget limits, warnings near/over budget or when spending exceeds earning, and encouraging copy based on balance range. Graphs, regression forecasts, multi-currency, and accounts were listed as TODO in the source README.",
+      "Java application (CPSC 210 lineage) with TDD (JUnit), JSON serialization, and an object model for transactions, categories, and budgets. Features: record income/expense/transfers, categorize, custom budget limits, warnings near/over budget or when spending exceeds earning, and encouraging copy based on balance range.",
     result:
       "Working tracker with JSON save/load and support for near unlimited transactions, with local data storage.",
     technologies: ["Java", "OOP", "JUnit", "TDD", "JSON persistence", "Git"],

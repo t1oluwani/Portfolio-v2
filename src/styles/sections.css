@@ -965,7 +965,7 @@ html {
 
 .project-page__lede {
   margin: 0;
-  margin-bottom: 75px;
+  margin-bottom: 25px;
   max-width: none;
   text-align: center;
 }
@@ -1075,7 +1075,7 @@ html {
   border: 5px solid var(--brass);
   border-radius: 14px;
   overflow: hidden;
-  max-width: 750px;
+  max-width: 850px;
 }
 
 .thumbnail img {
