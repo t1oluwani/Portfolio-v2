@@ -2,6 +2,8 @@ import { profile } from "@/data/content";
 import { SectionHeader } from "@/components/system/SectionHeader";
 import { useReveal } from "@/hooks/useReveal";
 
+import "@/styles/sections/about.css";
+
 export function About() {
   const ref = useReveal<HTMLDivElement>();
   return (

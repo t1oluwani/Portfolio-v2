@@ -1,0 +1,45 @@
+.lede {
+  margin: 0 0 18px;
+  color: var(--paper-soft);
+  max-width: 42em;
+}
+
+.section-kicker {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 28px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--oxide);
+}
+
+.section-kicker__stage {
+  color: var(--brass);
+}
+
+.section-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 4vw, 3.4rem);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 1.08;
+  margin: 0 0 18px;
+}
+
+.archive-kicker {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 48px 0 0;
+  padding-bottom: 12px;
+}
+
+.spec-alias {
+  color: var(--muted);
+}

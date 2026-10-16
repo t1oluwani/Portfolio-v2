@@ -1,0 +1,35 @@
+@media (max-width: 860px) {
+  .section {
+    padding: 64px 18px;
+  }
+
+  .spec-grid,
+  .contact,
+  .project-grid,
+  .stack__layer,
+  .threads,
+  .frames,
+  .case-row {
+    grid-template-columns: 1fr;
+  }
+
+  .case-row__meta {
+    text-align: left;
+    justify-items: start;
+  }
+
+  .thread,
+  .thread:nth-child(2n) {
+    padding: 22px 0;
+    border-right: 0;
+  }
+
+  .project-page {
+    padding: 24px 18px 80px;
+  }
+
+  .hero__readout--tl,
+  .hero__readout--br {
+    display: none;
+  }
+}

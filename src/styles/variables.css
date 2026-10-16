@@ -1,0 +1,46 @@
+:root {
+  --void: #08090a;
+  --void-2: #0d100f;
+  --panel: #121614;
+  --panel-2: #181c1a;
+  --line: rgba(33, 82, 52, 0.641);
+  --line-strong: rgba(232, 226, 210, 0.22);
+  --paper: #ebe6d8;
+  --paper-soft: #bad7ca;
+  --muted: #1a7971;
+  --brass: #177486;
+  --brass-dim: #3964d9;
+  --oxide: #13783a;
+  --signal: #d7d0be;
+  --warn: #907220;
+  --ok: #51ca44;
+  --shadow: rgba(0, 0, 0, 0.45);
+
+  --font-serif: "Instrument Serif", "Times New Roman", serif;
+  --font-display: "Playfair Display", Georgia, serif;
+  --font-editorial: "Cormorant Garamond", Georgia, serif;
+  --font-classic: "Libre Baskerville", Georgia, serif;
+  --font-serif-modern: "Bodoni Moda", Georgia, serif;
+  --font-sans: "IBM Plex Sans", "Segoe UI", sans-serif;
+  --font-clean: "DM Sans", "Segoe UI", sans-serif;
+  --font-modern: "Manrope", "Segoe UI", sans-serif;
+  --font-geometric: "Space Grotesk", "Segoe UI", sans-serif;
+  --font-grotesk: "Plus Jakarta Sans", "Segoe UI", sans-serif;
+  --font-humanist: "Source Sans 3", "Segoe UI", sans-serif;
+  --font-neutral: "Inter", "Segoe UI", sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+  --font-mono-modern: "Space Mono", ui-monospace, monospace;
+  --font-mono-clean: "JetBrains Mono", ui-monospace, monospace;
+
+  --space: 8px;
+  --rail: 72px;
+  --topbar: 44px;
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --max: 1180px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --motion: 0;
+  }
+}

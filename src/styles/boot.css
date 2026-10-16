@@ -1,0 +1,44 @@
+.boot {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  background: var(--void);
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+.boot__panel {
+  width: min(520px, 100%);
+  border: 1px solid var(--line);
+  padding: 28px 24px;
+  background: var(--void-2);
+}
+
+.boot__log {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  line-height: 1.8;
+  color: var(--paper-soft);
+  min-height: 11em;
+  margin: 0;
+}
+
+.boot__log b {
+  color: var(--brass);
+  font-weight: 500;
+}
+
+.boot__skip {
+  margin-top: 16px;
+  background: none;
+  border: 0;
+  padding: 0;
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
