@@ -18,6 +18,7 @@
   text-decoration: none;
   color: inherit;
   position: relative;
+  cursor: pointer;
 }
 
 .case-row:hover .case-row__title,

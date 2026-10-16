@@ -17,7 +17,7 @@ export function useReveal<T extends HTMLElement>() {
           io.disconnect();
         }
       },
-      { threshold: 0.16 },
+      { threshold: 0.10 },
     );
     io.observe(node);
     return () => io.disconnect();

@@ -26,6 +26,10 @@
   text-decoration: none;
 }
 
+.topbar__brand:hover {
+  text-decoration: underline;
+}
+
 .topbar__meta {
   justify-self: end;
   display: flex;
@@ -43,12 +47,16 @@
 
 @media (max-width: 860px) {
   .topbar {
-    grid-template-columns: auto 1fr;
+    grid-template-columns: auto auto;
     gap: 16px;
     padding: 0 16px;
   }
 
   .topbar__meta {
+    display: none;
+  }
+
+  .topbar__brand {
     display: none;
   }
 }

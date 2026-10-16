@@ -12,17 +12,18 @@ export const profile = {
   nameParts: ["Tioluwani", "Akinloye"] as const,
   aliases: "Tio / Favour",
   shortName: "Tio Akinloye",
+  brandName: "Tio's Portfolio",
   role: "Software · AI/ML Engineer",
   location: "Vancouver, Canada",
   origin: "Born in Nigeria · Raised in Canada",
   statusLine:
     "Master of Visual Computing (Incoming) | BSc Honors Computing Science",
   statement:
-    "I am a software and AI/ML engineer with a passion for intelligent systems and emerging applications in the integrated healthcare / biomedical field.",
+    "I'm a software and AI/ML engineer with a passion for intelligent systems and curious about emerging applications in integrated healthcare / biomedical fields.",
   about: [
-    "I go by Tio or Favour. I am a software and AI/ML engineer with interests spanning software development, quality assurance, AI/ML, robotics, and computer vision, with a particular interest in intelligent systems. I am also very interested in the intersectionality of technology and healthcare. ",
-    "I am pursuing a Master of Visual Computing at Simon Fraser University (expected 2028), following an Honors BSc in Computing Science from the University of Alberta (2025). I am a dual citizen of Canada and Nigeria.",
-    "Outside of school and my career, I engage in a variety of hobbies that reflect different aspects of my interests. My intellectual hobbies include reading novels and manga and playing chess; my physical hobbies include playing soccer and basketball; my creative hobbies include drawing and cooking; and my social interests include volunteering and mentoring. ",
+    "I mainly go by Tio or Favour, I’m a software and AI/ML engineer interested in software development, quality assurance, robotics, and computer vision, with a particular focus on intelligent systems. I have recently been drawn to the intersections of technology and healthcare.",
+    "I'm pursuing a Master of Visual Computing at Simon Fraser University (expected 2028), following an Honors BSc in Computing Science from the University of Alberta (2025). I am a dual citizen of Canada and Nigeria.",
+    "Outside of school and work, my hobbies reflect different aspects of my interests. My intellectual hobbies include reading novels, manga and playing chess; my physical hobbies include playing soccer and basketball; my creative hobbies include drawing and cooking; and my social interests include volunteering and mentoring. ",
   ],
   links: {
     github: "https://github.com/t1oluwani",
