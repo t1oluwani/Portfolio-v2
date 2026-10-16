@@ -1,0 +1,17 @@
+html {
+  cursor: crosshair;
+}
+
+.tracking-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+@media (hover: none), (pointer: coarse) {
+  .tracking-cursor {
+    display: none;
+  }
+}

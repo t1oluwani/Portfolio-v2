@@ -12,7 +12,7 @@ const bottomTextColor = "rgba(5, 245, 213, 0.95)";
 function labelFor(el: Element) {
   const t = (el as HTMLElement).dataset.track;
   if (t) return t.toUpperCase();
-  return el.tagName === "A" ? "VISIT" : "LOCKED";
+  return el.tagName === "A" ? "CLICK ME!" : "LOCKED";
 }
 
 function findTarget(px: number, py: number) {
