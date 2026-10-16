@@ -4,8 +4,6 @@ import { projects } from "@/data/content";
 import { SectionHeader } from "@/components/system/SectionHeader";
 import type { Project, ProjectStatus } from "@/types";
 
-import "@/styles/sections/project.css";
-
 const statusLabel: Record<ProjectStatus, string> = {
   complete: "Complete",
   "partially-complete": "Partially complete",

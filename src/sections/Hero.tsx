@@ -6,8 +6,6 @@ import { useBootSequence } from "@/hooks/useBootSequence";
 import { useVisitorInfo, fmtReadout } from "@/hooks/useVisitorInfo";
 import { Mail, Download } from "lucide-react";
 
-import "@/styles/sections/hero.css";
-
 function useClock() {
   const [now, setNow] = useState(() => new Date());
   useEffect(() => {

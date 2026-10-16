@@ -2,8 +2,6 @@ import { timeline } from "@/data/content";
 import { SectionHeader } from "@/components/system/SectionHeader";
 import { useReveal } from "@/hooks/useReveal";
 
-import "@/styles/sections/experience.css";
-
 export function Experience() {
   const ref = useReveal<HTMLDivElement>();
   return (

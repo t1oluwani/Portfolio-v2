@@ -3,8 +3,6 @@ import { SectionHeader } from "@/components/system/SectionHeader";
 import { useReveal } from "@/hooks/useReveal";
 import type { SkillItem } from "@/types";
 
-import "@/styles/sections/skills.css";
-
 const byName = (a: SkillItem, b: SkillItem) => a.name.localeCompare(b.name);
 
 function Chip({ item }: { item: SkillItem }) {

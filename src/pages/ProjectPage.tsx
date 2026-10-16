@@ -4,8 +4,6 @@ import { projects } from "@/data/content";
 import { Thumbnail } from "@/components/system/Thumbnail";
 import { ArchitectureDiagram } from "@/components/system/ArchitectureDiagram";
 
-import "@/styles/sections/project-page.css";
-
 const statusCopy = {
   complete: "Complete",
   "partially-complete": "Partially complete",
