@@ -124,6 +124,7 @@ export function Contact() {
 
           <button
             className="btn btn--solid"
+            data-track="extend a hand"
             type="submit"
             disabled={status === "sending"}
           >

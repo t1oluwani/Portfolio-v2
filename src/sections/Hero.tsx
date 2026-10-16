@@ -86,7 +86,7 @@ export function Hero() {
               Get in Touch
               <Mail className="btn__icon" />
             </a>
-            <a className="btn" onClick={downloadResume}>
+            <a className="btn" onClick={downloadResume} data-track="grab a copy">
               Download Resume
               <Download className="btn__icon" />
             </a>

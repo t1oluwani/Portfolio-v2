@@ -11,11 +11,25 @@ const statusCopy = {
   "on-hold": "On hold",
 };
 
+// Adjust if your route for a project page is different.
+const projectPath = (slug: string) => `/projects/${slug}`;
+
 export function ProjectPage() {
   const { slug } = useParams();
-  const project = projects.find((p) => p.slug === slug);
+
+  // Hooks must run on every render, so this stays above the early return.
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "instant" });
+  }, [slug]);
+
+  const index = projects.findIndex((p) => p.slug === slug);
+  const project = projects[index];
 
   if (!project) return <Navigate to="/" replace />;
+
+  // Wraps around: last -> first, first -> last.
+  const prev = projects[(index - 1 + projects.length) % projects.length];
+  const next = projects[(index + 1) % projects.length];
 
   const sections: { title: string; body: string; step: boolean }[] = [
     { title: "Problem", body: project.problem, step: true },
@@ -23,10 +37,6 @@ export function ProjectPage() {
     { title: "Result", body: project.result, step: true },
   ];
   let stepNum = 0;
-
-  useEffect(() => {
-    window.scrollTo({ top: 0, behavior: "instant" });
-  }, [slug]);
 
   return (
     <article className="project-page" key={project.slug}>
@@ -94,12 +104,12 @@ export function ProjectPage() {
       </div>
 
       <div className="project-grid">
-        {sections.map(({ title, body, step }, index) => (
+        {sections.map(({ title, body, step }, i) => (
           <div
             key={title}
             className="block block--card"
             data-track={title.toLowerCase()}
-            data-section={index + 1}
+            data-section={i + 1}
           >
             <h2>
               <span className="block__num">
@@ -123,6 +133,31 @@ export function ProjectPage() {
             <li key={note}>{note}</li>
           ))}
         </ul>
+      ) : null}
+
+      {projects.length > 1 ? (
+        <nav className="project-pager" aria-label="More projects">
+          <Link
+            className="project-pager__link project-pager__link--prev"
+            to={projectPath(prev.slug)}
+            data-track="previous project"
+          >
+            <span className="project-pager__dir">← Previous</span>
+            <span className="project-pager__title">
+              {prev.code} · {prev.title}
+            </span>
+          </Link>
+          <Link
+            className="project-pager__link project-pager__link--next"
+            to={projectPath(next.slug)}
+            data-track="next project"
+          >
+            <span className="project-pager__dir">Next →</span>
+            <span className="project-pager__title">
+              {next.code} · {next.title}
+            </span>
+          </Link>
+        </nav>
       ) : null}
     </article>
   );
