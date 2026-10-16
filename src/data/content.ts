@@ -34,14 +34,14 @@ export const profile = {
 
 export const navItems: NavItem[] = [
   // (remember me)
-  { id: "hero", href: "#hero", index: "01", label: "Viewport" },
-  { id: "about", href: "#about", index: "02", label: "Subject" },
+  { id: "hero", href: "#hero", index: "01", label: "Homepage" },
+  { id: "about", href: "#about", index: "02", label: "Profile" },
   { id: "projects", href: "#projects", index: "03", label: "Projects" },
   {
     id: "experiences",
     href: "#experiences",
     index: "04",
-    label: "Experiencesy",
+    label: "Experiences",
   },
   { id: "skills", href: "#skills", index: "05", label: "Skills" },
   { id: "contact", href: "#contact", index: "06", label: "Contact" },
