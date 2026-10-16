@@ -3,7 +3,7 @@ import type { Project } from "@/types";
 export const projects: Project[] = [
   {
     slug: "gemini-wears-prada",
-    code: "CS-11",
+    code: "CS-12",
     title: "Gemini Wears Prada",
     subtitle: "AI fashion critic and digital wardrobe",
     status: "complete",
@@ -62,7 +62,7 @@ export const projects: Project[] = [
   },
   {
     slug: "networking-startup",
-    code: "CS-10",
+    code: "CS-11",
     title: "Networking Copilot Startup",
     subtitle: "Meridian: event connections with a measurable follow-through",
     status: "on-hold",
@@ -125,7 +125,7 @@ export const projects: Project[] = [
   },
   {
     slug: "battlezone",
-    code: "CS-09",
+    code: "CS-10",
     title: "Battlezone",
     subtitle: "Atari 1980, rebuilt as a real-time OpenGL tank sim",
     status: "complete",
@@ -175,7 +175,7 @@ export const projects: Project[] = [
   },
   {
     slug: "smartvision",
-    code: "CS-08",
+    code: "CS-09",
     title: "SmartVision",
     subtitle:
       "Train, draw, and compare digit-recognition models in one viewport",
@@ -225,6 +225,53 @@ export const projects: Project[] = [
     notes: [
       "Object-recognition (FashionMNIST) is documented as not implemented.",
       "Course notes cited: CMPUT 328 Visual Recognition, University of Alberta.",
+    ],
+  },
+  {
+    slug: "legacy-portfolio",
+    code: "CS-08",
+    title: "Portfolio (Legacy)",
+    subtitle: "My first portfolio site: React, glow cursor, and a starfield",
+    status: "complete",
+    year: "2024",
+    feature: "Front-end · React",
+    featured: false,
+    summary:
+      "The original version of my portfolio: a single-page React site with a glow cursor, animated background stars, and sections for projects, skills, and experience.",
+    problem:
+      "I needed one place to present my projects, skills, and experience, with a way for people to reach me and download my resume.",
+    approach:
+      "Built with React, HTML and CSS, with an external stylesheet and React libraries for responsive layout, and Font Awesome for icons. Sections: Home (intro and call-to-action), About (biography, social links, resume download), Skills (icon grid of languages, tools and environments), Projects (cards with images and live/GitHub links), Experiences (timeline of work and education), and Contact (email, Calendly scheduling, and a contact form). A glow cursor and background stars give the site its look.",
+    result: "Deployed on Netlify as my public portfolio until the redesign.",
+    technologies: [
+      "React",
+      "JavaScript",
+      "HTML",
+      "CSS",
+      "Font Awesome",
+      "Netlify",
+    ],
+    github: "https://github.com/t1oluwani/https://github.com/t1oluwani/Portfolio",
+    demo: "https://tioluwaniportfoliolegacy.netlify.app/",
+    demotype: "Live Demo",
+    architecture: {
+      nodes: [
+        { id: "visitor", label: "Visitor", layer: "sense" },
+        { id: "sections", label: "Section components", layer: "route" },
+        { id: "state", label: "React state", layer: "model" },
+        { id: "fx", label: "Glow cursor + stars", layer: "act" },
+        { id: "deploy", label: "Netlify", layer: "route" },
+      ],
+      edges: [
+        { from: "visitor", to: "sections" },
+        { from: "sections", to: "state" },
+        { from: "state", to: "fx" },
+        { from: "sections", to: "deploy" },
+      ],
+    },
+    notes: [
+      "Superseded by the current portfolio.",
+      "Referenced tutorials: Owl Carousel, animated hamburger menu, React experience timeline, and react-switch.",
     ],
   },
   {
@@ -381,8 +428,7 @@ export const projects: Project[] = [
       "Small teams still need a simple place to capture stories, rank them, and see the board without standing up a full Jira.",
     approach:
       "HTML/CSS/JS and Scrum-oriented UX: story records, priority, story-point difficulty, and an interface meant to be adopted quickly. GitHub Pages hosts the live board.",
-    result:
-      "Public board at GitHub Pages.",
+    result: "Public board at GitHub Pages.",
     technologies: ["HTML", "CSS", "JavaScript", "Python", "Scrum", "UI/UX"],
     github: "https://github.com/t1oluwani/Sprint",
     demo: "https://kneadteam.github.io/Sprint/",
@@ -414,8 +460,7 @@ export const projects: Project[] = [
       "Two related games should not duplicate control flow. The design problem is a common type hierarchy, not two scripts.",
     approach:
       "Terminal UI in Python. Shared abstractions for words, scoring, and play-again flow. Wordle and Hangman as specializations. Word lists loaded from file (including a filtered dictionary for bad words).",
-    result:
-      "Playable terminal Wordle and Hangman.",
+    result: "Playable terminal Wordle and Hangman.",
     technologies: [
       "Python",
       "OOP",
