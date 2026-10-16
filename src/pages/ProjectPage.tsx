@@ -1,8 +1,8 @@
 import { Link, Navigate, useParams } from "react-router-dom";
 import { useEffect } from "react";
 import { projects } from "@/data/content";
-import { Thumbnail } from "@/components/system/Thumbnail";
-import { ArchitectureDiagram } from "@/components/system/ArchitectureDiagram";
+import { Thumbnail } from "@/components/core/Thumbnail";
+import { ArchitectureDiagram } from "@/components/core/ArchitectureDiagram";
 
 const statusCopy = {
   complete: "Complete",
@@ -85,7 +85,10 @@ export function ProjectPage() {
             ) : null}
           </div>
 
-          <div className="block block--card tech-section" data-track="tools used">
+          <div
+            className="block block--card tech-section"
+            data-track="tools used"
+          >
             <h2>Technologies</h2>
             <table className="tech-table">
               <tbody>

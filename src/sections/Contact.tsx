@@ -1,7 +1,7 @@
 import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import { contactChannels, profile } from "@/data/content";
-import { SectionHeader } from "@/components/system/SectionHeader";
+import { SectionHeader } from "@/components/core/SectionHeader";
 import { useReveal } from "@/hooks/useReveal";
 
 const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
@@ -137,8 +137,8 @@ export function Contact() {
             </p>
           ) : status === "fallback" ? (
             <p className="form__note">
-              Direct transmission failed...
-              Opening mail client directly, send the draft to finish!
+              Direct transmission failed... Opening mail client directly, send
+              the draft to finish!
             </p>
           ) : status === "error" ? (
             <p className="form__note form__note--error">

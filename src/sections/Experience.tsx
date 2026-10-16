@@ -1,11 +1,15 @@
 import { timeline } from "@/data/content";
-import { SectionHeader } from "@/components/system/SectionHeader";
+import { SectionHeader } from "@/components/core/SectionHeader";
 import { useReveal } from "@/hooks/useReveal";
 
 export function Experience() {
   const ref = useReveal<HTMLDivElement>();
   return (
-    <section id="experiences" className="section" aria-labelledby="experiences-title">
+    <section
+      id="experiences"
+      className="section"
+      aria-labelledby="experiences-title"
+    >
       <SectionHeader
         index="04"
         stage="My path so far"
@@ -22,7 +26,9 @@ export function Experience() {
             data-track={`timeline-${item.id}`}
             className={[
               "timeline__item",
-              item.kind === "education" ? "timeline__item--right" : "timeline__item--left",
+              item.kind === "education"
+                ? "timeline__item--right"
+                : "timeline__item--left",
               item.status === "active" ? "is-active" : "",
             ]
               .filter(Boolean)
