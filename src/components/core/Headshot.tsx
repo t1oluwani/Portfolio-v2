@@ -1,18 +1,20 @@
 import { useState } from "react";
+import headshot_url from "../../../public/images/headshot/me-v1.jpeg"
 
-export function Headshot({ src, name }: { src: string; name: string }) {
+const HEADSHOT_SRC = headshot_url;
+
+export function Headshot() {
   const [failed, setFailed] = useState(false);
 
   return (
-    <figure className="spec-photo" data-track="headshot">
+    <figure className="spec-photo" data-track="a handsome fella">
       {failed ? (
         <div className="spec-photo__placeholder" aria-hidden="true">
           Headshot
         </div>
       ) : (
         <img
-          src={src}
-          alt={`Headshot of ${name}`}
+          src={HEADSHOT_SRC}
           width={320}
           height={400}
           decoding="async"

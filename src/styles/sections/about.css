@@ -3,6 +3,7 @@
   grid-template-columns: 1fr 1.35fr;
   gap: 48px;
   align-items: start;
+  margin-top: 50px;
 }
 
 .spec-details {
@@ -21,9 +22,10 @@
   max-width: 320px;
   aspect-ratio: 4 / 5;
   overflow: hidden;
-  border: 1px solid var(--line);
-  background: color-mix(in srgb, var(--line) 35%, transparent);
   position: static;
+  border: 7px solid color-mix(in srgb, var(--muted) 60%, transparent);
+  border-radius: 145px;
+  box-shadow: 0 0 150px color-mix(in srgb, var(--brass) 50%, transparent);
 }
 
 .spec-photo img {

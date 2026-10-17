@@ -3,8 +3,6 @@ import { SectionHeader } from "@/components/core/SectionHeader";
 import { useReveal } from "@/hooks/useReveal";
 import { Headshot } from "../components/core/Headshot";
 
-const headshot_url = "../../public/images/headshot.jpg";
-
 export function About() {
   const ref = useReveal<HTMLDivElement>();
   return (
@@ -19,7 +17,7 @@ export function About() {
         About
       </h2>
       <div ref={ref} className="spec-grid spec-grid--with-photo reveal">
-        <Headshot src={headshot_url} name={profile.name} />
+        <Headshot />
         <div className="spec-details">
           <table className="spec-table" data-track="my profile">
             <tbody>
