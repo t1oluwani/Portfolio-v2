@@ -22,7 +22,7 @@ export const profile = {
   statusLine1: "Master of Visual Computing",
   statusLine1Status: "(Incoming)",
   statusLine2: "BSc Honors Computing Science",
-  statusLine2Status: "(Completed)",
+  statusLine2Status: "(Graduated)",
   statement:
     "I'm a software and AI/ML engineer with a passion for intelligent systems and curious about emerging applications in integrated healthcare / biomedical fields.",
   about: [

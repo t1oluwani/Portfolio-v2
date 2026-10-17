@@ -14,7 +14,7 @@
   justify-content: space-between;
   gap: 16px;
   padding: 16px 0;
-  border-bottom: 1px solid var(--line);
+  border-bottom: 1px solid var(--contrast);
   text-decoration: none;
   font-size: 15px;
 }
@@ -29,7 +29,7 @@
   font-size: 11px;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--muted);
+  color: var(--secondary);
 }
 
 .form {
@@ -44,20 +44,20 @@
   font-size: 11px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--muted);
+  color: var(--secondary);
 }
 
 .form input,
 .form textarea {
   background: var(--panel);
-  border: 1px solid var(--line);
+  border: 1px solid var(--contrast);
   padding: 10px 12px;
   outline: none;
 }
 
 .form input:focus,
 .form textarea:focus {
-  border-color: var(--brass);
+  border-color: var(--primary);
 }
 
 .form textarea {
@@ -67,6 +67,6 @@
 
 .form__note {
   margin: 0;
-  color: var(--muted);
+  color: var(--secondary);
   font-size: 13px;
 }

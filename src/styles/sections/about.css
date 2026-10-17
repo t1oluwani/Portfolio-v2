@@ -7,7 +7,7 @@
 }
 
 .spec-details {
-  min-width: 0; 
+  min-width: 0;
 }
 
 .spec-grid--with-photo {
@@ -23,9 +23,9 @@
   aspect-ratio: 4 / 5;
   overflow: hidden;
   position: static;
-  border: 7px solid color-mix(in srgb, var(--muted) 60%, transparent);
+  border: 7px solid color-mix(in srgb, var(--secondary) 60%, transparent);
   border-radius: 145px;
-  box-shadow: 0 0 150px color-mix(in srgb, var(--brass) 50%, transparent);
+  box-shadow: 0 0 150px color-mix(in srgb, var(--primary) 50%, transparent);
 }
 
 .spec-photo img {
@@ -44,7 +44,7 @@
   font-size: 11px;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--muted);
+  color: var(--secondary);
 }
 
 .spec-table {
@@ -59,7 +59,7 @@
 .spec-table td {
   text-align: left;
   padding: 12px 0;
-  border-bottom: 1px solid var(--line);
+  border-bottom: 1px solid var(--contrast);
   vertical-align: top;
 }
 
@@ -70,7 +70,7 @@
   font-weight: 400;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--muted);
+  color: var(--secondary);
 }
 
 .spec-details {
@@ -98,7 +98,7 @@
   display: flex;
   gap: 0;
   margin-top: 36px;
-  border-top: 1px solid var(--line);
+  border-top: 1px solid var(--contrast);
   overflow-x: auto;
 }
 
@@ -106,7 +106,7 @@
   flex: 1;
   min-width: 140px;
   padding: 16px 18px 4px;
-  border-right: 1px solid var(--line);
+  border-right: 1px solid var(--contrast);
 }
 
 .pipeline__step:last-child {
@@ -117,7 +117,7 @@
   font-family: var(--font-mono);
   font-size: 10px;
   letter-spacing: 0.18em;
-  color: var(--brass);
+  color: var(--primary);
 }
 
 .pipeline__name {
@@ -127,6 +127,6 @@
 }
 
 .pipeline__hint {
-  color: var(--muted);
+  color: var(--secondary);
   font-size: 13px;
 }

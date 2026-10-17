@@ -27,7 +27,7 @@
   font-size: 11px;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--oxide);
+  color: var(--tertiary);
   margin-bottom: 22px;
 }
 
@@ -59,7 +59,7 @@
   font-size: 12px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--muted);
+  color: var(--secondary);
 }
 
 .hero__actions {
@@ -76,7 +76,7 @@
   font-family: var(--font-mono);
   font-size: 10px;
   letter-spacing: 0.12em;
-  color: var(--muted);
+  color: var(--secondary);
   pointer-events: none;
 }
 
@@ -132,7 +132,7 @@
   position: absolute;
   width: 18px;
   height: 18px;
-  border: 1px solid var(--line-strong);
+  border: 1px solid var(--border);
 }
 
 .hero__corners span:nth-child(1) {
