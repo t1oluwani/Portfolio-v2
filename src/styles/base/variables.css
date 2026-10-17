@@ -1,20 +1,20 @@
 :root {
+  --primary: #177486;
+  --secondary: #1a7971;
+  --tertiary: #13783a;
+  --cyan: #1e9dd9;
+  --soft-blue: #3964d9;
+  --paper: #ebe6d8;
+  --paper-soft: #bad7ca;
+  --signal: #d7d0be;
+  --contrast: rgba(33, 82, 52, 0.641);
+  --border: rgba(232, 226, 210, 0.22);
+  --ok: #51ca44;
+  --warn: #907220;
+  --shadow: rgba(0, 0, 0, 0.45);
   --void: #08090a;
   --void-2: #0d100f;
   --panel: #121614;
-  --panel-2: #181c1a;
-  --line: rgba(33, 82, 52, 0.641);
-  --line-strong: rgba(232, 226, 210, 0.22);
-  --paper: #ebe6d8;
-  --paper-soft: #bad7ca;
-  --muted: #1a7971;
-  --brass: #177486;
-  --brass-dim: #3964d9;
-  --oxide: #13783a;
-  --signal: #d7d0be;
-  --warn: #907220;
-  --ok: #51ca44;
-  --shadow: rgba(0, 0, 0, 0.45);
 
   --font-serif: "Instrument Serif", "Times New Roman", serif;
   --font-display: "Playfair Display", Georgia, serif;

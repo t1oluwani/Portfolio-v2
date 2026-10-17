@@ -9,21 +9,25 @@
   grid-template-columns: 1fr auto 1fr;
   align-items: center;
   padding: 0 18px;
-  border-bottom: 1px solid var(--line);
+  border-bottom: 1px solid var(--contrast);
   background: rgba(8, 9, 10, 0.78);
   backdrop-filter: blur(10px);
   font-family: var(--font-mono);
   font-size: 11px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--muted);
+  color: var(--secondary);
   cursor: default;
 }
 
 .topbar__brand {
   justify-self: start;
-  color: var(--brass);
+  color: var(--primary);
   text-decoration: none;
+}
+
+.topbar__brand:hover {
+  text-decoration: underline;
 }
 
 .topbar__meta {
@@ -43,12 +47,16 @@
 
 @media (max-width: 860px) {
   .topbar {
-    grid-template-columns: auto 1fr;
+    grid-template-columns: auto auto;
     gap: 16px;
     padding: 0 16px;
   }
 
   .topbar__meta {
+    display: none;
+  }
+
+  .topbar__brand {
     display: none;
   }
 }

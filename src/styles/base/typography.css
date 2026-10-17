@@ -14,11 +14,11 @@
   font-size: 11px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--oxide);
+  color: var(--tertiary);
 }
 
 .section-kicker__stage {
-  color: var(--brass);
+  color: var(--primary);
 }
 
 .section-title {
@@ -35,11 +35,11 @@
   font-size: 11px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--muted);
+  color: var(--secondary);
   margin: 48px 0 0;
   padding-bottom: 12px;
 }
 
 .spec-alias {
-  color: var(--muted);
+  color: var(--secondary);
 }

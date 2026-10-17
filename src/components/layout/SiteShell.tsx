@@ -56,8 +56,8 @@ export function SiteShell() {
       </a>
       <div className="grid-bg" aria-hidden="true" />
       <header className="topbar">
-        <Link className="topbar__brand" data-track="preferred name" to="/">
-          {profile.shortName}
+        <Link className="topbar__brand" data-track="Welcome!" to="/" reloadDocument>
+          {profile.brandName}
         </Link>
 
         <nav className="topnav" aria-label="Section index">

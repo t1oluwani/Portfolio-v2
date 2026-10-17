@@ -4,6 +4,7 @@
   display: flex;
   flex-direction: column;
   gap: 16px;
+  margin-top: 50px;
 }
 
 .timeline::before {
@@ -12,29 +13,29 @@
   top: 0;
   bottom: 0;
   left: 50%;
-  border-left: 1px solid var(--line-strong);
+  border-left: 1px solid var(--border);
 }
 
 .timeline__item {
   position: relative;
   width: calc(50% - var(--stem-gap));
   padding: 16px 18px;
-  border: 1px solid color-mix(in srgb, var(--brass) 32%, transparent);
+  border: 1px solid color-mix(in srgb, var(--primary) 32%, transparent);
   border-radius: 14px;
-  background: color-mix(in srgb, var(--brass) 6%, transparent);
+  background: color-mix(in srgb, var(--primary) 6%, transparent);
   transition:
     border-color 0.2s var(--ease),
     background 0.2s var(--ease);
 }
 
 .timeline__item--left:hover {
-  border-color: color-mix(in srgb, var(--brass) 65%, transparent);
-  background: color-mix(in srgb, var(--brass) 10%, transparent);
+  border-color: color-mix(in srgb, var(--primary) 65%, transparent);
+  background: color-mix(in srgb, var(--primary) 10%, transparent);
 }
 
 .timeline__item--right:hover {
-  border-color: color-mix(in srgb, var(--oxide) 70%, transparent);
-  background: color-mix(in srgb, var(--oxide) 10%, transparent);
+  border-color: color-mix(in srgb, var(--tertiary) 70%, transparent);
+  background: color-mix(in srgb, var(--tertiary) 10%, transparent);
 }
 
 .timeline__item.is-active {
@@ -48,11 +49,11 @@
   width: 9px;
   height: 9px;
   background: var(--void);
-  border: 1px solid var(--brass);
+  border: 1px solid var(--primary);
 }
 
 .timeline__item.is-active::before {
-  background: var(--brass);
+  background: var(--primary);
 }
 
 .timeline__item--left {
@@ -73,17 +74,17 @@
 
 .timeline__item--right {
   align-self: flex-end;
-  border-color: color-mix(in srgb, var(--oxide) 38%, transparent);
-  background: color-mix(in srgb, var(--oxide) 7%, transparent);
+  border-color: color-mix(in srgb, var(--tertiary) 38%, transparent);
+  background: color-mix(in srgb, var(--tertiary) 7%, transparent);
 }
 
 .timeline__item--right::before {
   left: calc(-1 * var(--stem-gap) - 5px);
-  border-color: var(--oxide);
+  border-color: var(--tertiary);
 }
 
 .timeline__item--right.is-active::before {
-  background: var(--oxide);
+  background: var(--tertiary);
 }
 
 .timeline__head {
@@ -95,7 +96,7 @@
   font-size: 11px;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--muted);
+  color: var(--secondary);
 }
 
 .timeline__title {
@@ -105,7 +106,7 @@
 }
 
 .timeline__org {
-  color: var(--brass);
+  color: var(--primary);
   margin: 0 0 8px;
 }
 

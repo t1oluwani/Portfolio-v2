@@ -2,7 +2,7 @@ import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import { SiteShell } from "@/components/layout/SiteShell";
 import { HomePage } from "@/pages/HomePage";
 import { ProjectPage } from "@/pages/ProjectPage";
-import { TrackingCursor } from "@/components/vision/TrackingCursor";
+import { TrackingCursor } from "@/components/interface/TrackingCursor";
 
 export function App() {
   return (

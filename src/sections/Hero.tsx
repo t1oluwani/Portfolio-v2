@@ -1,7 +1,7 @@
 import { useRef, useState, useEffect } from "react";
 import { profile } from "@/data/content";
-import { PerceptionCanvas } from "@/components/vision/PerceptionCanvas";
-import { BootOverlay } from "@/components/vision/BootOverlay";
+import { PerceptionCanvas } from "@/components/interface/PerceptionCanvas";
+import { BootOverlay } from "@/components/interface/BootOverlay";
 import { useBootSequence } from "@/hooks/useBootSequence";
 import { useVisitorInfo, fmtReadout } from "@/hooks/useVisitorInfo";
 import { Mail, Download } from "lucide-react";
@@ -39,13 +39,19 @@ export function Hero() {
 
   const origin = visitor?.city
     ? `${visitor.city}, ${visitor.country}`
-    : visitor?.timezone.replace("_", " ") ?? "Resolving…";
+    : (visitor?.timezone.replace("_", " ") ?? "Resolving…");
   const readout = fmtReadout(visitor, origin, clock);
 
-
   return (
-    <section id="hero" className="section section--hero" ref={hostRef} aria-label="Viewport">
-      {boot.visible ? <BootOverlay lines={boot.lines} onSkip={boot.skip} /> : null}
+    <section
+      id="hero"
+      className="section section--hero"
+      ref={hostRef}
+      aria-label="Viewport"
+    >
+      {boot.visible ? (
+        <BootOverlay lines={boot.lines} onSkip={boot.skip} />
+      ) : null}
       <PerceptionCanvas hostRef={hostRef} />
       <div className="hero">
         <div className="hero__corners" aria-hidden="true">
@@ -54,11 +60,13 @@ export function Hero() {
           <span />
           <span />
         </div>
-        <div className="hero__readout hero__readout--tl" data-track="visitor details">
+        <div
+          className="hero__readout hero__readout--tl"
+          data-track="visitor details"
+        >
           <div className="hero__readout-head">
             VISITOR SIGNAL (
-            <span className="hero__readout-dot" aria-hidden="true" />
-            ) DETECTED
+            <span className="hero__readout-dot" aria-hidden="true" />) DETECTED
           </div>
           {readout.map(({ label, value }) => (
             <div key={label} className="hero__readout-row">
@@ -69,7 +77,7 @@ export function Hero() {
         </div>
         <div className="hero__copy">
           <p className="hero__status" data-track="my roles">
-            {profile.role}
+            {profile.titleRole}
           </p>
           <h1 ref={focusRef} className="hero__name" data-track="me">
             <span>{profile.nameParts[0]}</span>
@@ -86,7 +94,11 @@ export function Hero() {
               Get in Touch
               <Mail className="btn__icon" />
             </a>
-            <a className="btn" onClick={downloadResume} data-track="grab a copy">
+            <a
+              className="btn"
+              onClick={downloadResume}
+              data-track="grab a copy"
+            >
               Download Resume
               <Download className="btn__icon" />
             </a>

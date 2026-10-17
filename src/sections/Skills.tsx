@@ -1,5 +1,5 @@
 import { skillGroups } from "@/data/content";
-import { SectionHeader } from "@/components/system/SectionHeader";
+import { SectionHeader } from "@/components/core/SectionHeader";
 import { useReveal } from "@/hooks/useReveal";
 import type { SkillItem } from "@/types";
 
@@ -15,7 +15,8 @@ function Chip({ item }: { item: SkillItem }) {
             alt=""
             loading="lazy"
             onError={(e) => {
-              (e.currentTarget.parentElement as HTMLElement).style.display = "none";
+              (e.currentTarget.parentElement as HTMLElement).style.display =
+                "none";
             }}
           />
         </span>

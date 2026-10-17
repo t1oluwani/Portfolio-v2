@@ -10,7 +10,7 @@
 
 .boot__panel {
   width: min(520px, 100%);
-  border: 1px solid var(--line);
+  border: 1px solid var(--contrast);
   padding: 28px 24px;
   background: var(--void-2);
 }
@@ -25,7 +25,7 @@
 }
 
 .boot__log b {
-  color: var(--brass);
+  color: var(--primary);
   font-weight: 500;
 }
 
@@ -34,7 +34,7 @@
   background: none;
   border: 0;
   padding: 0;
-  color: var(--muted);
+  color: var(--secondary);
   font-family: var(--font-mono);
   font-size: 11px;
   letter-spacing: 0.14em;

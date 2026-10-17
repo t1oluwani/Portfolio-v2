@@ -1,6 +1,7 @@
 import { profile } from "@/data/content";
-import { SectionHeader } from "@/components/system/SectionHeader";
+import { SectionHeader } from "@/components/core/SectionHeader";
 import { useReveal } from "@/hooks/useReveal";
+import { Headshot } from "../components/core/Headshot";
 
 export function About() {
   const ref = useReveal<HTMLDivElement>();
@@ -15,41 +16,47 @@ export function About() {
       <h2 id="about-title" className="sr-only">
         About
       </h2>
-      <div ref={ref} className="spec-grid reveal">
-        <table className="spec-table" data-track="my profile">
-          <tbody>
-            <tr>
-              <th scope="row">Name</th>
-              <td>
-                {profile.name}
-                <span className="spec-alias"> · {profile.aliases}</span>
-              </td>
-            </tr>
-            <tr>
-              <th scope="row">Role</th>
-              <td>{profile.role}</td>
-            </tr>
-            <tr>
-              <th scope="row">Focus</th>
-              <td>Software Engineer · Computer Vision · Robotics</td>
-            </tr>
-            <tr>
-              <th scope="row">Status</th>
-              <td>{profile.statusLine}</td>
-            </tr>
-            <tr>
-              <th scope="row">Locale</th>
-              <td>
-                {profile.location}
-                <span className="spec-alias"> · {profile.origin}</span>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-        <div className="spec-copy" data-track="a short biography">
-          {profile.about.map((p) => (
-            <p key={p.slice(0, 24)}>{p}</p>
-          ))}
+      <div ref={ref} className="spec-grid spec-grid--with-photo reveal">
+        <Headshot />
+        <div className="spec-details">
+          <table className="spec-table" data-track="my profile">
+            <tbody>
+              <tr>
+                <th scope="row">Name</th>
+                <td>
+                  {profile.name}
+                  <span className="spec-alias"> · {profile.aliases}</span>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Role</th>
+                <td>
+                  {profile.currentRole}
+                  <span className="spec-alias"> · {profile.currentArea}</span>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Status</th>
+                <td>
+                  {profile.statusLine1} <span className="spec-alias"> · {profile.statusLine1Status}</span>
+                  <br/>
+                  {profile.statusLine2} <span className="spec-alias"> · {profile.statusLine2Status}</span>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Locale</th>
+                <td>
+                  {profile.location}
+                  <span className="spec-alias"> · {profile.origin}</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <div className="spec-copy" data-track="a short biography">
+            {profile.about.map((p) => (
+              <p key={p.slice(0, 24)}>{p}</p>
+            ))}
+          </div>
         </div>
       </div>
       {/* <div className="pipeline" aria-label="Working model">

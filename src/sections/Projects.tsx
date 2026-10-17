@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { projects } from "@/data/content";
-import { SectionHeader } from "@/components/system/SectionHeader";
+import { SectionHeader } from "@/components/core/SectionHeader";
 import type { Project, ProjectStatus } from "@/types";
 
 const statusLabel: Record<ProjectStatus, string> = {
